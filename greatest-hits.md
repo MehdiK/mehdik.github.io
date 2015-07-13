@@ -1,14 +1,13 @@
---- cson
+---
 layout: 'default'
 title: "Greatest Hits"
 metaTitle: "Greatest Hits"
 description: "The best of my blog, open source contribution and presentations"
 revised: "2014-01-03"
 date: "2014-01-03"
-
 ---
 ##Greatest Hits
-This is a curated list of the greatest hits of my blog, open source contribution and presentations based on Google Analytics stats and download counts. 
+This is a curated list of the greatest hits of my blog, open source contribution and presentations based on Google Analytics stats and download counts.
 
 If you are a new visitor/follower hopefully this helps you discover the good stuff easier. You may read more about me, as a person, [here](/about).
 
@@ -25,7 +24,7 @@ Here is the categorized list of my most popular post.
  - [Introducing Humanizer](/humanizer-v1): the introductory post for [Humanizer](https://github.com/MehdiK/Humanizer), a .Net framework that meets all your .NET needs for manipulating and displaying strings, dates, times (inc. timespans) and quantities.
  - [Transform app and web config](/transform-app-config-and-web-config): showing how you can easily transform app.config and web.config in a Visual Studio solution.
  - [Developer productivity tools & Visual Studio extensions](/developer-productivity-tools-and-visual-studio-extensions): a list of developer productivity tools and Visual Studio extensions that I find useful.
- 
+
 ####Concepts
  - [BDD To The Rescue](/bdd-to-the-rescue): why BDD matters and how it can help.
  - [BDD Simply](/bdd-simply): a simple BDD approach for those who don't want to use a BDD framework.
@@ -55,4 +54,3 @@ You can also find a few slidedecks on [SlideShare](http://www.slideshare.net/Meh
  - Created [Humanizer](http://github.com/MehdiK/Humanizer): a .Net framework that meets all your .NET needs for manipulating and displaying strings, dates, times (inc. timespans) and quantities.
  - Created and now contributing on [Seleno](https://github.com/TestStack/TestStack.Seleno): Seleno helps you write automated UI tests the RIGHT way!
  - Co-founded [TestStack](http://teststack.net/): a collection of awesome and unique testing tools and frameworks.
-
