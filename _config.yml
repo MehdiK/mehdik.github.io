@@ -1,6 +1,7 @@
 # Site settings
 title: Mehdi Khalili
 email: me@mehdi-khalili.com
+disqus_short_name: mehdikhalilisblog
 description: > # this means to ignore newlines until "baseurl:"
   Agile Coach, Lean Instigator, Mentor, Leader, Programmer, Presenter, Blogger
 baseurl: "" # the subpath of your site, e.g. /blog/
