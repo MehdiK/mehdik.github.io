@@ -237,8 +237,8 @@ Hope this helps.
   [3]: http://www.microsoft.com/downloads/en/details.aspx?FamilyID=92ced922-d505-457a-8c9c-84036160639f
   [4]: http://www.refactoring.com/
   [5]: http://en.wikipedia.org/wiki/Code_refactoring
-  [6]: /get/BlogPictures/resharper-refactoring/refactor-menu.JPG
-  [7]: /get/BlogPictures/resharper-refactoring/introduce-variable.JPG
+  [6]: /get/resharper-refactoring/refactor-menu.JPG
+  [7]: /get/resharper-refactoring/introduce-variable.JPG
   [8]: http://en.wikipedia.org/wiki/Software_regression
   [9]: http://www.antiifcampaign.com/
   [10]: http://stackoverflow.com/questions/235455/access-to-modified-closure

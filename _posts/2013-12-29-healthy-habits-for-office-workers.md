@@ -42,7 +42,7 @@ Office workers love their snacks and a lot of employers provide free snack. In o
 I prefer the fruit supply and I try to have a few serves a day. Banana is particularly good to top up the energy in the absence of artificial sugar intake. I also love dry roasted nuts - particularly almonds - and highly recommend them. Very healthy and tasty.
 
 #### Maintain your posture
-<img align="right" src="/get/BlogPictures/healthy-habits/sitting-on-fitness-ball.jpg" alt="mouse position" />
+<img align="right" src="/get/healthy-habits/sitting-on-fitness-ball.jpg" alt="mouse position" />
 
 I sit on exercise ball the whole day. I have one in the office and one at home. I know there are some arguments against sitting on a fitness ball; but it's worked for me like a charm. Sitting on a fitness ball doesn't guarantee good posture though and a lot of people still slouch on them! Inflate the ball enough so when you sit you don't sink in it or the lifted knees will force you to slump. The ball diameter is very important for a good posture. I am 178cm tall and 75cm balls work well for me.
 
@@ -61,13 +61,13 @@ I had wrist pain for a while and I learnt that they were mostly caused by bad ke
 
 But then holding mouse with my right hand for several years, I started developing a bit of pain in my right wrist. I tried ergonomic mice and ergonomic mouse pads with little improvement. So I switched hand and started using mouse with my left hand. Man, so many clicks that meant to be right clicks and vice versa; but I adapted after a few days and it worked great. 
 
-<img class="center" alt="mouse position" src="/get/BlogPictures/healthy-habits/mouse-position.jpg" />
+<img class="center" alt="mouse position" src="/get/healthy-habits/mouse-position.jpg" />
 
 There is another benefit of using mouse with your left hand. Num pad and command buttons (on most keyboards) are located on the right which means your mouse is further away from the center of your body and you have to reach rather far for it. When on left, the num pad is out of your way and you can much easier reach for the mouse. This releases a bit of tension from shoulder muscles which helps with painful neck and shoulder muscle knots. Every few weeks I switch from left to right so my wrists and shoulders share the load!
 
 If you are not willing to move your mouse around then, as Joshua suggested, you can go for an [ergonomic keyboard with detachable num pad](http://www.microsoft.com/hardware/en-us/p/sculpt-ergonomic-desktop) and move your num pad to the right to empty the mouse space on your right:
 
-<img class="center" alt="detachable num pad" src="/get/BlogPictures/healthy-habits/sculpt-ergonomic-desktop.jpg" />
+<img class="center" alt="detachable num pad" src="/get/healthy-habits/sculpt-ergonomic-desktop.jpg" />
 
 ####Monitors
 Adjust your monitor height to your eye level to release the tension from your neck and shoulder muscles. If your monitor is not height adjustable put a few thick books underneath to lift it up to your eye level. You can find a few really good tips for setting up your monitor properly [here](http://www.healthycomputing.com/office/setup/monitor/).
@@ -76,7 +76,7 @@ In a multi-monitor setup and when monitors are rotatable I rotate all monitors 9
 
 Hanselman has a [nice multi monitor setup](http://www.hanselman.com/blog/howtoadjustyoursiderearviewmirrorsandwhyyouneed3monitors.aspx) that may work well for you. That is a bit too wide for my neck though. 
 
-![mouse position](/get/BlogPictures/healthy-habits/hanselman-3-monitors.jpg)
+![mouse position](/get/healthy-habits/hanselman-3-monitors.jpg)
 
 ###Out of the office
 When returning home from work, I work more, either on work projects or on professional development by studying and coding. There have been long periods in my life when I would sleep around 5 hours a night so I have more time to work. I still think that a professional should put more into their work than 9 to 5 but everything has to be done in moderation. 
@@ -86,7 +86,7 @@ I wish I could say these are all my habits but this is a note to self to improve
 ####A bit less technology	
 Hi, My name is Mehdi and I am a technology addict.
 
-<img style="margin-top:0px" alt="Throw out the computer" align="right" src="/get/BlogPictures/healthy-habits/throw-out-computer.gif" />
+<img style="margin-top:0px" alt="Throw out the computer" align="right" src="/get/healthy-habits/throw-out-computer.gif" />
 
 I think we are all becoming slaves of computers and smart phones: these highly amusing and entertaining life suckers. We sit enough in the office. Let's not top it up with more sitting at home: less computers, less TV, less chair and couch when out of office. 
 

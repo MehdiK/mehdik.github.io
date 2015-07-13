@@ -263,7 +263,7 @@ Hope this helps.
 
   [1]: https://code.google.com/p/bddify/
   [2]: /bdd-simply
-  [3]: /get/BlogPictures/bdd-simply-take-2/card_is_disabled_result.JPG
-  [4]: /get/BlogPictures/bdd-simply-take-2/card_is_disabled_failed.JPG
-  [5]: /get/BlogPictures/bdd-simply-take-2/card_is_disabled_ignored.JPG
+  [3]: /get/bdd-simply-take-2/card_is_disabled_result.JPG
+  [4]: /get/bdd-simply-take-2/card_is_disabled_failed.JPG
+  [5]: /get/bdd-simply-take-2/card_is_disabled_ignored.JPG
   [6]: http://code.google.com/p/bddify/

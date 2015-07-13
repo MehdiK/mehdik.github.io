@@ -55,5 +55,5 @@ Please leave me a comment and let me know what you think. Do you find this inter
 Hope you enjoy it. 
 
 
-  [1]: /get/BlogPictures/ruby-for-csharp-devs/ruby-version.jpg
-  [2]: /get/BlogPictures/ruby-for-csharp-devs/irb.jpg
+  [1]: /get/ruby-for-csharp-devs/ruby-version.jpg
+  [2]: /get/ruby-for-csharp-devs/irb.jpg

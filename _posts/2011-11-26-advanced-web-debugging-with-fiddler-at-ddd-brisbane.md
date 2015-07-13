@@ -35,6 +35,6 @@ Happy fiddling.
   [2]: http://www.dddbrisbane.com/agenda#WEB201
   [3]: http://www.dddbrisbane.com
   [4]: /get/Downloads/Fiddler%20Web%20Debugger.pptx
-  [5]: /get/BlogPictures/DDDBrisbane/Fiddler-1.jpg
-  [6]: /get/BlogPictures/DDDBrisbane/Fiddler-2.jpg
+  [5]: /get/DDDBrisbane/Fiddler-1.jpg
+  [6]: /get/DDDBrisbane/Fiddler-2.jpg
   [7]: http://bronwenz.smugmug.com/Events/DDD-Brisbane-2011/20281834_DXrjT4#1603448525_wFJppcJ

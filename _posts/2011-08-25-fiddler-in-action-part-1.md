@@ -217,30 +217,30 @@ Hope it helps.
   [3]: /fiddler-in-action/part-2
   [4]: http://www.fiddler2.com/fiddler2/
   [5]: http://www.fiddler2.com
-  [6]: /get/BlogPictures/fiddler-in-action/fiddler-proxy.png
+  [6]: /get/fiddler-in-action/fiddler-proxy.png
   [7]: http://msdn.microsoft.com/en-us/library/aa383630(v=vs.85).aspx
-  [8]: /get/BlogPictures/fiddler-in-action/connections-tab-ie-options.png
-  [9]: /get/BlogPictures/fiddler-in-action/wininet-proxy-settings.png
-  [10]: /get/BlogPictures/fiddler-in-action/wininet-proxy-settings-after-fiddler-starts.png
-  [11]: /get/BlogPictures/fiddler-in-action/fiddler-proxy2.png
+  [8]: /get/fiddler-in-action/connections-tab-ie-options.png
+  [9]: /get/fiddler-in-action/wininet-proxy-settings.png
+  [10]: /get/fiddler-in-action/wininet-proxy-settings-after-fiddler-starts.png
+  [11]: /get/fiddler-in-action/fiddler-proxy2.png
   [12]: http://en.wikipedia.org/wiki/Wireshark
   [13]: http://en.wikipedia.org/wiki/Microsoft_Network_Monitor
   [14]: http://www.httpwatch.com/
   [15]: http://en.wikipedia.org/wiki/Firebug_(web_development)
   [16]: http://getfirebug.com/releases/lite/chrome/
-  [17]: /get/BlogPictures/fiddler-in-action/fiddler-ui.png
-  [18]: /get/BlogPictures/fiddler-in-action/web-sessions.png
+  [17]: /get/fiddler-in-action/fiddler-ui.png
+  [18]: /get/fiddler-in-action/web-sessions.png
   [19]: http://www.fiddler2.com/fiddler/help/ui.asp
-  [20]: /get/BlogPictures/fiddler-in-action/web-sessions-icons.png
-  [21]: /get/BlogPictures/fiddler-in-action/compare-sessions-menu.png
-  [22]: /get/BlogPictures/fiddler-in-action/compare-sessions-result.png
-  [23]: /get/BlogPictures/fiddler-in-action/statistics.png
+  [20]: /get/fiddler-in-action/web-sessions-icons.png
+  [21]: /get/fiddler-in-action/compare-sessions-menu.png
+  [22]: /get/fiddler-in-action/compare-sessions-result.png
+  [23]: /get/fiddler-in-action/statistics.png
   [24]: http://www.fiddler2.com/Fiddler/dev/Inspectors.asp
-  [25]: /get/BlogPictures/fiddler-in-action/inspectors.png
-  [26]: /get/BlogPictures/fiddler-in-action/fiddler-options.png
-  [27]: /get/BlogPictures/fiddler-in-action/fiddler-https-warning.png
-  [28]: /get/BlogPictures/fiddler-in-action/windows-security-warning.png
-  [29]: /get/BlogPictures/fiddler-in-action/fiddler-certificate.png
+  [25]: /get/fiddler-in-action/inspectors.png
+  [26]: /get/fiddler-in-action/fiddler-options.png
+  [27]: /get/fiddler-in-action/fiddler-https-warning.png
+  [28]: /get/fiddler-in-action/windows-security-warning.png
+  [29]: /get/fiddler-in-action/fiddler-certificate.png
   [30]: http://en.wikipedia.org/wiki/Man-in-the-middle_attack
-  [31]: /get/BlogPictures/fiddler-in-action/man-in-the-middle.png
+  [31]: /get/fiddler-in-action/man-in-the-middle.png
   [32]: /fiddler-in-action/part-2

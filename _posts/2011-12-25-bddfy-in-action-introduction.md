@@ -163,11 +163,11 @@ That is all for now.
   [15]: http://michael-whelan.net/bddfy-in-action/using-bddfy-for-unit-tests
   [16]: /bdd-simply-with-bddify
   [17]: https://github.com/TestStack/TestStack.BDDfy
-  [18]: /get/BlogPictures/bddify-in-action/intro/mstest-with-resharper.JPG
+  [18]: /get/bddify-in-action/intro/mstest-with-resharper.JPG
   [19]: http://dannorth.net/introducing-bdd/
-  [20]: /get/BlogPictures/bddify-in-action/intro/mstest-with-mstest-runner.JPG
-  [21]: /get/BlogPictures/bddify-in-action/intro/mstest-with-tdnet.JPG
-  [22]: /get/BlogPictures/bddify-in-action/intro/mstest-html-report.jpg
+  [20]: /get/bddify-in-action/intro/mstest-with-mstest-runner.JPG
+  [21]: /get/bddify-in-action/intro/mstest-with-tdnet.JPG
+  [22]: /get/bddify-in-action/intro/mstest-html-report.jpg
   [23]: http://nuget.org/packages/TestStack.BDDfy.samples
   [24]: http://dannorth.net/introducing-bdd/
   [25]: https://twitter.com/BDDfy

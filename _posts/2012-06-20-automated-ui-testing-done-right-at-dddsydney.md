@@ -118,6 +118,6 @@ Any ideas, comments, feedback and suggestions about the framework is welcome.
   [10]: http://seleniumhq.org/
   [11]: http://teststack.github.com/TestStack.Seleno/
   [12]: https://github.com/TestStack/TestStack.Seleno
-  [13]: /get/BlogPictures/DDDSydney/Seleno.png
+  [13]: /get/DDDSydney/Seleno.png
   [14]: https://github.com/TestStack/TestStack.Seleno/zipball/master
   [15]: https://github.com/TestStack/TestStack.Seleno

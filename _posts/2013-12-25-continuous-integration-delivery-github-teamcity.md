@@ -53,15 +53,15 @@ So before anything else we need to create a TeamCity project which is a simple g
 
 On the TeamCity admin console go to Administration (and click on the Projects from the left navigation bar). That takes you to a page showing a list of projects. There is also a 'Create Project' button (if you are System Administrator) to create new projects:
 
-![Projects](/get/BlogPictures/cd-for-github-with-teamcity/admin-projects-new-project.png)
+![Projects](/get/cd-for-github-with-teamcity/admin-projects-new-project.png)
 
 After clicking on the 'Create Project' button you see the following page where you can enter your project details:
 
-![New Project](/get/BlogPictures/cd-for-github-with-teamcity/create-new-project.png)
+![New Project](/get/cd-for-github-with-teamcity/create-new-project.png)
 
 After you create the project, you are taken to the project home page where you can setup the build configurations:
 
-![Project is created](/get/BlogPictures/cd-for-github-with-teamcity/project-is-created.png)
+![Project is created](/get/cd-for-github-with-teamcity/project-is-created.png)
 
 ##<a id="setting-up-ci">Setting up Continuous Integration</a>
 So you now have a TeamCity project and want to setup [Continuous Integration](http://www.martinfowler.com/articles/continuousIntegration.html) for your project:
@@ -70,11 +70,11 @@ So you now have a TeamCity project and want to setup [Continuous Integration](ht
 
 The first step is to create a build configuration for Continuous Integration. You can do so by clicking on the 'Create build configuration' button on the project home page:
 
-![Project home page](/get/BlogPictures/cd-for-github-with-teamcity/project-home-page.png)
+![Project home page](/get/cd-for-github-with-teamcity/project-home-page.png)
 
 After clicking on the button you will be taken to the 'Create build configuration' page:
 
-![Create build configuration](/get/BlogPictures/cd-for-github-with-teamcity/create-ci-build-config.png)
+![Create build configuration](/get/cd-for-github-with-teamcity/create-ci-build-config.png)
 
 The settings:
 
@@ -89,25 +89,25 @@ Once your build config is created you should set the 'VCS settings' so TeamCity 
 
 Different VCS engines have different settings so the first step is to pick the VCS you want to use - in our case Git (for GitHub):
 
-![Type of VCS](/get/BlogPictures/cd-for-github-with-teamcity/type-of-vcs.png)
+![Type of VCS](/get/cd-for-github-with-teamcity/type-of-vcs.png)
 
 Once you choose Git you are provided with a page to setup your git repository connection:
 
-![Git repository settings](/get/BlogPictures/cd-for-github-with-teamcity/git-vcs-config.png)
+![Git repository settings](/get/cd-for-github-with-teamcity/git-vcs-config.png)
 
 The important [git VCS settings](http://confluence.jetbrains.com/display/TCD8/Git+%28JetBrains%29) are:
 
  - VCS root name and ID: use a unique name preferably related to your project so it's easy to spot it amongst other VCS roots you might have in your TeamCity.
  - Fetch URL: this tells TeamCity where it should look for the source code. If you're using GitHub you can grab this from your project's GitHub home page (the SSH one requires authentication; so you might grab the https URL):
  
- ![GitHub repository fetch URL](/get/BlogPictures/cd-for-github-with-teamcity/repo-fetch-url.png)
+ ![GitHub repository fetch URL](/get/cd-for-github-with-teamcity/repo-fetch-url.png)
 
  - 'Default branch' should be set to your master branch which is where your CI should focus more. So we set it to `refs/heads/master` which is the git master branch. If you're wondering where that comes from run `git show-ref master` command on your git repo.
  - We want to also monitor pull request branches so we set the 'Branch specification' to `+refs/pull/*/merge` which uses wildcard to monitor pull request merged branches.
  
 I leave the rest of the settings to their default values. Before you save, make sure to 'Test connection' so that TeamCity can find your repository with the settings you have provided. The button is located down the bottom of the page:
 
-![Test VCS connection](/get/BlogPictures/cd-for-github-with-teamcity/test-vcs-connection.png)
+![Test VCS connection](/get/cd-for-github-with-teamcity/test-vcs-connection.png)
 
 Once you create a VCS root you can reuse it across build configurations.
 
@@ -123,7 +123,7 @@ To create a build step you should click on the 'Add build step' button. Much lik
 ####<a id="building-the-solution">1. Build Solution</a>
 To build a .Net solution the easiest way is to to build the Visual Studio solution which is how Visual Studio works too. So I pick 'Visual Studio (sln)' for the 'Runner type':
 
-![Build Solution](/get/BlogPictures/cd-for-github-with-teamcity/create-vs-solution-build-step.png)
+![Build Solution](/get/cd-for-github-with-teamcity/create-vs-solution-build-step.png)
 
 The important settings for this step are:
 
@@ -138,22 +138,22 @@ Once you have a build step to build your source code, it's a good idea to run yo
 
 On the top navigation bar click on the 'Agents' link and then navigate to the build agent you want to use for your CI build configuration:
 
-![Agents](/get/BlogPictures/cd-for-github-with-teamcity/agent-config.png)
+![Agents](/get/cd-for-github-with-teamcity/agent-config.png)
 
 From there you go to the 'Compatible Configurations' pane where you can assign your new build configuration to your agent: 
 
-![Compatible Configurations](/get/BlogPictures/cd-for-github-with-teamcity/agent-compatible-configs.png)
+![Compatible Configurations](/get/cd-for-github-with-teamcity/agent-compatible-configs.png)
 
 From there you just click 'Assign configurations', select the configuration you want to assign to this agent, which is your recently created build configuration, in my case `Humanizer :: 1.CI`: 
 
-![Assign configuration](/get/BlogPictures/cd-for-github-with-teamcity/assign-build-config-to-agent.png)
+![Assign configuration](/get/cd-for-github-with-teamcity/assign-build-config-to-agent.png)
 
 `Humanizer` is the name of the TeamCity project and `1.CI` is the name of my build configuration.
 
 #####Your first build run
 So now you have your build configuration with one build step and an agent assigned to it. Go forth and click run on your build. It should get the source from your repository and build it:
 
-![Successful build run](/get/BlogPictures/cd-for-github-with-teamcity/successful-build-run.png)
+![Successful build run](/get/cd-for-github-with-teamcity/successful-build-run.png)
  
 Make sure your build is green and it does what it should do: getting the latest code and building your solution. Check the 'Changes' and 'Build Log' panes.
 
@@ -162,13 +162,13 @@ Now that we have a passing build step, lets add test run to our build.
 
 To add a new build step, go to your build configuration and on the left navigation bar click on '3. Build Step(s)':
 
-![configuration steps](/get/BlogPictures/cd-for-github-with-teamcity/configuration-steps.png)
+![configuration steps](/get/cd-for-github-with-teamcity/configuration-steps.png)
 
 Now you can click 'Add build step' button to create your test runner step. As mentioned I am using xUnit for Humanizer and there isn't a built-in xUnit runner in TeamCity unlike nUnit and MSTest. If you are using nUnit then you can just pick nUnit runner from the 'Runner type' dropdown and fill the settings pages (obviously the same applies to MSTest; but hopefully you're not using MSTest).
 
 Before switching to TeamCity I had an MSBuild script which would do pretty much everything I am explaining here but it was run from command prompt. To run the tests from my build script I had to download xUnit and put it [in a 'tools' folder in my repository](https://github.com/MehdiK/Humanizer/tree/master/tools/xunit). So I just reused the xUnit in my repository to setup xUnit test run in TeamCity: 
 
-![setup xunit test run](/get/BlogPictures/cd-for-github-with-teamcity/run-xunit-tests-build-step.png)
+![setup xunit test run](/get/cd-for-github-with-teamcity/run-xunit-tests-build-step.png)
 
 The important settings are:
 
@@ -181,7 +181,7 @@ The rest are left as default values.
 
 Make sure you run your CI build again, this time with the test step:
 
-![CI run with tests](/get/BlogPictures/cd-for-github-with-teamcity/ci-run-with-tests.png)
+![CI run with tests](/get/cd-for-github-with-teamcity/ci-run-with-tests.png)
 
 Note the test results lighting up in the build result, oh yeah :)
 
@@ -190,8 +190,8 @@ This setup works nicely for your unit and integration tests; but setting up Team
 ####<a id="creating-nuget-package">3. Pack NuGet</a>
 A great practice in Continuous Delivery is to be able to publish the artifacts of any existing green build/test to production with a push of a button. In other words when you want to deploy, you don't rebuild stuff - you just deploy the existing artifacts of a healthy build. We have now setup a build and test run in our CI. We should extract the deployment artifacts now so we can later use them for deployment. Humanizer is a .Net library and releasing this library means pushing a new NuGet package to [nuget.org](http://nuget.org). So lets create the NuGet package from the build artifacts:
 
-![Create nuget build step](/get/BlogPictures/cd-for-github-with-teamcity/create-nuget-build-step-1.png)
-![Create nuget build step](/get/BlogPictures/cd-for-github-with-teamcity/create-nuget-build-step-2.png)
+![Create nuget build step](/get/cd-for-github-with-teamcity/create-nuget-build-step-1.png)
+![Create nuget build step](/get/cd-for-github-with-teamcity/create-nuget-build-step-2.png)
 
 The important settings are:
 
@@ -241,11 +241,11 @@ You can read [this article](http://docs.nuget.org/docs/creating-packages/creatin
  
 Alright lets run the CI build and see what we get:
 
-![CI build run with nuget](/get/BlogPictures/cd-for-github-with-teamcity/ci-build-run-with-nuget.png)
+![CI build run with nuget](/get/cd-for-github-with-teamcity/ci-build-run-with-nuget.png)
 
 We can see the three build steps in the build log. Also if we check the 'Artifacts' pane we can see the NuGet packages:
 
-![Complete CI build artifacts](/get/BlogPictures/cd-for-github-with-teamcity/complete-ci-build-artifacts.png)
+![Complete CI build artifacts](/get/cd-for-github-with-teamcity/complete-ci-build-artifacts.png)
 
 And in the build log we can see that the version has been injected into nuspec:
 
@@ -266,22 +266,22 @@ Although our CI build configuration can build the code, run the tests and packag
 
 TeamCity has a very elegant solution for this problem: 'AssemblyInfo patcher'. In the 'Build Steps' page of your Build Configuration there is a section down the bottom called 'Additional Build Features' where you can, errrrm, add additional features to your build! Click on the 'Add build feature' button and add 'AssemblyInfo patcher' feature:
 
-![Assembly Info Patcher](/get/BlogPictures/cd-for-github-with-teamcity/assembly-info-patcher.png)
+![Assembly Info Patcher](/get/cd-for-github-with-teamcity/assembly-info-patcher.png)
 
 That's it!! TeamCity takes care of everything for you. When you run your build again you can see the magic happening in your build log:
 
-![assembly info patch in build log](/get/BlogPictures/cd-for-github-with-teamcity/assembly-info-in-build-log.png)
+![assembly info patch in build log](/get/cd-for-github-with-teamcity/assembly-info-in-build-log.png)
 
 Another thing of note is that this expectedly happens as part of your '1. Build Solution' build step so the '3. Pack Nuget' step packs the build artifacts with correct versions.
 
 ###<a id="ci-build-trigger">Build Trigger</a>
 We now have a complete CI build configuration. There is still one problem though: we have been  running this build configuration manually! A CI setup should be able to detect changes on the source code and build them automatically. We can achieve that using 'Build Triggers'. Again from the left navigation bar on your CI Build Configuration select '5 Build Trigger' and click on 'Add new trigger' button to add a build trigger. 
 
-![Build Triggers](/get/BlogPictures/cd-for-github-with-teamcity/build-triggers-page.png)
+![Build Triggers](/get/cd-for-github-with-teamcity/build-triggers-page.png)
 
 To make the trigger dependent on source code changes we choose 'VCS Trigger':
 
-![Create VCS build trigger](/get/BlogPictures/cd-for-github-with-teamcity/create-build-trigger.png)
+![Create VCS build trigger](/get/cd-for-github-with-teamcity/create-build-trigger.png)
 
 Now you have automatic builds on all branches of your source control including pull requests.
 
@@ -292,15 +292,15 @@ Basically you have a TeamCity CI build setup for your GitHub project which build
 
 We have everything setup for that. All we need now is to add the notification in our configuration and see the result light up in GitHub pull requests. Go to your 'Build Steps' page and add a new 'Report change status to GitHub' build feature:
 
-![GitHub notification](/get/BlogPictures/cd-for-github-with-teamcity/report-change-status-to-github.png)
+![GitHub notification](/get/cd-for-github-with-teamcity/report-change-status-to-github.png)
 
 All settings are quite straightforward and now the notification:
 
-![PR pending notification](/get/BlogPictures/cd-for-github-with-teamcity/pr-notification-pending.png)
+![PR pending notification](/get/cd-for-github-with-teamcity/pr-notification-pending.png)
 
 You see a pending notification while TeamCity is building the PR code and when the build is finished you get the result on your PR page, in this case a successful build:
 
-![PR successful notification](/get/BlogPictures/cd-for-github-with-teamcity/pr-notification-passed.png)
+![PR successful notification](/get/cd-for-github-with-teamcity/pr-notification-passed.png)
 
 ###<a id="build-status-icon">Showing build status icon on GitHub</a>
 We can get a [build status icon](http://blog.jetbrains.com/teamcity/2012/07/teamcity-build-status-icon/) which is quite handy for GitHub read me page. To achieve this add the following snippet to your html page:
@@ -318,7 +318,7 @@ You can check my build icon on Humanizer's [ReadMe page](https://github.com/Mehd
 ###<a id="ci-wrap-up">Wrapping up the CI build</a>
 To sum up our CI build, we created a build configuration, called '1. CI', under our TeamCity project. This is what my build steps page look like now:
 
-![All CI build steps and features](/get/BlogPictures/cd-for-github-with-teamcity/ci-build-steps-done.png)
+![All CI build steps and features](/get/cd-for-github-with-teamcity/ci-build-steps-done.png)
 
 '1. CI' build configuration has three build steps as seen in the screenshot:
 
@@ -333,7 +333,7 @@ And two build features:
 
 I also have one VCS build trigger:
 
-![CI build trigger](/get/BlogPictures/cd-for-github-with-teamcity/ci-build-trigger.png)
+![CI build trigger](/get/cd-for-github-with-teamcity/ci-build-trigger.png)
 
 ##<a id="setting-up-cd">Setting up Continuous Delivery</a>
 Now that we have CI setup nicely, lets setup [Continuous Delivery](http://martinfowler.com/bliki/ContinuousDelivery.html) for our project:
@@ -346,7 +346,7 @@ I need a separate build configuration because I don't want to deploy every singl
 
 To create our CD build we go to our project home page and click on 'Create build configuration':
 
-![Publish nuget package](/get/BlogPictures/cd-for-github-with-teamcity/publish-nuget-pkg-build.png)
+![Publish nuget package](/get/cd-for-github-with-teamcity/publish-nuget-pkg-build.png)
 
 Nothing of note here. Just make sure you give your build some name and description. 
 
@@ -356,7 +356,7 @@ Back in 'Pack Nuget' I briefly talked about Continuous Delivery which I would li
 ###<a id="publishing-nuget">Publish NuGet Package Build Step</a>
 We should add a build step to publish our artifacts to production. In my case I want to publish my NuGet package(s):
 
-![Nuget publish build step](/get/BlogPictures/cd-for-github-with-teamcity/nuget-publish-build-step.png)
+![Nuget publish build step](/get/cd-for-github-with-teamcity/nuget-publish-build-step.png)
 
 Things of note in this step are:
 
@@ -373,35 +373,35 @@ Unlike our CI build, our CD build configuration doesn't need a build trigger bec
 ###<a id="getting-deployable-artifacts">Getting deployable artifacts</a>
 The 'Publish NuGet Package' build step depends on 'Humanizer.*.nupkg' but doesn't know where to get it from; so we have to somehow resolve it. We can do that using build 'Dependencies'. Click on the 'Dependencies' on the left navigation bar:
 
-![Nuget Build Config Dependencies](/get/BlogPictures/cd-for-github-with-teamcity/nuget-publish-dependencies.png)
+![Nuget Build Config Dependencies](/get/cd-for-github-with-teamcity/nuget-publish-dependencies.png)
 
 Now 'Add a new artifact dependency':
 
-![getting ci build artifacts](/get/BlogPictures/cd-for-github-with-teamcity/nuget-artifact-from-ci.png)
+![getting ci build artifacts](/get/cd-for-github-with-teamcity/nuget-artifact-from-ci.png)
 
 From the 'Depend on' box you can pick the artifacts we published in the 'Pack NuGet' step by ticking 'Publish created packages to build artifacts' checkbox. Back in the dependencies page, there is a button down the bottom called 'Check artifact dependencies' which helps you verify the dependencies you have specified. It's a good idea to check your dependencies now.
 
 You can now run your CD build and see your build artifacts pushed to production:
 
-![CD run build log](/get/BlogPictures/cd-for-github-with-teamcity/cd-run-build-log.png)
+![CD run build log](/get/cd-for-github-with-teamcity/cd-run-build-log.png)
 
 We used 'NuGet Publish' on 'Humanizer.*.nupkg' in our only build step; but since we had `-Symbols` in our 'Pack NuGet' step we had two NuGet packages and in the log we can see that both packages have been deployed: one to nuget.org, which we can see [here](https://www.nuget.org/packages/humanizer), and another one to symbolsource.org, which we can see [here](http://www.symbolsource.org/Public/Metadata/NuGet/Project/Humanizer).
 
 ###<a id="cd-wrap-up">Wrapping up the CD build</a>
 To sum up our CD build, we created a build configuration, called '2. Publish NuGet Package' (which in the hindsight I should've called '2. CD'), under our TeamCity project. This is what my build steps page looks like now:
 
-![CD build steps](/get/BlogPictures/cd-for-github-with-teamcity/cd-build-steps-done.png)
+![CD build steps](/get/cd-for-github-with-teamcity/cd-build-steps-done.png)
 
 Our CD build has one step only: 'NuGet Publish'. Even though we didn't give this step a name, TeamCity shows a name based on the Runner type. That's why I didn't give this step any name. Still not a bad idea to have a name though.
 
 We also have an artifact dependency:
 
-![CD dependencies](/get/BlogPictures/cd-for-github-with-teamcity/cd-dependencies.png)
+![CD dependencies](/get/cd-for-github-with-teamcity/cd-dependencies.png)
 
 ##Conclusion
 In this post we created a TeamCity project and setup continuous integration and delivery for a .Net project hosted on GitHub along with automatic CI run on code checkins and pull requests. Here is the 1000-foot view of our project:
 
-![Project Home Page done](/get/BlogPictures/cd-for-github-with-teamcity/humanizer-project-done.png)
+![Project Home Page done](/get/cd-for-github-with-teamcity/humanizer-project-done.png)
 
 Hopefully this post provides an easy guide for setting up your TeamCity projects. If you are a TeamCity or CI/CD expert and think I could/should have done something different then I would love to hear your thoughts. Please leave me a comment.
 

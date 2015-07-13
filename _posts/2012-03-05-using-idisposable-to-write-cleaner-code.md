@@ -187,11 +187,11 @@ You may download the code from [here][8].
 I hope this helps.
 
 
-  [1]: /get/BlogPictures/idisposable-for-readability/unreadable-code.png
+  [1]: /get/idisposable-for-readability/unreadable-code.png
   [2]: http://msdn.microsoft.com/en-us/library/system.idisposable.aspx
   [3]: http://msdn.microsoft.com/en-us/library/yh598w02.aspx
-  [4]: /get/BlogPictures/idisposable-for-readability/console-output.png
+  [4]: /get/idisposable-for-readability/console-output.png
   [5]: http://www.amazon.com/Framework-Design-Guidelines-Conventions-Libraries/dp/0321545613
-  [6]: /get/BlogPictures/idisposable-for-readability/readable-code.jpg
+  [6]: /get/idisposable-for-readability/readable-code.jpg
   [7]: http://msdn.microsoft.com/en-us/library/system.transactions.transactionscope.aspx
   [8]: /get/Downloads/IDisposableForCleanup.zip

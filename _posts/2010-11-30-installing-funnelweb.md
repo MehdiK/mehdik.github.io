@@ -71,9 +71,9 @@ Hope this helps.
 
 
   [1]: http://hg.funnelweblog.com/
-  [2]: /get/BlogPictures/InstallingFunnelWeb/get%20source%20code.png
-  [3]: /get/BlogPictures/InstallingFunnelWeb/build%20the%20code.png
-  [4]: /get/BlogPictures/InstallingFunnelWeb/published%20folder%20structure.png
-  [5]: /get/BlogPictures/InstallingFunnelWeb/administration%20login%20page.png
-  [6]: /get/BlogPictures/InstallingFunnelWeb/connection%20string.png
-  [7]: /get/BlogPictures/InstallingFunnelWeb/installation%20scripts%20run.png
+  [2]: /get/InstallingFunnelWeb/get%20source%20code.png
+  [3]: /get/InstallingFunnelWeb/build%20the%20code.png
+  [4]: /get/InstallingFunnelWeb/published%20folder%20structure.png
+  [5]: /get/InstallingFunnelWeb/administration%20login%20page.png
+  [6]: /get/InstallingFunnelWeb/connection%20string.png
+  [7]: /get/InstallingFunnelWeb/installation%20scripts%20run.png

@@ -342,11 +342,11 @@ Hope this helps.
   [2]: /get/Downloads/bddify-in-action/Bddify.ExecutableAttributes.zip
   [3]: /bddify-in-action/method-name-conventions
   [4]: /bddify-in-action/method-name-conventions
-  [5]: /get/BlogPictures/bddify-in-action/executable-attibutes/NonCompliantMethodNamesWithExecutableAttributes.JPG
+  [5]: /get/bddify-in-action/executable-attibutes/NonCompliantMethodNamesWithExecutableAttributes.JPG
   [6]: http://en.wikipedia.org/wiki/Chain-of-responsibility_pattern
-  [7]: /get/BlogPictures/bddify-in-action/executable-attibutes/ExecutableAttributesOverridingTheNamingConvention.JPG
-  [8]: /get/BlogPictures/bddify-in-action/executable-attibutes/NonCompliantMethodNamesWithGwtAttributes.JPG
-  [9]: /get/BlogPictures/bddify-in-action/executable-attibutes/IgnoreStepAttribute.JPG
+  [7]: /get/bddify-in-action/executable-attibutes/ExecutableAttributesOverridingTheNamingConvention.JPG
+  [8]: /get/bddify-in-action/executable-attibutes/NonCompliantMethodNamesWithGwtAttributes.JPG
+  [9]: /get/bddify-in-action/executable-attibutes/IgnoreStepAttribute.JPG
   [10]: http://hg.mehdi-khalili.com/bddify/src/83fd2f4566c4/Bddify/Scanners/StepScanners/ExecutableAttribute/GwtAttributes/GivenAttribute.cs
   [11]: http://hg.mehdi-khalili.com/bddify/src/83fd2f4566c4/Bddify/Scanners/StepScanners/ExecutableAttribute/GwtAttributes/AndGivenAttribute.cs
   [12]: http://hg.mehdi-khalili.com/bddify/src/83fd2f4566c4/Bddify/Scanners/StepScanners/ExecutableAttribute/GwtAttributes/WhenAttribute.cs

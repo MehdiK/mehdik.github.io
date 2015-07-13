@@ -178,13 +178,13 @@ The code for this post is available for download from [here][14].
   [2]: http://msdn.microsoft.com/en-us/library/dd465326.aspx
   [3]: http://nuget.org/packages/CodeAssassin.ConfigTransform
   [4]: http://msdn.microsoft.com/en-us/library/dd465326.aspx
-  [5]: /get/BlogPictures/config-transform/app.UAT.config.transformed.JPG
-  [6]: /get/BlogPictures/config-transform/app.UAT.config.transformed-compared.JPG
+  [5]: /get/config-transform/app.UAT.config.transformed.JPG
+  [6]: /get/config-transform/app.UAT.config.transformed-compared.JPG
   [7]: http://visualstudiogallery.msdn.microsoft.com/69023d00-a4f9-4a34-a6cd-7e854ba318b5
   [8]: http://visualstudiogallery.msdn.microsoft.com/69023d00-a4f9-4a34-a6cd-7e854ba318b5
-  [9]: /get/BlogPictures/config-transform/SlowCheetah-Add-Transform-Menu.JPG
-  [10]: /get/BlogPictures/config-transform/SlowCheetah-transform-files-added.JPG
-  [11]: /get/BlogPictures/config-transform/SlowCheetah-transform-result.JPG
-  [12]: /get/BlogPictures/config-transform/SlowCheetah-transform-preview-menu.JPG
-  [13]: /get/BlogPictures/config-transform/SlowCheetah-transform-preview.JPG
+  [9]: /get/config-transform/SlowCheetah-Add-Transform-Menu.JPG
+  [10]: /get/config-transform/SlowCheetah-transform-files-added.JPG
+  [11]: /get/config-transform/SlowCheetah-transform-result.JPG
+  [12]: /get/config-transform/SlowCheetah-transform-preview-menu.JPG
+  [13]: /get/config-transform/SlowCheetah-transform-preview.JPG
   [14]: /get/Downloads/ConfigTransform.zip
