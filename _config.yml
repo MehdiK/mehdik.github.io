@@ -1,5 +1,6 @@
 # Site settings
 title: Mehdi Khalili
+author: Mehdi Khalili
 email: me@mehdi-khalili.com
 disqus_short_name: mehdikhalilisblog
 description: > # this means to ignore newlines until "baseurl:"
