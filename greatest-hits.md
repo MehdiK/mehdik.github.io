@@ -5,6 +5,7 @@ metaTitle: "Greatest Hits"
 description: "The best of my blog, open source contribution and presentations"
 revised: "2014-01-03"
 date: "2014-01-03"
+permalink: "/greatest-hits/"
 ---
 ##Greatest Hits
 This is a curated list of the greatest hits of my blog, open source contribution and presentations based on Google Analytics stats and download counts.

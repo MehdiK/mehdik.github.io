@@ -6,7 +6,7 @@ description: "My name is Mehdi Khalili and I am a software developer!"
 revised: "2013-08-28"
 date: "2010-11-30"
 migrated: "true"
-permalink: "/about"
+permalink: "/about/"
 ---
 ##About Me
 
