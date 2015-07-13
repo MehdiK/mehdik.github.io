@@ -237,4 +237,4 @@ Hope this helps.
   [8]: http://code.google.com/p/bddify/source/browse/Bddify.Samples/TicTacToe/WinnerGame.cs
   [9]: http://code.google.com/p/bddify/source/browse/Bddify.Samples/TicTacToe/TicTacToe.cs#126
   [10]: /get/bddify-in-action/method-name-conventions/tictactoe-html-result.JPG
-  [11]: /get/Downloads/bddify-in-action/Bddify.MethodNameConventions.zip
+  [11]: /get/bddify-in-action/Bddify.MethodNameConventions.zip

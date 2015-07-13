@@ -253,7 +253,7 @@ Hope this helps.
   [8]: /get/fiddler-in-action-2/hacked-shopping-cart.png
   [9]: /get/fiddler-in-action-2/hacked-bing.jpg
   [10]: http://www.fiddler2.com/fiddler2/help/AutoResponder.asp
-  [11]: /get/Downloads/HackBing.saz
+  [11]: /get/HackBing.saz
   [12]: /get/fiddler-in-action-2/autoresponder.png
   [13]: http://www.bing.com
   [14]: http://www.fiddler2.com/fiddler/help/requestbuilder.asp

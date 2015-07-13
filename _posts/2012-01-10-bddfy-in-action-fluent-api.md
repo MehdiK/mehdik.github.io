@@ -212,10 +212,10 @@ Hope this helps.
 
 
   [1]: /bddify-in-action/introduction
-  [2]: /get/Downloads/bddify-in-action/Bddify.FluentApi.zip
+  [2]: /get/bddify-in-action/Bddify.FluentApi.zip
   [3]: /bddify-in-action/method-name-conventions
   [4]: /bddify-in-action/executable-attributes
   [5]: http://www.codeproject.com/KB/library/Introducing_bddify.aspx
   [6]: /get/bddify-in-action/fluent-api/console-report-without-story.JPG
   [7]: /bddify-in-action/story
-  [8]: /get/Downloads/bddify-in-action/Bddify.FluentApi.zip
+  [8]: /get/bddify-in-action/Bddify.FluentApi.zip

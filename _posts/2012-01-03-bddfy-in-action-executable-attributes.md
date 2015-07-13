@@ -339,7 +339,7 @@ Hope this helps.
 
 
   [1]: /bddify-in-action/introduction
-  [2]: /get/Downloads/bddify-in-action/Bddify.ExecutableAttributes.zip
+  [2]: /get/bddify-in-action/Bddify.ExecutableAttributes.zip
   [3]: /bddify-in-action/method-name-conventions
   [4]: /bddify-in-action/method-name-conventions
   [5]: /get/bddify-in-action/executable-attibutes/NonCompliantMethodNamesWithExecutableAttributes.JPG
@@ -350,4 +350,4 @@ Hope this helps.
   [10]: http://hg.mehdi-khalili.com/bddify/src/83fd2f4566c4/Bddify/Scanners/StepScanners/ExecutableAttribute/GwtAttributes/GivenAttribute.cs
   [11]: http://hg.mehdi-khalili.com/bddify/src/83fd2f4566c4/Bddify/Scanners/StepScanners/ExecutableAttribute/GwtAttributes/AndGivenAttribute.cs
   [12]: http://hg.mehdi-khalili.com/bddify/src/83fd2f4566c4/Bddify/Scanners/StepScanners/ExecutableAttribute/GwtAttributes/WhenAttribute.cs
-  [13]: /get/Downloads/bddify-in-action/Bddify.ExecutableAttributes.zip
+  [13]: /get/bddify-in-action/Bddify.ExecutableAttributes.zip

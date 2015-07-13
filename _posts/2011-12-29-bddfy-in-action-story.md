@@ -194,9 +194,9 @@ Hope this helps.
 
 
   [1]: /bddify-in-action/introduction
-  [2]: /get/Downloads/bddify-in-action/Bddify.Story.zip
+  [2]: /get/bddify-in-action/Bddify.Story.zip
   [3]: /bddify-in-action/method-name-conventions
   [4]: /get/bddify-in-action/story/let-bddify-find-the-story.JPG
   [5]: /get/bddify-in-action/story/separate-story-html-report.JPG
   [6]: /that-tricky-stacktrace
-  [7]: /get/Downloads/bddify-in-action/Bddify.Story.zip
+  [7]: /get/bddify-in-action/Bddify.Story.zip

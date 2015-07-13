@@ -213,7 +213,7 @@ Hope this helps.
 
 
   [1]: /bddify-in-action/introduction
-  [2]: /get/Downloads/bddify-in-action/Bddify.FluentApiInputParameters.zip
+  [2]: /get/bddify-in-action/Bddify.FluentApiInputParameters.zip
   [3]: /bddify-in-action/fluent-api
   [4]: /bddify-in-action/method-name-conventions
   [5]: /extracting-input-arguments-from-expressions
@@ -226,4 +226,4 @@ Hope this helps.
   [12]: /get/bddify-in-action/fluent-api-advanced/avoiding-input-parameters-in-the-title-take-1.JPG
   [13]: http://hg.mehdi-khalili.com/bddify/src/e19e2293602e/Bddify/Scanners/StepScanners/Fluent/FluentScanner.cs#cl-171
   [14]: /get/bddify-in-action/fluent-api-advanced/avoiding-input-parameters-in-the-title-take-2.JPG
-  [15]: /get/Downloads/bddify-in-action/Bddify.FluentApiInputParameters.zip
+  [15]: /get/bddify-in-action/Bddify.FluentApiInputParameters.zip

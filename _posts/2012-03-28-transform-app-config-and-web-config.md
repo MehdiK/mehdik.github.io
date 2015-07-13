@@ -187,4 +187,4 @@ The code for this post is available for download from [here][14].
   [11]: /get/config-transform/SlowCheetah-transform-result.JPG
   [12]: /get/config-transform/SlowCheetah-transform-preview-menu.JPG
   [13]: /get/config-transform/SlowCheetah-transform-preview.JPG
-  [14]: /get/Downloads/ConfigTransform.zip
+  [14]: /get/ConfigTransform.zip

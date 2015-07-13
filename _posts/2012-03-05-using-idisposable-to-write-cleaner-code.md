@@ -194,4 +194,4 @@ I hope this helps.
   [5]: http://www.amazon.com/Framework-Design-Guidelines-Conventions-Libraries/dp/0321545613
   [6]: /get/idisposable-for-readability/readable-code.jpg
   [7]: http://msdn.microsoft.com/en-us/library/system.transactions.transactionscope.aspx
-  [8]: /get/Downloads/IDisposableForCleanup.zip
+  [8]: /get/IDisposableForCleanup.zip

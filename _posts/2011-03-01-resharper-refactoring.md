@@ -245,4 +245,4 @@ Hope this helps.
   [11]: http://stackoverflow.com/questions/304258/access-to-modified-closure-2
   [12]: http://martinfowler.com/bliki/TechnicalDebt.html
   [13]: http://c2.com/cgi/wiki?BigBallOfMud
-  [14]: /get/Downloads/RefactoringUsingReSharper.zip
+  [14]: /get/RefactoringUsingReSharper.zip
