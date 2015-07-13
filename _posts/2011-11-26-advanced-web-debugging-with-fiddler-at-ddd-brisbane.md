@@ -7,7 +7,7 @@ revised: "2012-04-25"
 date: "2011-11-26"
 tags: ["Web","Fiddler","Debugging","Presentations"]
 migrated: "true"
-resource: "/presentations/advanced-web-debugging-with-fiddler-at-ddd-brisbane"
+permalink: "/presentations/advanced-web-debugging-with-fiddler-at-ddd-brisbane"
 summary: "
 I just finished up my talk at DDD Brisbane about Fiddler. Here are the slides
 "

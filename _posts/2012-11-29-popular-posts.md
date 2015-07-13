@@ -6,7 +6,7 @@ description: "A quick list of the most hit posts on my blog"
 revised: "2012-12-16"
 date: "2012-11-29"
 migrated: "true"
-resource: "/2012/popular-posts"
+permalink: "/2012/popular-posts"
 summary: "
 
 "

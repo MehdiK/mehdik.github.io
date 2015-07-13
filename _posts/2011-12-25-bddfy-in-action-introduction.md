@@ -7,7 +7,7 @@ revised: "2013-08-10"
 date: "2011-12-25"
 tags: ["Testing","BDDfy","BDD","OSS"]
 migrated: "true"
-resource: "/bddify-in-action/introduction"
+permalink: "/bddify-in-action/introduction"
 summary: "
 BDDfy V1 is released. This is an introduction to the framework and a start of an extensive series about BDDfy.
 "

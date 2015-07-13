@@ -7,7 +7,7 @@ revised: "2012-12-10"
 date: "2012-12-10"
 tags: ["Personal","Thoughtworks","Notes"]
 migrated: "true"
-resource: "/joining-thoughtworks"
+permalink: "/joining-thoughtworks"
 summary: "
 
 "

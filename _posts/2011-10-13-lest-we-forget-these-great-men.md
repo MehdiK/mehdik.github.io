@@ -7,7 +7,7 @@ revised: "2011-10-13"
 date: "2011-10-13"
 tags: ["Notes"]
 migrated: "true"
-resource: "/lest-we-forget-these-great-men"
+permalink: "/lest-we-forget-these-great-men"
 summary: "
 R.I.P. Steve Jobs and Dennis Ritchie
 "

@@ -7,7 +7,7 @@ revised: "2012-06-20"
 date: "2012-06-03"
 tags: ["BDDfy"]
 migrated: "true"
-resource: "/bddify-moved-to-github-and-renamed-to-teststack-bddfy"
+permalink: "/bddify-moved-to-github-and-renamed-to-teststack-bddfy"
 summary: "
 Ever since I created bddify one of the most frequent question I was asked was 'how is it pronounced?'! Good news... it has now been renamed to BDDfy - well BDDfy to be more precise
 "

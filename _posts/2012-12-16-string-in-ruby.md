@@ -7,7 +7,7 @@ revised: "2012-12-20"
 date: "2012-12-16"
 tags: ["Ruby"]
 migrated: "true"
-resource: "/string-in-ruby"
+permalink: "/string-in-ruby"
 summary: "
 This is the third post in my '[Ruby for C# developer](/ruby-for-csharp-developers)' series. In this post we will take a look at String class
 "

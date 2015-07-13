@@ -7,7 +7,7 @@ revised: "2011-10-02"
 date: "2011-09-22"
 tags: ["Quiz","Announcement"]
 migrated: "true"
-resource: "/geekquiz-net"
+permalink: "/geekquiz-net"
 summary: "
 <strong><a style=\"text-decoration:none\" href=\"http://geekquiz.net\">GeekQuiz.Net</a></strong> <br />
 Geeky quizzes for geeks and coding enthusiasts

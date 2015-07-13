@@ -7,7 +7,7 @@ revised: "2011-09-30"
 date: "2011-09-27"
 tags: [".Net","Quiz"]
 migrated: "true"
-resource: "/nullable-types-subtlety"
+permalink: "/nullable-types-subtlety"
 summary: "
 In this post I explain a little subtlety with .Net Nullable Types that confuses some programmers
 "

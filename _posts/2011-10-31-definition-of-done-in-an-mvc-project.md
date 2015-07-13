@@ -7,7 +7,7 @@ revised: "2011-10-31"
 date: "2011-10-31"
 tags: ["Agile","Notes"]
 migrated: "true"
-resource: "/definition-of-done-in-an-mvc-project"
+permalink: "/definition-of-done-in-an-mvc-project"
 summary: "
 
 "

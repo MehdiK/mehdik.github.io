@@ -7,7 +7,7 @@ revised: "2012-08-11"
 date: "2012-08-08"
 tags: ["Productivity","Team","Notes","Rants"]
 migrated: "true"
-resource: "/dealing-with-net-negative-producing-programmers"
+permalink: "/dealing-with-net-negative-producing-programmers"
 summary: "
 
 "

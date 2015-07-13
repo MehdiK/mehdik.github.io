@@ -7,7 +7,7 @@ revised: "2011-02-26"
 date: "2011-02-25"
 tags: ["Visual Studio"]
 migrated: "true"
-resource: "/visual-studio-code-definition"
+permalink: "/visual-studio-code-definition"
 summary: "
 Visual Studio 2010 Code Definition Window is very handy
 "

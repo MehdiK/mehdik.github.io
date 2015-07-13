@@ -7,7 +7,7 @@ revised: "2011-10-27"
 date: "2011-10-27"
 tags: ["Quiz"]
 migrated: "true"
-resource: "/guids-security"
+permalink: "/guids-security"
 summary: "
 
 "

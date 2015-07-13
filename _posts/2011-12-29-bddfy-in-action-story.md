@@ -7,7 +7,7 @@ revised: "2013-08-10"
 date: "2011-12-29"
 tags: ["BDDfy"]
 migrated: "true"
-resource: "/bddify-in-action/story"
+permalink: "/bddify-in-action/story"
 summary: "
 We wrote a simple scenario in the <a href=\"/bddify-in-action/method-name-conventions\">previous post</a>; but how can we write a user story using BDDfy?
 "

@@ -7,7 +7,7 @@ revised: "2012-08-28"
 date: "2012-08-27"
 tags: ["Html5","Web","JavaScript","Presentations"]
 migrated: "true"
-resource: "/presentations/wdyk-offline-web"
+permalink: "/presentations/wdyk-offline-web"
 summary: "
 
 "

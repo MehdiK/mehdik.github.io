@@ -7,7 +7,7 @@ revised: "2012-05-20"
 date: "2012-05-20"
 tags: ["Tools","Visual Studio"]
 migrated: "true"
-resource: "/developer-productivity-tools-and-visual-studio-extensions"
+permalink: "/developer-productivity-tools-and-visual-studio-extensions"
 summary: "
 
 "

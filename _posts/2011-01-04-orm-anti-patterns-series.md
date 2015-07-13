@@ -7,7 +7,7 @@ revised: "2011-02-12"
 date: "2011-01-04"
 tags: ["Anti-Patterns","ORM"]
 migrated: "true"
-resource: "/orm-anti-patterns-series"
+permalink: "/orm-anti-patterns-series"
 summary: "
 In this series I will try to cover some of the ORM anti-patterns I have come across. Most of these issues have huge impact on your project architecture, maintainability, user experience, database and network load. Some could complicate your project to the point of paralysis.
 

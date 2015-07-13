@@ -7,7 +7,7 @@ revised: "2013-02-26"
 date: "2013-02-26"
 tags: ["Learning","Notes"]
 migrated: "true"
-resource: "/how-i-learn"
+permalink: "/how-i-learn"
 summary: "
 
 "

@@ -7,7 +7,7 @@ revised: "2011-07-12"
 date: "2011-04-06"
 tags: ["BDDfy"]
 migrated: "true"
-resource: "/extending-bddify"
+permalink: "/extending-bddify"
 summary: "
 Bddify is very extensible and extending it is very easy. In this post I will discuss how to extend Bddify.
 "

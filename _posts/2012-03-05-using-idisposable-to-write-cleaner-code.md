@@ -7,7 +7,7 @@ revised: "2012-03-05"
 date: "2012-03-05"
 tags: ["Maintainability",".Net"]
 migrated: "true"
-resource: "/using-idisposable-to-write-cleaner-code"
+permalink: "/using-idisposable-to-write-cleaner-code"
 summary: "
 IDisposable is usually used for garbage collection. In this post I explain a very simple technique that can help you clean up some of your code using IDisposable.
 "

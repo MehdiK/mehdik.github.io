@@ -7,7 +7,7 @@ revised: "2012-12-16"
 date: "2012-12-11"
 tags: ["Ruby"]
 migrated: "true"
-resource: "/ruby-for-csharp-developers"
+permalink: "/ruby-for-csharp-developers"
 summary: "
 
 "

@@ -7,7 +7,7 @@ revised: "2012-04-25"
 date: "2011-08-25"
 tags: ["Debugging","Web","Fiddler"]
 migrated: "true"
-resource: "/fiddler-in-action/part-1"
+permalink: "/fiddler-in-action/part-1"
 summary: "
 A lot of developers use Fiddler but only very few features of this amazing tool. In this post I will try to cover most cool features of this cool tool. So buckle up ...
 "

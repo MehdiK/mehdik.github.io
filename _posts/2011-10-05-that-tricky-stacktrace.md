@@ -7,7 +7,7 @@ revised: "2012-10-14"
 date: "2011-10-05"
 tags: ["Quiz",".Net"]
 migrated: "true"
-resource: "/that-tricky-stacktrace"
+permalink: "/that-tricky-stacktrace"
 summary: "
 Do you know what is in your StackTrace at run time? Well, you can guess what it could be, but you cannot know it. Do you wonder why? Then read on.
 "

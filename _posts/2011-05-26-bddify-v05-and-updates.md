@@ -7,7 +7,7 @@ revised: "2011-06-02"
 date: "2011-05-26"
 tags: ["BDDfy"]
 migrated: "true"
-resource: "/bddify-v05-and-updates"
+permalink: "/bddify-v05-and-updates"
 summary: "
 
 "

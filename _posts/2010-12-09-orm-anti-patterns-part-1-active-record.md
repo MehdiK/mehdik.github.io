@@ -1,4 +1,4 @@
---- 
+---
 layout: post
 title: "ORM anti-patterns - Part 1: Active Record"
 metaTitle: "ORM anti-patterns - Part 1: Active Record"
@@ -7,11 +7,11 @@ revised: "2011-01-28"
 date: "2010-12-09"
 tags: ["Anti-Patterns","ORM"]
 migrated: "true"
-resource: "/orm-anti-patterns-part-1-active-record"
+permalink: "/orm-anti-patterns-part-1-active-record"
 summary: "
 This is the first article in the <a href=\"/orm-anti-patterns-series\">ORM anti-pattern series</a>.
 
-Martin Fowler who coined the term Active Record explains where and why this pattern should be used; but most of the times we use it just because it is easy without considering its ramifications on our project. In this article I will discuss Active Record as a pattern that is usually abused. 
+Martin Fowler who coined the term Active Record explains where and why this pattern should be used; but most of the times we use it just because it is easy without considering its ramifications on our project. In this article I will discuss Active Record as a pattern that is usually abused.
 "
 ---
 One of the patterns implemented by a few ORM frameworks is [Active Record][2]:
@@ -23,7 +23,7 @@ Active Record is very simple to use. Usually everything you need is generated fo
 About suitability of the pattern Martin Fowler says:
 "*Active Record is a good choice for domain logic that isn't too complex, such as creates, reads, updates, and deletes. Derivations and validations based on a single record work well in this structure.*"
 
-The pattern could provide for a great productivity boost and value when you have next to no business logic. This is the case for forms over data applications where all the user wants is to be able to enter and search some data. 
+The pattern could provide for a great productivity boost and value when you have next to no business logic. This is the case for forms over data applications where all the user wants is to be able to enter and search some data.
 
 I believe in most cases, regardless of how simple your requirements are you can still provide a lot of value if you stay away from this architecture. In majority of cases you will have some business logic and your application is not a simple data capturing/searching interface which means this pattern will not work for you.
 
@@ -61,7 +61,7 @@ You can then extract the logic out of your entities into some business logic ser
 Same thing could be applied to validation logics if needed; but in my experience validation logic can be spared as it is not usually where the problem lies. Also invariants are best and simplest kept inside the entity.
 
 ###Conclusion
-Sadly a lot of developers consider Active Record as their default choice for database interaction while most applications will have some business logic and complex behavior where Active Record pattern will fail. 
+Sadly a lot of developers consider Active Record as their default choice for database interaction while most applications will have some business logic and complex behavior where Active Record pattern will fail.
 
 It is OK to use Active Record if your application does not have these complexities; but there is a good chance that it will grow beyond your expectation. So before choosing Active Record make sure you know the project, the scope and your stakeholders very well.
 

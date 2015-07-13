@@ -7,7 +7,7 @@ revised: "2012-08-09"
 date: "2011-01-12"
 tags: ["Productivity","Notes"]
 migrated: "true"
-resource: "/inattentional-blindness"
+permalink: "/inattentional-blindness"
 summary: "
 Inattentional blindness impacts our productivity. This post is about few things that could help us avoid some of these issues.
 "

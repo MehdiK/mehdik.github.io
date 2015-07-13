@@ -7,7 +7,7 @@ revised: "2012-12-27"
 date: "2012-12-18"
 tags: ["Personal","Notes","Rants"]
 migrated: "true"
-resource: "/stop-discriminating"
+permalink: "/stop-discriminating"
 summary: "
 
 "

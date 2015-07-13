@@ -7,7 +7,7 @@ revised: "2012-05-08"
 date: "2012-05-07"
 tags: ["OSS","Humanizer","Announcement"]
 migrated: "true"
-resource: "/introducing-humanizer"
+permalink: "/introducing-humanizer"
 summary: "
 Introducing Humanizer - A micro-framework that turns your normal strings, type names, enum fields, date fields ETC into a human friendly format
 "

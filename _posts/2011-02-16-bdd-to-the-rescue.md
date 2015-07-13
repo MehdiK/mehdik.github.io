@@ -7,7 +7,7 @@ revised: "2012-08-21"
 date: "2011-02-16"
 tags: ["Testing","BDD","Notes"]
 migrated: "true"
-resource: "/bdd-to-the-rescue"
+permalink: "/bdd-to-the-rescue"
 summary: "
 BDD can help you in more than one way. First and foremost it removes the ambiguity from the requirements; but taking it a step further could give you a lot of significant benefits.
 "

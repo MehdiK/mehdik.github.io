@@ -7,7 +7,7 @@ revised: "2013-07-14"
 date: "2013-07-13"
 tags: ["Personal","Notes"]
 migrated: "true"
-resource: "/a-horrifying-experience"
+permalink: "/a-horrifying-experience"
 summary: "I cannot be thankful enough for being alive without a single scratch"
 ---
 The police officer said "*The plate number seems to be correct - good work. The bike was stolen three days ago*" as he got interrupted by a phone call. After the call finished he looked at me and said "*Sons of bitches just did it again in Kaveh Boulevard!*".

@@ -7,7 +7,7 @@ revised: "2013-08-10"
 date: "2012-01-10"
 tags: ["BDDfy"]
 migrated: "true"
-resource: "/bddify-in-action/fluent-api"
+permalink: "/bddify-in-action/fluent-api"
 summary: "
 In this post we cover Fluent API as the third approach to specify scenario steps
 "

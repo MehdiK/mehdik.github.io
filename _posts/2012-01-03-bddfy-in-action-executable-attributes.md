@@ -7,7 +7,7 @@ revised: "2013-08-10"
 date: "2012-01-03"
 tags: ["BDDfy"]
 migrated: "true"
-resource: "/bddify-in-action/executable-attributes"
+permalink: "/bddify-in-action/executable-attributes"
 summary: "
 In this post we discuss how you can specify your steps explicitly using <code>ExecutableAttribute</code>
 "

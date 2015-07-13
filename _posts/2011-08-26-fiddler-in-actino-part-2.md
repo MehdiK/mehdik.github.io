@@ -7,7 +7,7 @@ revised: "2012-04-25"
 date: "2011-08-26"
 tags: ["Debugging","Web","Fiddler"]
 migrated: "true"
-resource: "/fiddler-in-action/part-2"
+permalink: "/fiddler-in-action/part-2"
 summary: "
 In the first article I covered some of the basic features of Fiddler. In this article I will try to cover some of the more advanced features.
 "

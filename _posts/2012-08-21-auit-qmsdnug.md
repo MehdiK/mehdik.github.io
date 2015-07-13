@@ -7,7 +7,7 @@ revised: "2012-08-21"
 date: "2012-08-21"
 tags: ["Seleno","Presentations"]
 migrated: "true"
-resource: "/presentations/auit-qmsdnug"
+permalink: "/presentations/auit-qmsdnug"
 summary: "
 
 "
