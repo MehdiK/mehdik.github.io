@@ -1,4 +1,4 @@
---- 
+---
 layout: post
 title: "Continuous Integration & Delivery For GitHub With TeamCity"
 metaTitle: "Continuous Integration & Delivery For GitHub With TeamCity"
@@ -17,13 +17,13 @@ This is the technology stack I am using in the project, [Humanizer](https://gith
  - XUnit: the testing framework I am using in Humanizer.
  - NuGet: the package manager for .Net which is where [Humanizer is deployed to](http://nuget.org/packages/humanizer).
 
-That said many of the topics in this post are more or less applicable to other technologies. 
+That said many of the topics in this post are more or less applicable to other technologies.
 
 **What this post is about**:
 
  - [Creating a TeamCity project](#creating-teamcity-project)
  - [Setting up Continuous Integration](#setting-up-ci)
- 
+
    - [Getting the source code](#getting-source-code)
    - [Building the solution](#building-the-solution)
    - [Running the tests](#running-the-tests)
@@ -41,11 +41,11 @@ That said many of the topics in this post are more or less applicable to other t
    - [Getting deployable artifacts](#getting-deployable-artifacts)
    - [Wrapping up Continuous Delivery](#cd-wrap-up)
 
-**What this post is not about**: 
+**What this post is not about**:
 
  - Installing TeamCity on your servers
- - Setting up build agents, users and roles. 
- 
+ - Setting up build agents, users and roles.
+
 For this post, I assume that you have a running TeamCity server and a user with System administrator rights and you're logged into the admin console.
 
 ##<a id="creating-teamcity-project">Creating a TeamCity project</a>
@@ -78,12 +78,12 @@ After clicking on the button you will be taken to the 'Create build configuratio
 
 The settings:
 
- - I name the build setting '1. CI' so the next person knows that this is a CI build configuration and also that it's the first build config. 
+ - I name the build setting '1. CI' so the next person knows that this is a CI build configuration and also that it's the first build config.
  - 'Build configuration ID' is a unique identifier for this build configuration. We will see where this is useful later.
  - 'Description' is optional; but having a description there makes it easier for the person maintaining the project.
  - 'Build number format' is the build number. You can hardcode this value or could use the TeamCity provided value `%build.counter%` as part of your build number. I use `1.0.%build.counter%` because the project I am setting up, [Humanizer](https://github.com/MehdiK/Humanizer), is currently on version 1 and I want the future builds to continue from there. This is one setting that you will be changing rather often: in my case any time I want to release a new version with a different major or minor.
  - 'Build counter' starts from 1 and increases on each build. This is basically the value that gets injected into `%build.counter%`.
- 
+
 ###<a id="getting-source-code">Source control settings</a>
 Once your build config is created you should set the 'VCS settings' so TeamCity knows how to get the code needed for the build.
 
@@ -99,12 +99,12 @@ The important [git VCS settings](http://confluence.jetbrains.com/display/TCD8/Gi
 
  - VCS root name and ID: use a unique name preferably related to your project so it's easy to spot it amongst other VCS roots you might have in your TeamCity.
  - Fetch URL: this tells TeamCity where it should look for the source code. If you're using GitHub you can grab this from your project's GitHub home page (the SSH one requires authentication; so you might grab the https URL):
- 
+
  ![GitHub repository fetch URL](/get/cd-for-github-with-teamcity/repo-fetch-url.png)
 
  - 'Default branch' should be set to your master branch which is where your CI should focus more. So we set it to `refs/heads/master` which is the git master branch. If you're wondering where that comes from run `git show-ref master` command on your git repo.
  - We want to also monitor pull request branches so we set the 'Branch specification' to `+refs/pull/*/merge` which uses wildcard to monitor pull request merged branches.
- 
+
 I leave the rest of the settings to their default values. Before you save, make sure to 'Test connection' so that TeamCity can find your repository with the settings you have provided. The button is located down the bottom of the page:
 
 ![Test VCS connection](/get/cd-for-github-with-teamcity/test-vcs-connection.png)
@@ -112,7 +112,7 @@ I leave the rest of the settings to their default values. Before you save, make 
 Once you create a VCS root you can reuse it across build configurations.
 
 ###Create build steps
-You have a build configuration attached to a source control. We can now create the build steps. I am going to create three steps: 
+You have a build configuration attached to a source control. We can now create the build steps. I am going to create three steps:
 
  1. Build Solution: to build the code
  2. Run Tests: to run the tests
@@ -130,8 +130,8 @@ The important settings for this step are:
  - Step name: like I said before pick a right name so it's easy to figure out what the step does. I think '1. Build Solution' is quite nice.
  - Execute step: I leave this as default - 'If all previous steps finished successfully'.
  - Solution file path: you should tell TeamCity where the solution file is so it can build it. You can fill this easily by clicking on the tree icon next to the box and finding the solution file in the provided file browser as shown in the above screenshot.
- 
-I leave the rest as default. 
+
+I leave the rest as default.
 
 #####Assign your build configuration to an agent
 Once you have a build step to build your source code, it's a good idea to run your build to see if it works. For that to work though you have to assign a build agent to your build. So I am going to jump ahead a bit and explain how you can assign your build configuration to a build agent.
@@ -140,11 +140,11 @@ On the top navigation bar click on the 'Agents' link and then navigate to the bu
 
 ![Agents](/get/cd-for-github-with-teamcity/agent-config.png)
 
-From there you go to the 'Compatible Configurations' pane where you can assign your new build configuration to your agent: 
+From there you go to the 'Compatible Configurations' pane where you can assign your new build configuration to your agent:
 
 ![Compatible Configurations](/get/cd-for-github-with-teamcity/agent-compatible-configs.png)
 
-From there you just click 'Assign configurations', select the configuration you want to assign to this agent, which is your recently created build configuration, in my case `Humanizer :: 1.CI`: 
+From there you just click 'Assign configurations', select the configuration you want to assign to this agent, which is your recently created build configuration, in my case `Humanizer :: 1.CI`:
 
 ![Assign configuration](/get/cd-for-github-with-teamcity/assign-build-config-to-agent.png)
 
@@ -154,7 +154,7 @@ From there you just click 'Assign configurations', select the configuration you 
 So now you have your build configuration with one build step and an agent assigned to it. Go forth and click run on your build. It should get the source from your repository and build it:
 
 ![Successful build run](/get/cd-for-github-with-teamcity/successful-build-run.png)
- 
+
 Make sure your build is green and it does what it should do: getting the latest code and building your solution. Check the 'Changes' and 'Build Log' panes.
 
 ####<a id="running-the-tests">2. Run Tests</a>
@@ -166,7 +166,7 @@ To add a new build step, go to your build configuration and on the left navigati
 
 Now you can click 'Add build step' button to create your test runner step. As mentioned I am using xUnit for Humanizer and there isn't a built-in xUnit runner in TeamCity unlike nUnit and MSTest. If you are using nUnit then you can just pick nUnit runner from the 'Runner type' dropdown and fill the settings pages (obviously the same applies to MSTest; but hopefully you're not using MSTest).
 
-Before switching to TeamCity I had an MSBuild script which would do pretty much everything I am explaining here but it was run from command prompt. To run the tests from my build script I had to download xUnit and put it [in a 'tools' folder in my repository](https://github.com/MehdiK/Humanizer/tree/master/tools/xunit). So I just reused the xUnit in my repository to setup xUnit test run in TeamCity: 
+Before switching to TeamCity I had an MSBuild script which would do pretty much everything I am explaining here but it was run from command prompt. To run the tests from my build script I had to download xUnit and put it [in a 'tools' folder in my repository](https://github.com/MehdiK/Humanizer/tree/master/tools/xunit). So I just reused the xUnit in my repository to setup xUnit test run in TeamCity:
 
 ![setup xunit test run](/get/cd-for-github-with-teamcity/run-xunit-tests-build-step.png)
 
@@ -176,7 +176,7 @@ The important settings are:
  - 'Step name' is set to '2. Run Tests' for readability.
  - 'Path' is the path to the .Net process I wish to run, in this case `xunit.console.clr4.exe` picked using the source tree explorer (the tree icon next to the Path box).
  - 'Command line parameters': set to the relative path of my test dll: 'src\Humanizer.Tests\bin\Release\Humanizer.Tests.dll'.
- 
+
 The rest are left as default values.
 
 Make sure you run your CI build again, this time with the test step:
@@ -200,33 +200,31 @@ The important settings are:
  - 'Specification files' is set to the [existing 'Humanizer.nuspec' file](https://github.com/MehdiK/Humanizer/blob/master/src/Humanizer.nuspec). More on this shortly.
  - In the 'Output' setting group, we tick the 'Publish created packages to build artifacts' checkbox to make sure the created NuGet packages end up in the CI build artifacts so we can later use them for deployment.
  - 'Additional commandline arguments' is set to '-Symbols'. This tells NuGet to create a Symbols package to be published to [symbolsource.org](http://symbolsource.org). More on this shortly.
- 
+
 Before we go ahead and run the build again I would like to highlight a few things on these settings. Lets take a look at my nuspec file first:
 
-```
-<?xml version="1.0"?>
-<package >
-  <metadata>
-    <id>Humanizer</id>
-    <version>$version$</version>
-    <title>Humanizer</title>
-    <authors>Mehdi Khalili</authors>
-    <owners>Mehdi Khalili</owners>
-    <projectUrl>https://github.com/MehdiK/Humanizer</projectUrl>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>A framework that turns your normal strings, type names, enums and DateTime into a human friendly format and provides human friendly API for DateTime, TimeSpan etc</description>
-    <copyright>Copyright 2012-2013  Mehdi Khalili</copyright>
-    <licenseUrl>https://github.com/MehdiK/Humanizer/blob/master/LICENSE</licenseUrl>
-    <releaseNotes>
-      In this version we changed the library to Portable Class Library. There are no breaking changes.
-    </releaseNotes>
-  </metadata>
-  <files>
-    <file src="Humanizer\bin\Release\**" target="lib\portable-win+net40+sl50+wp8" />
-    <file src="Humanizer\**\*.cs" exclude="**\obj\**\*.*" target="src" />
-  </files>
-</package>
-```
+    <?xml version="1.0"?>
+    <package >
+      <metadata>
+        <id>Humanizer</id>
+        <version>$version$</version>
+        <title>Humanizer</title>
+        <authors>Mehdi Khalili</authors>
+        <owners>Mehdi Khalili</owners>
+        <projectUrl>https://github.com/MehdiK/Humanizer</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>A framework that turns your normal strings, type names, enums and DateTime into a human friendly format and provides human friendly API for DateTime, TimeSpan etc</description>
+        <copyright>Copyright 2012-2013  Mehdi Khalili</copyright>
+        <licenseUrl>https://github.com/MehdiK/Humanizer/blob/master/LICENSE</licenseUrl>
+        <releaseNotes>
+          In this version we changed the library to Portable Class Library. There are no breaking changes.
+        </releaseNotes>
+      </metadata>
+      <files>
+        <file src="Humanizer\bin\Release\**" target="lib\portable-win+net40+sl50+wp8" />
+        <file src="Humanizer\**\*.cs" exclude="**\obj\**\*.*" target="src" />
+      </files>
+    </package>
 
 There are a few things of note in this file:
 
@@ -238,7 +236,7 @@ You can read [this article](http://docs.nuget.org/docs/creating-packages/creatin
 
  - Copy all your source files to a 'src' folder in your NuGet folder (which we're doing using the 'file' element in the 'files' section of the nuspec file).
  - Call `nuget pack` with a `-Symbols` parameter to create an additional Symbols package which we are doing by setting 'Additional commandline arguments' in '3. Pack Nuget' build step to '-Symbols'.
- 
+
 Alright lets run the CI build and see what we get:
 
 ![CI build run with nuget](/get/cd-for-github-with-teamcity/ci-build-run-with-nuget.png)
@@ -249,17 +247,15 @@ We can see the three build steps in the build log. Also if we check the 'Artifac
 
 And in the build log we can see that the version has been injected into nuspec:
 
-```
-Attempting to build package from 'Humanizer.nuspec'.
- 
-Id: Humanizer
-Version: 1.0.34
-Authors: Mehdi Khalili
-Description: A framework that turns your normal strings, type names, enums and DateTime into a human friendly format and provides human friendly API for DateTime, TimeSpan etc
-License Url: https://github.com/MehdiK/Humanizer/blob/master/LICENSE
-Project Url: https://github.com/MehdiK/Humanizer
-Dependencies: None
-```
+    Attempting to build package from 'Humanizer.nuspec'.
+
+    Id: Humanizer
+    Version: 1.0.34
+    Authors: Mehdi Khalili
+    Description: A framework that turns your normal strings, type names, enums and DateTime into a human friendly format and provides human friendly API for DateTime, TimeSpan etc
+    License Url: https://github.com/MehdiK/Humanizer/blob/master/LICENSE
+    Project Url: https://github.com/MehdiK/Humanizer
+    Dependencies: None
 
 ###<a id="rewriting-assembly-version">Rewriting Assembly Versions</a>
 Although our CI build configuration can build the code, run the tests and package the artifacts it has a relatively big flaw, and that is the library version as stored in ['AssemblyInfo.cs'](https://github.com/MehdiK/Humanizer/blob/master/src/Humanizer/Properties/AssemblyInfo.cs) files is static and while the published NuGet package version increases, the version of the dll inside the package never changes as it's set to a static value!
@@ -275,7 +271,7 @@ That's it!! TeamCity takes care of everything for you. When you run your build a
 Another thing of note is that this expectedly happens as part of your '1. Build Solution' build step so the '3. Pack Nuget' step packs the build artifacts with correct versions.
 
 ###<a id="ci-build-trigger">Build Trigger</a>
-We now have a complete CI build configuration. There is still one problem though: we have been  running this build configuration manually! A CI setup should be able to detect changes on the source code and build them automatically. We can achieve that using 'Build Triggers'. Again from the left navigation bar on your CI Build Configuration select '5 Build Trigger' and click on 'Add new trigger' button to add a build trigger. 
+We now have a complete CI build configuration. There is still one problem though: we have been  running this build configuration manually! A CI setup should be able to detect changes on the source code and build them automatically. We can achieve that using 'Build Triggers'. Again from the left navigation bar on your CI Build Configuration select '5 Build Trigger' and click on 'Add new trigger' button to add a build trigger.
 
 ![Build Triggers](/get/cd-for-github-with-teamcity/build-triggers-page.png)
 
@@ -286,7 +282,7 @@ To make the trigger dependent on source code changes we choose 'VCS Trigger':
 Now you have automatic builds on all branches of your source control including pull requests.
 
 ###<a id="pr-notification">Pull Request Notification</a>
-TeamCity can automatically build GitHub pull requests and provide build notifications on them which is pretty handy. Hadi Hariri has a detailed post about the feature [here](http://hadihariri.com/2013/02/06/automatically-building-pull-requests-from-github-with-teamcity/). 
+TeamCity can automatically build GitHub pull requests and provide build notifications on them which is pretty handy. Hadi Hariri has a detailed post about the feature [here](http://hadihariri.com/2013/02/06/automatically-building-pull-requests-from-github-with-teamcity/).
 
 Basically you have a TeamCity CI build setup for your GitHub project which builds your code and runs your tests on checkin. Why not leverage that to provide notification to contributors of your project?
 
@@ -305,11 +301,9 @@ You see a pending notification while TeamCity is building the PR code and when t
 ###<a id="build-status-icon">Showing build status icon on GitHub</a>
 We can get a [build status icon](http://blog.jetbrains.com/teamcity/2012/07/teamcity-build-status-icon/) which is quite handy for GitHub read me page. To achieve this add the following snippet to your html page:
 
-```
-<a href="http://teamcity/viewType.html?buildTypeId=btN&guest=1">
-<img src="http://teamcity/app/rest/builds/buildType:(id:btN)/statusIcon"/>
-</a>
-```
+    <a href="http://teamcity/viewType.html?buildTypeId=btN&guest=1">
+    <img src="http://teamcity/app/rest/builds/buildType:(id:btN)/statusIcon"/>
+    </a>
 
 Remember the 'Build configuration ID' we set on 'Build Configuration' (in my case Humanizer_CI). You should replace the build type Ids (`btN`) on the above snippet with your 'Build Configuration Id', and obviously `teamcity` should be replaced with your TeamCity server URL.
 
@@ -348,7 +342,7 @@ To create our CD build we go to our project home page and click on 'Create build
 
 ![Publish nuget package](/get/cd-for-github-with-teamcity/publish-nuget-pkg-build.png)
 
-Nothing of note here. Just make sure you give your build some name and description. 
+Nothing of note here. Just make sure you give your build some name and description.
 
 ###<a id="cd-source-control-settings">Source Control Settings</a>
 Back in 'Pack Nuget' I briefly talked about Continuous Delivery which I would like to repeat here: *"A great practice in Continuous Delivery is to be able to publish the artifacts of any existing green build/test to production with a push of a button. In other words when you want to deploy, you don't rebuild stuff - you just deploy the existing artifacts of a healthy build.."*. We already have a build step, 3. Pack Nuget, that creates the artifacts required for deployment. So I don't need any version control settings for this build (and you shouldn't either) because your CD build should work off the existing build artifacts created by your CI build with no dependency on any code. So we skip over 'Version Control Settings'.
@@ -364,7 +358,7 @@ Things of note in this step are:
  - I haven't given this build step a name, mainly because my CD build has one and only one step. When you have only one step, name is not that necessary, as we will see later.
  - 'API Key' is your NuGet API key which you can get from your [NuGet account page](https://www.nuget.org/account). Just grab that GUID and paste it here.
  - 'Packages to upload' is set to 'Humanizer.\*.nupkg' where Humanizer is the id of my NuGet package. The * is to match all NuGet packages and versions; e.g. 'Humanizer.1.0.34.nupkg' and 'Humanizer.1.0.34.symbols.nupkg'.
- 
+
 If you only want to deploy your package but not list them you can tick 'Only upload package but do not publish it to feed'.
 
 ###<a id="cd-build-triggers">Build Triggers</a>
@@ -408,6 +402,3 @@ Hopefully this post provides an easy guide for setting up your TeamCity projects
 P.S. Thanks Jake for letting me use your server.
 
 <p><a href="http://www.codeproject.com" style="display:none" rel="tag">CodeProject</a></p>
-
-
-
