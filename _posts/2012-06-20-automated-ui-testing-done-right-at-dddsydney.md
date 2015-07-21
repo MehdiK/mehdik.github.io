@@ -1,4 +1,4 @@
---- 
+---
 layout: post
 title: "Automated UI Testing Done Right"
 metaTitle: "Automated UI Testing Done Right"
@@ -17,12 +17,12 @@ I am giving a talk at DDDSydney called Automated UI Testing Done Right. Come alo
 
 I will be speaking at [DDDSydney][1] on 30th of June. You may find the details of the conference and the info about the sessions and the timetable [here][2]. If you have not purchased your ticket yet, then leave me a comment or send me a message on [@MehdiKhalili][3] to arrange a discounted ticket.
 
-My talk is called Automated UI Testing Done Right and you may find more info about it [here][4]. 
+My talk is called Automated UI Testing Done Right and you may find more info about it [here][4].
 
 ###Background
 Two years ago I was very sceptical about automated UI testing. I had some painful experience with it because while writing the tests seemed relatively easy, maintaining them would become harder and harder over time to the point where it was impractical to maintain.
 
-Over the past year or so, I have been investing more in Automated UI Testing. I have had some discussions with guys at Readify about ways to do it better. Michael Whelan, my partner in crime for [BDDfy][5], had also been going through a similar journey, although he was ahead of me. So we started sharing notes and talking about UI testing, and a few ideas started popping up. Some of the videos from the last [SeleniumConf][6] were really insightful too. We used these ideas and patterns in some personal and work related projects; but then we thought we may formalize these ideas and patterns and turn it into a framework so others will not have to go through the same pain. 
+Over the past year or so, I have been investing more in Automated UI Testing. I have had some discussions with guys at Readify about ways to do it better. Michael Whelan, my partner in crime for [BDDfy][5], had also been going through a similar journey, although he was ahead of me. So we started sharing notes and talking about UI testing, and a few ideas started popping up. Some of the videos from the last [SeleniumConf][6] were really insightful too. We used these ideas and patterns in some personal and work related projects; but then we thought we may formalize these ideas and patterns and turn it into a framework so others will not have to go through the same pain.
 
 A while back I mentioned a [BDDfy has moved to GitHub][7] and is now part of a test family called TestStack. Now there is a new cool kid on the TestStack block. It is called [Seleno][8] (thanks [Russ Blake][9] for the name).
 
@@ -61,7 +61,7 @@ I am not going to go through the API or feature set now as it is still under (ag
         _driver.FindElement(By.Id("PromoCode")).Clear();
         _driver.FindElement(By.Id("PromoCode")).SendKeys("FREE");
         _driver.FindElement(By.CssSelector("input[type=\"submit\"]")).Click();
-    
+
         Assert.IsTrue(_driver.PageSource.Contains("Checkout Complete"));
     }
 
@@ -83,27 +83,27 @@ I then turn that test into a very maintainable test in three steps. The result o
             .AddAlbumToCart()
             .Checkout()
             .SubmitShippingInfo(ObjectMother.ShippingInfo, "Free");
-    
+
         orderedPage.Title.Should().Be("Checkout Complete");
     }
 
-At the end of the session I will also provide some pro-tips on what to do and what not to do. These are based on the lessons Michael and I have learnt in the past year or so. There is also a bonus forth step which helps turn your awesome test into a living documentation for your system. 
+At the end of the session I will also provide some pro-tips on what to do and what not to do. These are based on the lessons Michael and I have learnt in the past year or so. There is also a bonus forth step which helps turn your awesome test into a living documentation for your system.
 
 Although I am using Seleno, BDDfy and Selenium in the talk, it is very important to note that the ideas, patterns and tips mentioned in the talk are not related to any particular UI or UI testing frameworks or even web testing. So you can use the same ideas and patterns to test your website or desktop or mobile application using your UI testing framework of choice. For example I have applied similar patterns for testing a WPF desktop application using Microsoft Coded UI Test.
 
-The samples used in the talk are directly out of the Seleno code-base. The samples are structured in a way to make it easy to read and follow and you should be able to easily compare the steps to see how each step improves the tests. 
+The samples used in the talk are directly out of the Seleno code-base. The samples are structured in a way to make it easy to read and follow and you should be able to easily compare the steps to see how each step improves the tests.
 
 ![Screenshot of the solution structure with step folders][13]
 
-*There is a file in the FunctionalTests project called `BrittleTests` and then there is one folder per step* 
+*There is a file in the FunctionalTests project called `BrittleTests` and then there is one folder per step*
 
-You may download the zip from [here][14] or clone the framework on [GitHub][15]. 
+You may download the zip from [here][14] or clone the framework on [GitHub][15].
 
-<div style="width:425px" id="__ss_13493067"><strong style="display:block;margin:12px 0 4px"><a href="http://www.slideshare.net/MehdiKhalili/automated-ui-testing-done-right-13493067" title="Automated UI testing done right!">Automated UI testing done right!</a></strong><object id="__sse13493067" width="425" height="355"><param name="movie" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=auit-120629055816-phpapp01&stripped_title=automated-ui-testing-done-right-13493067&userName=MehdiKhalili" /><param name="allowFullScreen" value="true"/><param name="allowScriptAccess" value="always"/><param name="wmode" value="transparent"/><embed name="__sse13493067" src="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=auit-120629055816-phpapp01&stripped_title=automated-ui-testing-done-right-13493067&userName=MehdiKhalili" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="transparent" width="425" height="355"></embed></object><div style="padding:5px 0 12px">View more <a href="http://www.slideshare.net/">presentations</a> from <a href="http://www.slideshare.net/MehdiKhalili">Mehdi Khalili</a>.</div></div>
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/kPI7LyYC4avOXx" width="425" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/MehdiKhalili/automated-ui-testing-done-right-13493067" title="Automated UI testing done right (DDDSydney)" target="_blank">Automated UI testing done right (DDDSydney)</a> </strong> from <strong><a href="//www.slideshare.net/MehdiKhalili" target="_blank">Mehdi Khalili</a></strong> </div>
 
 If you like what you see, come along for the session. There are quite a few tips and tricks to be learnt.
 
-Any ideas, comments, feedback and suggestions about the framework is welcome. 
+Any ideas, comments, feedback and suggestions about the framework is welcome.
 
 
   [1]: http://www.eventbrite.com/event/3366694875
