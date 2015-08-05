@@ -1,4 +1,4 @@
---- 
+---
 layout: post
 title: "ORM anti-patterns - Part 3: Lazy loading"
 metaTitle: "ORM anti-patterns - Part 3: Lazy loading"
@@ -12,10 +12,12 @@ summary: "
 This is the third article in the <a href=\"/orm-anti-patterns-series\">ORM anti-pattern series</a>.
 "
 ---
+This post is part of my [ORM anti-pattern series](/orm-anti-patterns-series). If you like this post, make sure you check out other posts too.
+
 We use lazy loading because we do not want to think about how a fetched entity is going to be used: we materialise a database record into an entity and as it goes through business logic related entities required by business logic are traversed and fetched from database. This certainly works, business logic is not cluttered with code to fetch the required entities, and the fact that related entities have or have not been materialized from database is nicely abstracted away. 
 
 ##Some Arguments for Lazy Loading
-Some people believe lazy loading helps achieve better performance. Lazy loading might help achieve better performance depending on your design. In other words, with some architecture and/or within some design limitation it is better to lazy load a graph than to eager load it! 
+Some people believe lazy loading helps achieve better performance. Lazy loading might help achieve better performance depending on your design. In other words, with some architecture and/or within some design limitation it is better to lazy load a graph than to eager load it!
 
 If you are loading an object graph without knowing how it is going to be used, then you are better off leaving some parts of it out to be fetched later and upon request as they may never be requested. For example you have a generic method in your app that fetches a customer without knowing how and in what context the method is going to be used. Then the result could be used to either edit customer details or edit his/her orders or check his/her eligibility for an upgrade and so on and so forth. Of course if you are using the same method for all these cases then you do not want to eager load the graph because it is going to load a lot of data while only a small subset of it is required in each case. Also in cases like this, the graph usually does not have a clear end. In other words, due to the generic nature of your method and the way it is used, you do not know in which path and how deep you should prefetch related entities. Instead you want to read the customer into memory, and then as the caller uses the record it will fetch bits and pieces it requires. This way you will not load things you do not need and you have spread the data fetching load over a longer period which gives you an **illusion** of better performance.
 
@@ -34,7 +36,7 @@ I have a few issues with lazy loading that I will try to explain below:
 ###1. Inconsistent state
 You load a customer, then you lazy load its orders. At the same time someone changes one of the orders and adds an order line to it. You then lazy load order lines and get the latest state of lines while your order entity is not refreshed and contains the old data. From this point forward you are working with an inconsistent object graph in memory.
 
-Regardless of how lazy loading is implemented you are going to have this problem. Simply put, when you use lazy loading the object graph you are working with is potentially inconsistent. 
+Regardless of how lazy loading is implemented you are going to have this problem. Simply put, when you use lazy loading the object graph you are working with is potentially inconsistent.
 
 We are very strict about ACID property of relational databases and we use transactions on database to make sure that database is in a consistent and valid state before and after a transaction; but when it comes to loading that state into memory we do not quite care if it is being loaded consistently. We are happy to load parts of our graph before a transaction and some other parts after changes are made easily breaking consistency forced by ACID attributes of our relational database on the application level.
 
@@ -105,7 +107,7 @@ A very contrived example, but say you have 100 customers with average of 50 orde
 
 To be fair, this happens when you do not have an [Identity Map][1] (e.g. you are using Active Record) or caching on you ORM level. Every time Customer property on order is called ORM checks to see if that property has already been loaded and if not it loads it from database. In the presence of Identity Map ORM holds a collections of all loaded entities and each time you ask for an entity it checks to see if it has already been loaded. If it supports caching then it may return the already loaded entity. In the absence of an Identity Map ORM does not know that that entity has been loaded on another path or graph, and hits the database again to load it. This problem exhibits only when you are traversing your object graph bottom up.
 
-###3. Business requirements lost in abstraction 
+###3. Business requirements lost in abstraction
 Lazy loading sometimes hides some of the explicit business requirements away. If to perform some business logic I need to load a few things from database, I need that to be an explicit action and I want it to be readable. I want the next programmer taking over my code to know that to achieve that goal we need to load a few things from database. With lazy loading you do not know when something is loaded; you just call properties one after another without any real business meaning.
 
 This can be improved with strict coding practices. Programmers can still use explicit methods to do the same with lazy loading; but my experience is that when that convenience is there it is abused and it is very hard to trace because it looks like a very normal property call. If lazy loading was not there lazy programmer would end up putting that code and the rest of the business logic inside one big method; but it would be very easy to find and refactor.
@@ -138,7 +140,7 @@ If you are using Lazy Loading and it is too late to change then caching could re
 When you are using caching to avoid unnecessary database calls, that is when the entity being lazily loaded has just been loaded from database, then you should cache your entities for a very short period of time. Cached items' expiry should be shorter than the operation response time. For example, if you have an operation that takes 10 seconds to run and hits database 1000 times due to lazy loading and if you know a lot of those calls are unnecessary and are to load a very small number of entities, then you may cache those entities for 10 seconds. If your operation response time is reduced to half a second, then you can reduce your cache expiry to half a second. Also my personal preference is to use a cache key like LazyLoadCustomerForCheckUpgradeEligibility-CustomerId-{PK goes here} and use this key/item only for this operation.
 
 ##Conclusion
-Lazy loading may provide a tiny bit of benefit in some rare cases; but it is being used almost everywhere an ORM is used! The way it is used is doing far more harm than good and I believe the good it is doing is not justifiable at all. In my opinion, lazy loading should be limited to Active Record pattern, and [Active Record pattern should only be used in forms over data applications][2]. Even in that case lazy loading should be used only when there is no high concurrency requirement or you will have the risk of working with inconsistent state. All the other issues explained above will also apply. 
+Lazy loading may provide a tiny bit of benefit in some rare cases; but it is being used almost everywhere an ORM is used! The way it is used is doing far more harm than good and I believe the good it is doing is not justifiable at all. In my opinion, lazy loading should be limited to Active Record pattern, and [Active Record pattern should only be used in forms over data applications][2]. Even in that case lazy loading should be used only when there is no high concurrency requirement or you will have the risk of working with inconsistent state. All the other issues explained above will also apply.
 
 Explaining all of the edge cases and providing code for everything I explained above would be rather impractical. If you have used ORMs and lazy loading then I am sure you know what I am talking about, and hopefully the solutions I provided above could help you avoid some of these issues. If you still have any questions feel free to post in the comments.
 

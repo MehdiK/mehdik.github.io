@@ -14,6 +14,8 @@ This is the second article in the <a href=\"/orm-anti-patterns-series\">ORM anti
 Batch operations are not always implemented properly when programmers use ORM. In this article I will discuss batch operations and how it should and should not be implemented.
 "
 ---
+This post is part of my [ORM anti-pattern series](/orm-anti-patterns-series). If you like this post, make sure you check out other posts too.
+
 Most applications have some batch operation requirements: you want to blacklist several customers, or set a cut-off date and time on all the transactions processed in the past x hours, or delete all spams and so on and so forth. Implementing batch operations using a collection of objects fetched by an ORM in a for loop is one of those mistakes that a lot of programmers make.
 
 ####Background

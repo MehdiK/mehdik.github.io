@@ -1,4 +1,4 @@
---- 
+---
 layout: post
 title: "ORM anti-patterns - Part 4: Persistence vs Domain Model"
 metaTitle: "ORM anti-patterns - Part 4: Persistence vs Domain Model"
@@ -14,10 +14,12 @@ This is the forth article in my <a href=\"/orm-anti-patterns-series\">ORM anti-p
 Confusing persistence model with domain model has to be one of the most common mistakes in ORM usage.
 "
 ---
+This post is part of my [ORM anti-pattern series](/orm-anti-patterns-series). If you like this post, make sure you check out other posts too.
+
 First some definition to make sure we are on the same page:
 
 ####Persistence Model (PM)
-For the sake of this article I am going to call the set of ORM entities in a project the Persistence Model of that project. It is the set of entities mapped to your database using an ORM framework. 
+For the sake of this article I am going to call the set of ORM entities in a project the Persistence Model of that project. It is the set of entities mapped to your database using an ORM framework.
 
 ####Domain Model (DM)
 It is your domain entities. This is where OOD fits into your code and where you code business logic. DM in this context does not necessarily mean fully fledged Domain Model from DDD.
@@ -36,11 +38,11 @@ PM is created because we need to map our tables and columns into something we ca
 Below I will try to break down this problem:
 
 ###PM is a property bag while DM is about business logic and behavior
-If you do not code your PM as a property bag (and that is something some ORMs allow) then this does not apply to you. 
+If you do not code your PM as a property bag (and that is something some ORMs allow) then this does not apply to you.
 
 Most PMs end up as property bags. It is either that the ORM framework forces you to use public getter/setters or that programmers make PM a property bag even if [the ORM supports private setters][2]. Either case, you end up with classes that expose all (or most) of their inner state through properties which breaks class encapsulation and makes classes more tightly coupled. An almost inevitable side effect of this is violation of [Tell Don't Ask][3] and [Single Responsibility Principle][4] principles. SRP says "*There should never be more than one reason for a class to change*". This also means that "*[Each responsibility should be a separate class, because each responsibility is an axis of change.][5]*" (a.k.a [Once and Only Once][6]). Using PM the behavior belonging to a class spreads all over the application which results to maintenance hell. If you need to change some functionality there is no single place you can go and change. Instead you have to scan through the application and find all the usages of your property bag (PB) class and change it accordingly. It gets even more interesting when it comes to debugging. You are trying to debug a logic spread amongst so many classes and most likely hidden in the interaction of those classes; i.e. you have to find where your PB is used, and then from there another class is called where a changed instance of your PB is passed to which in turn makes some more changes to it and so on and so forth.
 
-In my experience, when a team is working on a project, once a logic gets out of a class it is just a matter of time before it gets duplicated. Here is a typical scenario: Developer A needs some functionality that he writes in the class CA he is working on because that is where he needs it. Developer B some time later needs the same functionality in class CB. He has two choices: 
+In my experience, when a team is working on a project, once a logic gets out of a class it is just a matter of time before it gets duplicated. Here is a typical scenario: Developer A needs some functionality that he writes in the class CA he is working on because that is where he needs it. Developer B some time later needs the same functionality in class CB. He has two choices:
 
 <ol>
  <li>To write the functionality in class CB, and he is going to write it completely different to the way it is implemented in CA. His code may have bugs that CA does not because the functionality written in CA has been tested and fixed by now.</li>
@@ -68,7 +70,7 @@ When using an ORM, PM is created to accommodate the ORM needs. It is created to 
 
 DM does not have that limitation. It should not care about how or where things are stored. It is all about business domain and it is modeled in a way it makes sense to the business and implemented in a way it makes sense in an object oriented language.
 
-If we did not have to store anything in a database, then we would see more DM like than PM like classes. We would, hopefully, start a project [thinking about what the business wants and would create classes that would map more closely to the business domain][8]. 
+If we did not have to store anything in a database, then we would see more DM like than PM like classes. We would, hopefully, start a project [thinking about what the business wants and would create classes that would map more closely to the business domain][8].
 
 We use PM because we (think we) have to have it and not because the business really cares about it. We have these classes and we do not feel like creating another set of rather related classes so we may as well use these everywhere!!
 
@@ -117,14 +119,14 @@ All the abovementioned issues apply.
 Also I may add that if you are working on a decent size project - which requires several developers - (and unless you are all senior developers and are very strict about code reviews or pair programming in which case you are one of the luckiest programmers in the world) you are going to end up with a tangled mess due to the issues mentioned above and the cost of maintaining it is far more than the cheap and quick start it provides.
 
 ###2. PM with public getters and private/protected setters and no DM
-I feel far better about this one. The difference with the first model in terms of implementation could be insignificant (depending on your ORM of choice); but the difference in terms of cleanliness of the result and ease of maintenance could be **HUGE**. I think this is a very good and acceptable middle ground for a lot of projects as long as you know what you are losing, have considered its pros and cons (below) and have made an informed decision about it. 
+I feel far better about this one. The difference with the first model in terms of implementation could be insignificant (depending on your ORM of choice); but the difference in terms of cleanliness of the result and ease of maintenance could be **HUGE**. I think this is a very good and acceptable middle ground for a lot of projects as long as you know what you are losing, have considered its pros and cons (below) and have made an informed decision about it.
 
 ####Pros
  1. Behaviors are easier to keep within your PM and are less likely to spread all over your app.
  2. The logic can be written in a unit-testable way.
  3. You may avoid temporary invalid state to some extent. This is going to be hard because most of the times your ORM is in charge of the lifecycle of PM entities and can construct them in an invalid state.
  4. You will avoid maintenance hell to a great extent in a long run.
- 5. It is not very hard and does not cost much to achieve and it definitely costs much less than the first solution to maintain. 
+ 5. It is not very hard and does not cost much to achieve and it definitely costs much less than the first solution to maintain.
 
 ####Cons
  1. You can still violate Tell Don't Ask and SRP. The moment the internal state of your object is exposed (even in readonly mode) developers are going to ask it about its state and make decisions from outside: the decision that belongs to the object itself. It is going to be harder compared to the previous solution particularly if you have private setters. With protected setters sooner or later that bad programmer in your team is going to subclass your entities and provide a public setter for that property.

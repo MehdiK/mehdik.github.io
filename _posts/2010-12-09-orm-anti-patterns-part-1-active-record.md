@@ -14,6 +14,9 @@ This is the first article in the <a href=\"/orm-anti-patterns-series\">ORM anti-
 Martin Fowler who coined the term Active Record explains where and why this pattern should be used; but most of the times we use it just because it is easy without considering its ramifications on our project. In this article I will discuss Active Record as a pattern that is usually abused.
 "
 ---
+
+This post is part of my [ORM anti-pattern series](/orm-anti-patterns-series). If you like this post, make sure you check out other posts too.
+
 One of the patterns implemented by a few ORM frameworks is [Active Record][2]:
 "*An object that wraps a row in a database table or view, encapsulates the database access, and adds domain logic on that data.*", from [PoEAA][3] book.
 

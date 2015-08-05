@@ -1,4 +1,4 @@
---- 
+---
 layout: post
 title: "ORM anti-patterns - Part 5: Generic update methods"
 metaTitle: "ORM anti-patterns - Part 5: Generic update methods"
@@ -14,6 +14,8 @@ This is part 5 of my <a href=\"/orm-anti-patterns-series\">ORM Anti-Pattern seri
 Using generic save method to save object graph changes is a rather common practice. This is a decision that is very hard to change down the track and one that impacts the architecture very badly.
 "
 ---
+This post is part of my [ORM anti-pattern series](/orm-anti-patterns-series). If you like this post, make sure you check out other posts too.
+
 I am sure you have seen methods like Update(Customer customer) and that is what I am going to discuss in this post: generic methods that save changes on an object graph as opposed to saving the actual user intended change. 
 
 This anti-pattern has a much larger impact on projects than some of the other issues I have talked about in [the orm anti-pattern series][1]. Other anti-patterns are usually easier to fix than this; for example, [batch operation][2] issue can be fixed with a rather little effort: you only need to change the part of code that does the batch operation; but when you step down this path/pattern it will be very hard to change your decision because it most likely impacts your UI design, service layer design, domain model and so on and so forth.
@@ -42,11 +44,11 @@ Also (as I mentioned above) some businesses have to reduce the number of conflic
 ###Sending an entire object graph over the wire
 *(Applicable to n-tier applications only)*
 
-I am going to use the following example, which is taken from a project I worked on a while back, to explain this issue . Lets call it Order Portal. Order Portal was a simple web page that allowed confirming orders. The entities involved in the operation looked something (bigger than but) like: 
+I am going to use the following example, which is taken from a project I worked on a while back, to explain this issue . Lets call it Order Portal. Order Portal was a simple web page that allowed confirming orders. The entities involved in the operation looked something (bigger than but) like:
 
 ![alt text][3]
 
-The page displayed a grid of orders with several columns created by denormalizing the object graph. Due to the number of entities involved in the operation the number of involved records were usually really high; e.g. 50 orders with 3 lines with 4 statuses and 3 products. So a typical refresh on the page would send around 200KB of data over the wire. 
+The page displayed a grid of orders with several columns created by denormalizing the object graph. Due to the number of entities involved in the operation the number of involved records were usually really high; e.g. 50 orders with 3 lines with 4 statuses and 3 products. So a typical refresh on the page would send around 200KB of data over the wire.
 
 On the page each row had a checkbox called 'Confirmed' and then there was a save button on the top of the form that saved all the changes, and the Save operation, as you can guess, looked something like:
 
@@ -58,7 +60,7 @@ Hopefully you are not showing a grid of data to the user; but even if you are di
 
     Order ConfirmOrder(int orderId);
 
-This method sends only the id of the order user confirms (that is 4 bytes). The portal was changed to call the above method in an AJAX call and to refresh only the changed row. 
+This method sends only the id of the order user confirms (that is 4 bytes). The portal was changed to call the above method in an AJAX call and to refresh only the changed row.
 
 If you are very interested in confirming several orders in one go (or if that is what the business wants) then you can have another method like below that would get an array of order numbers to confirm:
 
@@ -69,7 +71,7 @@ Still thousand times lighter on the wire.
 ###Lazy loading
 *Applicable to any and all architectures*
 
-User changes a dropdown box in the customer details form to upgrade the customer from silver to gold, and then clicks the save button that sends the entire customer object (for only one change) for persistence. 
+User changes a dropdown box in the customer details form to upgrade the customer from silver to gold, and then clicks the save button that sends the entire customer object (for only one change) for persistence.
 
 Here is a typical implementation of business/validation rules:
 
@@ -80,8 +82,8 @@ Here is a typical implementation of business/validation rules:
         {
             var statuses = dbCustomer.Statuses; // Note: loads customer statuses from database
             var orders = dbCustomer.Orders; // Note: loads customer orders from database
-                
-            // do some checks 
+
+            // do some checks
         }
 
         if (dbCustomer.Children.Count < this.Children.Count) // Note: loads customer children from database
@@ -109,21 +111,21 @@ This method forces you to use lazy loading and you have no way out of it. The pr
 
 Now lets have a look at an alternative method:
 
-    void UpgradeToGold(int customerId) 
+    void UpgradeToGold(int customerId)
     // or perhaps Upgrade(int customerId, CustomerLevel level)
     // or maybe even Handle(CustomerUpgradeCommand command)
     {
-       var customer = _repo.GetCustomerForUpgrade(customerId);   
+       var customer = _repo.GetCustomerForUpgrade(customerId);
        // apply your business rules
        // Orders and Statuses have been loaded in the GetCustomerForUpgrade method
     }
 
-GetCustomerForUpgrade knows that the customer is being loaded for upgrade, so it loads whatever is needed for checking/upgrading a customer. This is what I meant when I said "[*Implement explicit methods with business meaning to load required entities*][4]" to avoid lazy loading. The code in UpgradeToGold is only specific to upgrade, I do not need to check for all the possible changes applied to customer. All I have been provided with is an id; so I do not even know (and do not need to know) if anything else has changed on the client side or not. 
+GetCustomerForUpgrade knows that the customer is being loaded for upgrade, so it loads whatever is needed for checking/upgrading a customer. This is what I meant when I said "[*Implement explicit methods with business meaning to load required entities*][4]" to avoid lazy loading. The code in UpgradeToGold is only specific to upgrade, I do not need to check for all the possible changes applied to customer. All I have been provided with is an id; so I do not even know (and do not need to know) if anything else has changed on the client side or not.
 
 Another less measurable benefit is that the code written in GetCustomerForUpgrade shows you exactly what you need to load for a customer upgrade and how many times you hit the database. This is the requirement that would otherwise be lost in lazy loading in MethodRunAsPartOfSave.
 
 ###Unnecessary processing
-In a generic update each time you want to save a change you have to check to see which business and validation rule apply. In other words, because you do not know what has changed and which business rule has to be run, you have to run a lot of checks on the object graph to find the applicable business rules. 
+In a generic update each time you want to save a change you have to check to see which business and validation rule apply. In other words, because you do not know what has changed and which business rule has to be run, you have to run a lot of checks on the object graph to find the applicable business rules.
 
 In the MethodRunAsPartOfSave example (given above for lazy loading) several checks are run every time the save method is called for the customer entity. **All** these checks are unnecessary. These checks are only there because the generic save method does not know what has changed. If you look at UpgradeToGold method, as an alternative for one of the changes, you can see that there is no check for changes. We know what has changed and we know that we should check for customer upgrade and nothing more.
 
@@ -134,7 +136,7 @@ Some developers, who do not like this additional processing, make another mistak
 ###UI design
 The problem of generic update method is very closely related to UI design. Different UI designs can ask for different saving mechanism and vice versa.
 
-So many times we see big UI forms/pages with a lot of elements on them and just one save button. When you have one save action for your entire screen you do not know what user has done. All you can do is to pass the object your screen is bound to into a generic method. This is a chicken and egg problem though; i.e. you may be forced to create one save action on your UI because your architecture enforces generic save mechanism, or you may have to write a generic save method because of incorrect UI design. When possible we should try to use [Task Based UI][5] (This article which I just found while trying to find a reference for Task Based UI appears to cover a lot of issues I am covering in this article with an example that is very much like Order Portal - du`h). Task based UI is a UI designed to capture user intention and business operation as opposed to state changes. 
+So many times we see big UI forms/pages with a lot of elements on them and just one save button. When you have one save action for your entire screen you do not know what user has done. All you can do is to pass the object your screen is bound to into a generic method. This is a chicken and egg problem though; i.e. you may be forced to create one save action on your UI because your architecture enforces generic save mechanism, or you may have to write a generic save method because of incorrect UI design. When possible we should try to use [Task Based UI][5] (This article which I just found while trying to find a reference for Task Based UI appears to cover a lot of issues I am covering in this article with an example that is very much like Order Portal - du`h). Task based UI is a UI designed to capture user intention and business operation as opposed to state changes.
 
 For example, for the Order Portal we removed the save button from the top of the form. Instead each row now has a confirm button that when clicked sends a very explicit AJAX request to the server ultimately calling into ConfirmOrder(int orderId).
 
@@ -177,7 +179,7 @@ In some cases that is totally unacceptable and in others that is alright but not
         var dbCustomer = _repo.Get(customer.Id); // loads customer from database
         if (dbCustomer.IsSilver && this.IsGold)
         {
-            // do some checks 
+            // do some checks
 
             Logger.Log("Upgraded To Gold {0}", Id);
         }
@@ -212,7 +214,7 @@ Now lets take a look at the alternative method:
     {
        Logger.Log("UpgradeToGold {0}", customerId);
 
-       var customer = _repo.GetCustomerForUpgrade(customerId);   
+       var customer = _repo.GetCustomerForUpgrade(customerId);
        // apply your business rules: note that Orders and Statuses have been loaded in the GetCustomerForUpgrade method
     }
 
@@ -244,7 +246,7 @@ That makes a big difference for logging. Some businesses analyze their operation
 Actually now that there is one log per method we can do even better. We can easily remove all audit log calls and achieve the same result using an [AOP][6] framework. I have a post coming up about this.
 
 ##Active Record and self tracking entities
-When you are using Active Record or self tracking entities you are somehow forced down the road of generic saves. OK, you are not forced, but you usually end up there. The reason is that the entity knows almost everything it needs and all it takes to save the changes is to call a save method. This is almost too convenient to give up; thus you end up in the nasty world of generic updates. 
+When you are using Active Record or self tracking entities you are somehow forced down the road of generic saves. OK, you are not forced, but you usually end up there. The reason is that the entity knows almost everything it needs and all it takes to save the changes is to call a save method. This is almost too convenient to give up; thus you end up in the nasty world of generic updates.
 
 The other side effects I have observed is that all the business rules usually turn into validation logics applied on the entity itself because it knows everything, and you are "sure" that saving the entity is safe. Again a topic for another post.
 
