@@ -21,7 +21,7 @@ There has been a bit of hype lately around microservices. You go to conferences 
 
 I purposely didn't go into details of these benefits because they've been written and talked about many times. If you're interested you can learn more about microservices and their benefits and challenges [here](http://martinfowler.com/microservices/).
 
-I love microservices and distributed systems and that's my main expertise - what I don't like is the hype. Good developers are very passionate about what they do, and they hear or see something awesome, and they're blinded by the passion and desire to try the latest and shiniest and suddenly they HAVE to do it, not because it fits their needs but because they like to try it. So, this series is not about the benefits of microservices - it's about its challenges: things you don't normally hear when developers talk about microservices.
+I love microservices and distributed systems and that's my main expertise - what I don't like is the hype. Developers are very passionate about what they do. We hear or see something awesome and suddenly HAVE to do it, not because it fits our needs but because we like to try it. So in this series of posts I would like to talk more about some of the challenges of microservices.
 
 Here is an (evolving) index of posts I am considering to write over time:
 
