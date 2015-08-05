@@ -8,12 +8,7 @@ date: "2014-01-03"
 permalink: "/greatest-hits/"
 ---
 ##Greatest Hits
-This is a curated list of the greatest hits of my blog, open source contribution and presentations based on Google Analytics stats and download counts.
-
-If you are a new visitor/follower hopefully this helps you discover the good stuff easier. You may read more about me, as a person, [here](/about).
-
-##The Most Popular Posts
-Here is the categorized list of my most popular post.
+This is a curated list of the greatest hits of my blog, open source contribution and presentations based on Google Analytics stats and download counts. If you are a new visitor/follower hopefully this helps you discover the good stuff easier. You may read more about me, as a person, [here](/about).
 
 ####Tutorials
  - Fiddler In Action tutorial [part 1](/fiddler-in-action/part-1) and [part 2](/fiddler-in-action/part-2): an extensive tutorial on using [Fiddler](http://http://fiddler2.com/) web debugging proxy.
@@ -42,13 +37,6 @@ Here is the categorized list of my most popular post.
  - [It's sometimes OK to write bad code](/bad-code)
  - [Stop Discriminating](/stop-discriminating): venting out a sore personal experience with racial discrimination.
  - [Migrating from Mercurial to Git](/migrating-from-mercurial-to-git): a guide on how to migrate a mercurial repository to git along with some of the gotchas you might face and their solutions.
-
-##Presentations
- - [Automated UI Testing Done Right at DDD Sydney](/presentations/automated-ui-testing-done-right-at-dddsydney). Session recording available [here](http://tv.ssw.com/3444/ddd-sydney-2012-mehdi-khalili-automated-ui-testing-done-right).
- - [Advanced Web Debugging With Fiddler at DDD Brisbane](/advanced-web-debugging-with-fiddler)
- - [Working With Offline Web Application](/presentations/wdyk-offline-web) at What Do You Know  Night from [Web Directions](http://www.webdirections.org/) conference.
-
-You can also find a few slidedecks on [SlideShare](http://www.slideshare.net/MehdiKhalili). Although I only have a few uploads and none in 2013, [my content was among the top 3% of most viewed on SlideShare in 2013](http://www.slideshare.net/yearinreview/MehdiKhalili/_jpbAg).
 
 ##Open Source
  - Created [BDDfy](https://github.com/TestStack/TestStack.BDDfy): the simplest to use and extend BDD framework for .Net.

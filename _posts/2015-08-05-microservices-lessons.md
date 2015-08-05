@@ -26,13 +26,13 @@ I love microservices and distributed systems and that's my main expertise - what
 Here is an (evolving) index of posts I am considering to write over time:
 
   - Culture
-  - Fault Tolerance
-  - Loose Coupling
-  - Greenfield Microservices
+  - Fault tolerance
+  - Loose coupling
+  - Greenfield microservices
   - Service size and boundaries
-  - Continuous Delivery
-  - Decentralised Data Management
-  - RESTful vs Messaging
+  - Continuous delivery
+  - Decentralized data management
+  - REST or messaging?
 
 I hope that by highlighting some of these challenges, you weigh the challenges and cost of microservices against its benefits before you pick it for your next project.
 

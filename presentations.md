@@ -7,6 +7,7 @@ date: "2015-08-05"
 permalink: "/presentations/"
 ---
 
+##Presentations
 I really enjoy public presentation and over the years I've spoken in a handful of conferences and user groups. I've written about some of my presentations. You can find them below (some of them also included video recording of the session):
 
  - Microservices lessons from trenches
