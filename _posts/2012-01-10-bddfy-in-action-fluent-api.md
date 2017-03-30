@@ -22,7 +22,7 @@ BDDfy can scan your tests in one of two ways: using Reflective API and Fluent AP
 
 I just thought I would share a bit of history with you first. I had just released BDDfy V0.5 and the API had kinda settled. So I thought I'd write an [introductory article on CodeProject][5] to promote the framework. On the top of article I said '*BDDfy is very extensible. In fact, BDDfy core barely has any logic in it. It delegates all its responsibilities to its extensions*'. Then I thought that just claiming a framework is extensible does not mean anything if I cannot provide a sample for it. That is why I wrote the Fluent API as I was writing that article to prove it to myself that BDDfy is highly extensible and also to provide an example of that. Well, I started it as an extensibility example; but then I liked and felt the need for it and baked into the framework. Today it is no longer a sample and in fact it is even more popular than Reflective mode!!
 
-##Fluent API
+## Fluent API
 Fluent API of BDDfy does not really require much explanation as it is quite fluent ;-) So instead of trying to explain to you how it works I will just provide an example.
 
 In the Method Name Conventions post I wrote a scenario called 'BDDfyRocks' which I repeat here for your convenience:
@@ -152,7 +152,7 @@ There are a few important differences in implementation as follows:
  - You notice that I removed two methods while porting the code to use Fluent API: <code>WhenIAmIntroducedToTheFramework</code> and <code>ThenILikeItAndStartUsingIt</code>. These two methods were repeated in each scenario; but I ported all scenarios and methods to the same class; so we can avoid duplication. Well, in all fairness the same could be achieved in the Reflective mode through inheritance where the shared logic lives in a base class that other scenarios subclass; but I think the reuse is kinda more natural in the Fluent mode.
  - If you use R#, in Reflective mode if you write your steps as private methods you are going to get R# warning for unused methods because R# does not have any idea about the reflection magic going behind the scenes. Using Fluent API because you explicitly call the methods you no longer get the R# warning because you are using the methods. In order to avoid the warning in Reflective mode you may define your methods as protected or public to avoid the warnings.
 
-###Adding Story
+### Adding Story
 Out of the box, there is only one way to [specify your Story][7] and to associate it with scenarios and that is using <code>StoryAttribute</code>. This is the same for Reflective and Fluent modes. 
 
 Let's add story to the above example:
@@ -189,19 +189,19 @@ This of course has its pros and cons. The nice thing about this approach is that
 
 Running the tests now will include the story title and narrative into console and html reports.
 
-##FAQ
+## FAQ
 These are some of the FAQs I have received for Fluent API:
 
-###Should I have my methods in the right order?
+### Should I have my methods in the right order?
 In the Reflective mode there is a situation where you have to put your methods in the right order and that is when you have more than one 'AndGiven' or 'AndWhen' or 'And' in which you case the 'and' parts are executed in the order they appear in the class. In the Fluent API that does not matter. The methods are executed in the order specified using the Fluent API. So it does not matter in what order they appear in the class. 
 
-###How I can reuse some of the testing logic?
+### How I can reuse some of the testing logic?
 As mentioned above with Fluent API it is very easy to reuse the test logic across all scenarios of the same story because usually they are all in the same class. If the logic is not in the same class, you can still use inheritance or composition to compose a scenario.
 
-###Can my step methods be static or should they be instance methods?
+### Can my step methods be static or should they be instance methods?
 BDDfy handles both cases. So feel free to use whatever makes sense.
 
-##Conclusion
+## Conclusion
 In the last few posts I talked about Method Name Conventions and <code>ExecutableAttribute</code>. In this post we saw Fluent API - the last of built-in BDDfy scanners. These are the scanners that come out of the box with BDDfy. 
 
 BDDfy is quite customizable and extensible. You can very easily create your own dialect using Method Name Conventions and Executable Attributes and, as mentioned above, Fluent API was born out of an example and took only a few hours to implement (I have a few uncoming posts dedicated to customizing the framework.). So if you think the out of the box scanners do not behave the way you expect you may either customize them or very easily create your own. If you do so, I would appreciate if you could share your experience (and/or code) with me :o)

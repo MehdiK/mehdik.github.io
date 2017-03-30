@@ -32,10 +32,10 @@ In the following code snippet the *nullable.HasValue* condition is not necessary
 
 Also how you would implement this method?
 
-###The short answer###
+### The short answer###
 According to [msdn][3] "*An 'is' expression evaluates to true if the provided expression is non-null*". So when the '*is*' condition is fulfilled the value is not null; i.e. nullable.HasValue is always true.
 
-###The long answer###
+### The long answer###
 To understand the the behavior of '*is*' operator I am going to need to dig rather deep. So bear with me:
 
 Below is the IL code for *ToInt* (to get the IL code you may run ildasm from VS command prompt and open your executable there):
@@ -113,7 +113,7 @@ As expected, we are calling '*box*' IL instruction (at *IL_000c*) on the input v
 
 "*If typeTok is a value type, the box instruction converts val to its boxed form. When typeTok is a non-nullable type (§I.8.2.4), this is done by creating a new object and copying the data from val into the newly allocated object. **If it is a nullable type, this is done by inspecting val's HasValue property; if it is false, a null reference is pushed onto the stack; otherwise, the result of boxing val's Value property is pushed onto the stack***."
 
-###Alternative implementations of ToInt method###
+### Alternative implementations of ToInt method###
 So for nullable types, after boxing, which is the case for object input parameter, we either get *null* or an *int* value! So we could actually write the *ToInt* method as:
 
     public static int ToInt2(this object value)

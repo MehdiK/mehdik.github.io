@@ -20,13 +20,13 @@ The code used in this post is available for download from [here][2]. Just before
 
 As mentioned in the previous post BDDfy can scan your tests in one of two ways: using Reflective API and Fluent API. Reflective API uses some hints to scan your classes. You can provide these hints in two ways: using method name conventions and/or attributes. We have discussed [method name conventions][4] before and in this post we will only concentrate on <code>ExecutableAttribute</code>.
 
-#ExecutableAttribute
+# ExecutableAttribute
 In the reflective mode you could use Method Name Conventions to provide BDDfy with some hints about your test steps. That is all good; but in some cases you may need to explicitly specify your test steps and/or their title (or at least some of them):
 
-##You may need more control over the step title
+## You may need more control over the step title
 When using Method Name Conventions BDDfy uses your method name to generate the step title. This works in a lot cases; but in some cases you may need more control over your step title. For example your step title may need to have special characters; e.g. "Given the ATM doesn't have enough cash". For BDDfy to be able to derive this your method should be called "GivenTheAtmDoesn'tHaveEnoughCash" which of course is not a valid method name. Even if that was a valid method name the result would be "Given the atm doesn't have enough cash" where 'atm' is all lower case!
 
-##What if Method Name Conventions do not make sense?
+## What if Method Name Conventions do not make sense?
 In vast majority of cases method name conventions make your methods and tests more readable and maintainable; but there may be cases when you want to use different method names because they may read better. As an example you may have a scenario that is written as:
 
 <pre>
@@ -64,7 +64,7 @@ namespace BDDfy.ExecutableAttributes
 
 The last two methods, which are my 'Then' and 'And then' steps, do not comply with method name conventions and as such will not be picked up by BDDfy!
 
-##So what are ExecutableAttributes?
+## So what are ExecutableAttributes?
 In cases when method name conventions do not cut it for you, you may use <code>ExecutableAttribute</code> to nominate any method as a step. So let's just change the above example so it works:
 
 <pre>
@@ -154,7 +154,7 @@ Using Method Name Conventions this method would be picked up as a 'Then' step; b
 
 ![Executable attribute overriding the method name convention][7]
 
-##But dude, ExecutableAttribute is too technical
+## But dude, ExecutableAttribute is too technical
 Fair enough. That is more of an implementation detail plus an extension point that you should not normally care about. For that reason BDDfy comes with a set of predefined subclasses of <code>ExecutableAttribute</code> which are easier to use: <code>Given</code>, <code>AndGiven</code>, <code>When</code>, <code>AndWhen</code>, <code>Then</code> and <code>AndThen</code>. These attributes have default constructors that allow you to set a method as a step without having to provide a title in which case the title will be driven by the method name. They also have a constructor that allows you the specify the title which will override the default convention. Let's see that in action. Changing the last example to use these attributes:
 
 <pre>
@@ -201,7 +201,7 @@ The only change here was to replace the <code>ExecutableAttribute</code> usage w
 
 To spice things up a bit I am also overriding the scenario name. This is only to show that you can always override scenario title regardless of your preferred BDDfy API/mode.
 
-##Can I exclude a method from scan?
+## Can I exclude a method from scan?
 Just like there are cases when your step method name does not comply with conventions there may be cases where you have a non-step method that just happens to comply with conventions. Consider the following example:
 
 <pre>
@@ -296,7 +296,7 @@ I just had to decorate the method with the attribute and now when I run the test
 
 This is not necessarily related to the <code>Executable</code> attribute as such and is part of the Reflective Scanner's logic which applies to both method name conventions and executable attributes.
 
-##How to create your own dialect
+## How to create your own dialect
 If you want to use another syntax for your BDD behaviors because you do not like Given, When, Then or because you are writing low-level tests that do not quite fit into the GWT model you can create your own syntax easily. Near the end of this series I am writing a few posts dedicated to BDDfy extension points and how you can override and/or extend the framework easily. So I will just provide a small hint about this here and leave the full story for later. 
 
 In this running mode the only thing BDDfy cares about is the <code>Executable</code> attribute; so you can very easily subclass it as I have done with the abovementioned attributes and create a new dialect and it will just work. For your reference this is the implementation of a few of the out of the box attributes:
@@ -330,7 +330,7 @@ public class WhenAttribute : ExecutableAttribute
 
 It is very easy to implement your own attribute and create your own dialect with BDDfy. You can also very easily override the existing Method Name Conventions to create a new dialect for conventions; but that is a matter of another post :)
 
-##Conclusion
+## Conclusion
 In this post we saw <code>Executable</code> attributes: one of many ways BDDfy can help you write BDD behaviors. In the future posts I will explain other alternatives.
 
 The code used in this article is available for download from [here][13].

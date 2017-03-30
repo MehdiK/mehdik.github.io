@@ -27,10 +27,10 @@ The out of the box [web config transformation][2] built into Visual Studio and M
  - It only works for web applications. This means that if you want to deploy a desktop application or a windows service that require config transformation you are out of luck with OOTB solution. I honestly do not understand why Microsoft thinks that only web applications require or deserve config transformation!!
  - It works with Build Configuration. You should have one build configuration per environment for the config transformation to work. On the same line, for the transformation to happen you need to build your solution using the relevant build configuration; e.g. if you want to deploy to Production you need to build your solution using a build configuration created for production release (which perhaps is called 'Production') and for Test environment you need to build using the 'Test' build configuration.
 
-##Config Transformation 
+## Config Transformation 
 In this article, I am going to talk about two great solutions for config transformation: CodeAssassin.ConfigTransform and SlowCheetah. Both solutions fix the same problem: they allow you to apply config transformation on any and all config file regardless of the project type. They, however, have a few differences that I will explain below.
 
-###CodeAssassin.ConfigTransform
+### CodeAssassin.ConfigTransform
 CodeAssassin.ConfigTransform is a great solution implemented by Jason Stangroome one of my colleagues at Readify. From the [nuget homepage][3]: "*Transforms all *.config files at build time instead of the default MSBuild behaviour of only transforming the configuration file matching the current build configuration*". 
 
 To use CodeAssassin.ConfigTransform you need to install the nuget package (from Package Manager Console) on the project where you want to apply the transformation:
@@ -110,7 +110,7 @@ The second part is required if you want to get rid of all the other .transformed
 
 To sum up, I think this is quite a neat package and the abovementioned cons are not really con: it is the price we pay to avoid relying on build configuration which IMO is quite a low price ... and we just saw above how easy it is to rename the result config file and to clean up the unnecessary transformed files.
 
-###SlowCheetah
+### SlowCheetah
 SlowCheetah, implemented by Chuck England and Sayed Ibrahim Hashimi from Microsoft, is another awesome solution that does more or less the same thing. From the [project homepage][7]: "*This package enables you to transform your app.config or any other XML file based on the build configuration. It also adds additional tooling to help you create XML transforms.*". 
 
 To install SlowCheetah you will need to [download and install the SlowCheetah Visual Studio extention][8]. After doing so you will get the 'Add Transform' option in all projects (and not only web projects) with a UI experience which is very similar to the built in config transform. Let's apply SlowCheetah on the same project with the same config and transformation requirements: 
@@ -163,7 +163,7 @@ There is also a very handy 'Preview Transform' feature that allows you to previe
  - And again just like OOTB solution you need to build your solution with the appropriate build configuration for it to use the right transform template.
  - This solution is not self-contained. If you are using SlowCheetah you will either have to have the extension installed on all the dev machines (and the build server) or copy the required files to the expected path: $(LOCALAPPDATA)\Microsoft\MSBuild\SlowCheetah\v1\SlowCheetah.Transforms.targets.
 
-##Conclusion
+## Conclusion
 CodeAssassin.ConfigTransform and SlowCheetah are great solutions that allow easy config transformation for any project type which in turn empowers your Continuous Delivery and provide for shorter feedback cycles. 
 
 Which of these solutions you choose depends on your requirements and environment. If you do not have any problem having several build configurations and if you can easily build whatever build configuration (from your build server) then SlowCheetah is a great fit (even though CodeAssassin.ConfigTransform will work too). If, on the other hand, you do not want to have multiple build configuration files, you are already doing some PowerShell magic as part of your deployment, or for some reason you cannot or do not want to build your solution using different Build Configuration, then CodeAssassin.ConfigTransform is the answer (but SlowCheetah will not work).

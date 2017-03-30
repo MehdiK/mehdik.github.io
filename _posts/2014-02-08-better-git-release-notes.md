@@ -15,7 +15,7 @@ I just created a new [release-notes.md](https://github.com/TestStack/TestStack.B
 
 Let's see what we get with this format:
 
-##Highlights
+## Highlights
 The release notes in this format:
 
  - show the release versions and the associated dates
@@ -29,7 +29,7 @@ Another benefit of creating a release-notes file is that it works with all git h
  
 Obviously you could get all of the above benefits from GitHub releases.
 
-##No need for GitHub releases
+## No need for GitHub releases
 A while back I asked on Twitter why people use GitHub releases and the only convincing answer I got was that it allows users to see the releases and commits that goes into them easily. Well, this format does that - so I don't need GitHub releases anymore!
 
 Here are a few benefits of getting rid of GitHub releases and completely replacing them with release-notes:
@@ -42,7 +42,7 @@ A handy feature of GitHub you'll be missing out is the issue and pull request lo
 
 To get the best of both worlds it would be ideal if GitHub Release worked as a glorified GUI over the release-notes file. I don't understand why GitHub decided readme and license files should be part of the repository but releases have to live outside!
 
-##Conclusion
+## Conclusion
 In this post I showed you how I just stopped using GitHub releases and replaced it with a proper release-notes file, and I highlighted some of the benefits of this approach.
 
 One thing I didn't talk about is NuGet release notes. I think I will just create a link to a release entry on release-notes file for that - something like [this](https://github.com/TestStack/TestStack.BDDfy/blob/master/release-notes.md#v3185---2014-02-03).
@@ -51,47 +51,47 @@ One thing I didn't talk about is NuGet release notes. I think I will just create
 
 Hope this helps.
 
-##Reference
+## Reference
 A few entries from [BDDfy](https://github.com/TestStack/TestStack.BDDfy)'s [release-notes.md](https://github.com/TestStack/TestStack.BDDfy/blob/master/release-notes.md) is copied here for your reference:
 
-###In development
+### In development
 [Commits](https://github.com/TestStack/TestStack.BDDfy/compare/v3.18.5...master)
 
 ###v3.18.5 - 2014-02-03
-####Improvements
+#### Improvements
  - [#46](https://github.com/TestStack/TestStack.BDDfy/pull/46) - tidies up the layout of the summary pane in the HTML report
 
 [Commits](https://github.com/TestStack/TestStack.BDDfy/compare/v3.18.3...v3.18.5)
 
 ###v3.18.3 - 2014-01-24
-####Bugs
+#### Bugs
  - [#42](https://github.com/TestStack/TestStack.BDDfy/pull/42) - fixes a bug that caused html report to fail when there is a BDDfy test without an associated story
 
 [Commits](https://github.com/TestStack/TestStack.BDDfy/compare/v3.18.2...v3.18.3)
 
 ###v3.18.2 - 2014-01-13
-####Improvements
+#### Improvements
  - [#40](https://github.com/TestStack/TestStack.BDDfy/pull/40) - reduces memory footprint by disposing unnecessary objects in StoryCache
 
-####Breaking Changes
+#### Breaking Changes
  - to reduce the memory foot print, `TestObject` on `Story` class and `StepAction` on `ExecutionStep` are nulled out before persisting the story in `StoryCache` as these two properties leave a lot of dangling objects in memory (see [#39](https://github.com/TestStack/TestStack.BDDfy/issues/39) for more details) and they're not used in `BatchProcessors`. Not sure why you would, but if you were using these properties from your tests they'll be null after the test is executed.
 
 [Commits](https://github.com/TestStack/TestStack.BDDfy/compare/v3.18.0...v3.18.2)
 
 ###v3.18.0 - 2014-01-02
-####New Features
+#### New Features
  - [#38](https://github.com/TestStack/TestStack.BDDfy/pull/38) - adds a configuration point to stop execution pipeline on a failing test
 
 [Commits](https://github.com/TestStack/TestStack.BDDfy/compare/v3.17.1...v3.18.0)
 
 ###v3.17.1 - 2013-11-04
-####New Features
+#### New Features
  - [#32](https://github.com/TestStack/TestStack.BDDfy/pull/32) - adds support for async steps
 
 [Commits](https://github.com/TestStack/TestStack.BDDfy/compare/v3.16.14...v3.17.1)
 
 ###v3.16.14 - 2013-08-05
-####Improvements
+#### Improvements
  - [#30](https://github.com/TestStack/TestStack.BDDfy/pull/30) - cleans up samples and adds a simple BDDfy Rocks one
  - [#28](https://github.com/TestStack/TestStack.BDDfy/pull/28) - adds nuget tags 
  - [#27](https://github.com/TestStack/TestStack.BDDfy/pull/27) - updates nuspec files with the latest license (MIT) & project url
@@ -99,7 +99,7 @@ A few entries from [BDDfy](https://github.com/TestStack/TestStack.BDDfy)'s [rele
  - [#24](https://github.com/TestStack/TestStack.BDDfy/pull/24) - removes some text from readme & pointed to the new docos website
  - [#23](https://github.com/TestStack/TestStack.BDDfy/pull/23) - changes the license to MIT
 
-####Bugs
+#### Bugs
  - [#25](https://github.com/TestStack/TestStack.BDDfy/pull/25) - changes the html report link & fixes the custom scripts
  - [#22](https://github.com/TestStack/TestStack.BDDfy/pull/22) - renames custom script names and fixes the report link - Fixes issue #18
 

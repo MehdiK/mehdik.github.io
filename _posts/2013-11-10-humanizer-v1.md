@@ -12,17 +12,17 @@ tags: ["OSS",".Net"]
 
 Humanizer is a small framework that helps .Net developer turn their otherwise geeky strings, type names, enum fields, date, timespan values into a human friendly format plus a lot more.
 
-##Installation
+## Installation
 You can install Humanizer as [a nuget package](https://nuget.org/packages/Humanizer): `Install-Package Humanizer`
 
  > Up until now Humanizer supported .Net 3.5 and newer versions; but as of V1 the support for .Net 3.5 was discontinued. If you are using .Net 3.5 you can still use V0.6 or better upgrade to .Net 4.5 ;)
 
-##Source code
+## Source code
 You can find the code on [Humanizer home page](http://github.com/MehdiK/Humanizer) on GitHub. You can build the whole solution, run the tests and create a local nuget package for the library by running the `go.cmd` on the root of the repo.
 
 Humanizer is released under MIT License. See the [bundled LICENSE file](https://github.com/MehdiK/Humanizer/blob/master/LICENSE) for details.
 
-##Humanize Strings
+## Humanize Strings
 String extensions are at the heart of this micro-framework. The foundation of this was set in the [BDDfy framework](https://github.com/TestStack/TestStack.BDDfy) where class names, method names and properties are turned into human readable sentences.
 
     "PascalCaseInputStringIsTurnedIntoSentence".Humanize() => "Pascal case input string is turned into sentence"
@@ -46,12 +46,12 @@ You may also specify the desired letter casing:
 
  > The `LetterCasing` API and the methods accepting it are legacy from V0.2 era and will be deprecated in the future. Instead of that, you can use `Transform` method explained below.
 
-###Dehumanize Strings
+### Dehumanize Strings
 Much like you can humanize a computer friendly into human friendly string you can dehumanize a human friendly string into a computer friendly one:
 
     "Pascal case input string is turned into sentence".Dehumanize() => "PascalCaseInputStringIsTurnedIntoSentence"
 
-##Transform
+## Transform
 There is a `Transform` method that supersedes `LetterCasing`, `ApplyCase` and `Humanize` overloads that accept `LetterCasing`.
 Transform method signature is as follows:
 
@@ -69,7 +69,7 @@ And there are some out of the box implementations of `IStringTransformer` for le
 The benefit of using `Transform` and `IStringTransformer` over `ApplyCase` and `LetterCasing` is that `LetterCasing` is an enum and you're limited to use what's in the framework
 while `IStringTransformer` is an interface you can implement in your codebase once and use it with `Transform` method allowing for easy extension.
 
-##Humanize Enums
+## Humanize Enums
 Calling `ToString` directly on enum members usually results in less than ideal output for users. The solution to this is usually to use `DescriptionAttribute` data annotation and then read that at runtime to get a more friendly output. That is a great solution; but more often than not we only need to put some space between words of an enum member - which is what `String.Humanize()` does well. For an enum like:
 
     public enum EnumUnderTest
@@ -93,7 +93,7 @@ You will get:
 
 Hopefully this will help avoid littering enums with unnecessary attributes!
 
-###Dehumanize Enums
+### Dehumanize Enums
 Dehumanizes a string into the Enum it was originally Humanized from! The API looks like:
 
     public static Enum DehumanizeTo<TTargetEnum>(this string input)
@@ -104,7 +104,7 @@ And the usage is:
 
 And just like the Humanize API it honors the `Description` attribute. You don't have to provide the casing you provided during humanization: it figures it out.
 
-##Humanize Dates
+## Humanize Dates
 This is borrowed from [StackOverFlow algorithm](http://stackoverflow.com/a/12/141101) - although I had to apply some minor fixes on top of it. I am not going to bore you with all the examples as I am sure you know what this does: you basically give it an instance of `DateTime` and get back a string telling how far back in time that is:
 
     DateTime.UtcNow.AddHours(-30).Humanize() => "yesterday"
@@ -117,7 +117,7 @@ For dates Humanizer also supports localization.
 
  > No dehumanization for dates as the human friendly date is not reversible
 
-##Humanize TimeSpan
+## Humanize TimeSpan
 You can call `Humanize` on a `TimeSpan` to a get human friendly representation for it:
 
     TimeSpan.FromMilliseconds(1).Humanize() => "1 millisecond"
@@ -125,7 +125,7 @@ You can call `Humanize` on a `TimeSpan` to a get human friendly representation f
     TimeSpan.FromDays(1).Humanize() => "1 day"
     TimeSpan.FromDays(14).Humanize() => "2 weeks"
 
-##Inflector methods
+## Inflector methods
 There are also a few inflector methods:
 
 **Pluralize**: pluralizes the provided input considering irregular words
@@ -153,10 +153,10 @@ There are also a few inflector methods:
 
     "some_title".Dasherize() => "some-title"
 
-##Fluent Date
+## Fluent Date
 Humanizer provides a fluent API to deal with `DateTime` and `TimeSpan` as follows:
 
-###TimeSpan methods
+### TimeSpan methods
 
     2.Milliseconds() => TimeSpan.FromMilliseconds(2)
     2.Seconds() => TimeSpan.FromSeconds(2)
@@ -175,7 +175,7 @@ with
 
     DateTime.Now + 2.Days() + 3.Hours() - 5.Minutes()
 
-###DateTime methods
+### DateTime methods
 
     In.TheYear(2010) // Returns the first of January of 2010
     In.January // Returns 1st of January of the current year
@@ -212,7 +212,7 @@ and some extension methods:
 
 Obviously you could chain the methods too; e.g. `On.November.The13th.In(2010).AtNoon + 5.Minutes()`
 
-##Number to words
+## Number to words
 Humanizer can change numbers to words using the `ToWords` extension:
 
     1.ToWords() => "one"
@@ -221,7 +221,7 @@ Humanizer can change numbers to words using the `ToWords` extension:
     122.ToWords() => "one hundred and twenty-two"
     3501.ToWords() => "three thousand five hundred and one"
 
-##Number to ordinal words
+## Number to ordinal words
 This is kind of mixing `ToWords` with `Ordinalize`. You can call `ToOrdinalWords` on a number to get an ordinal representation of the number in words!! Let me show that with an example:
 
     0.ToOrdinalWords() => "zeroth"
@@ -235,7 +235,7 @@ This is kind of mixing `ToWords` with `Ordinalize`. You can call `ToOrdinalWords
     21.ToOrdinalWords() => "twenty first"
     121.ToOrdinalWords() => "hundred and twenty first"
 
-##Integrate Humanizer with ASP.Net MVC
+## Integrate Humanizer with ASP.Net MVC
 This is just a baseline and you can use this to simplify your day to day job. For example, in Asp.Net MVC we keep chucking `Display` attribute on ViewModel properties so `HtmlHelper` can generate correct labels for us; but, just like enums, in vast majority of cases we just need a space between the words in property name - so why not use string.Humanizer for that?!
 
 You may find an Asp.Net MVC sample [in the code][5] that does that (although the project is excluded from the solution file to make the nuget package available for .Net 3.5 too).
@@ -310,7 +310,7 @@ No need to mention that if you want title casing for your labels you may call th
 
     modelMetadata.DisplayName = modelMetadata.PropertyName.Humanize().Transform(To.TitleCase);
 
-##How to contribute?
+## How to contribute?
 Your contribution to Humanizer would be very welcome. Just check out the list of [issues](https://github.com/MehdiK/Humanizer/issues). They should be relatively straightforward.
 We us [GitHub flow](http://scottchacon.com/2011/08/31/github-flow.html) for pull requests.
 So if you want to contribute, fork the repo, fix an issue and send a PR.

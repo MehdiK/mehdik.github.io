@@ -14,7 +14,7 @@ Using BDD you could write executable software requirements. Is not that cool?
 ---
 [In the last post][1] I talked about BDD as a way to improve our testing experience and to write more maintainable and higher quality tests. We also talked about two approaches to write BDD style tests/behaviors. I think the outcome was very nice; but can we improve it?
 
-###Using BDD to create executable requirements
+### Using BDD to create executable requirements
 I am going to use the credit card and ATM example from [the BDD Simply post][2]. I am using [SpecFlow][3] for this article; but there are other choices, like [NBehave][4] and [StorEvil][5], that allow you to do more or less the same.
 
 Let's code the ATM cash withdrawal specification together:
@@ -85,26 +85,26 @@ I created a file called 'CardHasBeenDisabled.cs' and implemented the steps as be
 
 I am using the same Atm and Card classes from the [BDD Simply post][8]. 
 
-###It is nice but it costs
+### It is nice but it costs
 Using SpecFor or StoryQ was very easy and straightforward. It did take a bit of mindset adjustment to write tests the BDD way which IMO is very easy to adopt and quite worth it.
 
 To use SpecFlow we had to install it, which is not always welcome. The tests I wrote using SpecFlow above are also very similar to those I wrote using SpecFor. In fact SpecFlow tests are a bit wordier due to the use of SpecFlow attributes. We also have to maintain the feature file.
 
 So what did we gain from using SpecFlow framework instead of SpecFor<T> class?
 
-###Benefits
-####Specification owned by Business Analysts
+### Benefits
+#### Specification owned by Business Analysts
 With StoryQ (and SpecFor) the specification was mixed with the test implementation; but with SpecFlow the specification ends up in a separate file - the feature file. One of the benefits of having separate specification is that it can be owned by BAs. In other words, because the feature file is not coupled with the code and in fact does not know anything about the code, BAs can create and maintain it.
 
 Who knows? You may even get lucky and get feature files from your BA for software requirements instead of 100 pages of word document with executive summary, big flowcharts and wordy and ambiguous requirements. That is pretty nice actually - instead of reading a boring long word document you get several feature files that you can execute and code against. You will have completed the feature/functionality when your tests (which BTW just turned into a regression suite) turn green.
 
-####Instant feedback when Business Analysts change a specification
+#### Instant feedback when Business Analysts change a specification
 When the requirement changes your tests break. Also the executable specification can be parameterized which provides a very nice framework for BAs to verify some of their guesses about the system and document it in an executable way. To learn more about this you may have a look at [Gherkin][9] which is the language of SpecFlow and a lot of other BDD frameworks.
 
-####YAGNI
+#### YAGNI
 [YAGNI][10] is another benefit. You write code to pass an executable requirements which means you are only coding what you need. You can of course go crazy and make a mess no matter what; but having a strict BDD practice in place guides you very well and keeps you on track avoiding some of the common YAGNI traps.
 
-###Conclusion
+### Conclusion
 By separating specification and test implementation you may gain a few substantial benefits. I am in no way saying that you should always do this, or that these benefits always outweigh the cost. 
 
 These benefits are very nice and attractive; but you should make sure that they apply to your project/team. For example, if all team members are developers then I think StoryQ or even SpecFor would do just fine and removes some unnecessary maintenance load.

@@ -111,7 +111,7 @@ I leave the rest of the settings to their default values. Before you save, make 
 
 Once you create a VCS root you can reuse it across build configurations.
 
-###Create build steps
+### Create build steps
 You have a build configuration attached to a source control. We can now create the build steps. I am going to create three steps:
 
  1. Build Solution: to build the code
@@ -133,7 +133,7 @@ The important settings for this step are:
 
 I leave the rest as default.
 
-#####Assign your build configuration to an agent
+##### Assign your build configuration to an agent
 Once you have a build step to build your source code, it's a good idea to run your build to see if it works. For that to work though you have to assign a build agent to your build. So I am going to jump ahead a bit and explain how you can assign your build configuration to a build agent.
 
 On the top navigation bar click on the 'Agents' link and then navigate to the build agent you want to use for your CI build configuration:
@@ -150,7 +150,7 @@ From there you just click 'Assign configurations', select the configuration you 
 
 `Humanizer` is the name of the TeamCity project and `1.CI` is the name of my build configuration.
 
-#####Your first build run
+##### Your first build run
 So now you have your build configuration with one build step and an agent assigned to it. Go forth and click run on your build. It should get the source from your repository and build it:
 
 ![Successful build run](/get/cd-for-github-with-teamcity/successful-build-run.png)
@@ -392,7 +392,7 @@ We also have an artifact dependency:
 
 ![CD dependencies](/get/cd-for-github-with-teamcity/cd-dependencies.png)
 
-##Conclusion
+## Conclusion
 In this post we created a TeamCity project and setup continuous integration and delivery for a .Net project hosted on GitHub along with automatic CI run on code checkins and pull requests. Here is the 1000-foot view of our project:
 
 ![Project Home Page done](/get/cd-for-github-with-teamcity/humanizer-project-done.png)

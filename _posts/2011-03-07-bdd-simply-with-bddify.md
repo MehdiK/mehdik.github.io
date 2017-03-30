@@ -69,7 +69,7 @@ If you run the 'Execute' test you will see the following report:
 
 Bddify generates this report for you by reflecting over the test type and its methods. If you do not like underscores in type/method names that is ok. I will provide a solution shortly.
 
-###The failure report
+### The failure report
 Let's make that test fail by changing one of the assertions:
 
     [Then]
@@ -84,7 +84,7 @@ When you run the test again you get a failure report like below:
 
 The error and stack trace is the same as you would get if you did not use Bddify. The class also shows you which part of the test has failed by showing a "Failed" text next to the failing bit.
 
-###Support for test first development
+### Support for test first development
 When you are doing test first development you usually end up creating methods that you do not implement straightaway. The body of these methods usually throws a NotImplementedException.
 
 I usually check-in my changes a bit at a time instead of waiting for a whole feature to be implemented; but I do not want my check-in to break the build. Bddify allows for that. If your code (either the test code or the classes you are testing) throw a NotImplementedException, Bddify will ignore the test for you. This way not only your check-in does not break the build; but you will also know which bits you still have not implemented. Let's try this:
@@ -99,7 +99,7 @@ I just throw an exception from one of the test methods. If you run the test now 
 
 ![alt text][5]
 
-###Do not like method names with underscore?
+### Do not like method names with underscore?
 Some developers just do not like underscores in method/type name, and that is quite understandable. For that I have written an extension (if you can call it that, because it is just one line) that allows you to write your tests like below:
 
     public class CardIsDisabled

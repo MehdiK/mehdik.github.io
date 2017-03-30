@@ -16,7 +16,7 @@ In the first article I covered some of the basic features of Fiddler. In this ar
 
 In the [first part][3] we covered some of the basic features of Fiddler. In this article we will cover some of the more advanced features of this great tool. So fire up your Fiddler and get ready for some interesting features.
 
-##QuickExec
+## QuickExec
 There is a little textbox with black background color and green forecolor on the bottom of Fiddler form where you can run some very useful commands. To see a complete list of available commands type 'help' and enter. That takes you to the [Fiddler's website][4] where all the available commands are explained in details. Below I will list a few of them:
 
  - ?sometext: *As you type sometext, Fiddler will highlight sessions where the URL contains sometext.  Hit Enter to set focus to the selected matches.*; e.g. ?google
@@ -35,7 +35,7 @@ The above list (plus a few commands I will discuss below) are those I use most. 
 
 For shortcut lovers when Fiddler window is active you can use Alt+Q to activate QuickExec box.
 
-##Set breakpoints
+## Set breakpoints
 Fiddler provides us with a few ways to set breakpoints which I explain below:
 
 ###1. Use the small button on the status bar to set breakpoints
@@ -77,12 +77,12 @@ As you can see in the dialog you have four commands to set breakpoints:
 
 To clear the breakpoint you should use the command alone. For example, using 'bpu' clears the request breakpoints you have set.
 
-##Let's change the traffic on the fly
+## Let's change the traffic on the fly
 Above we saw a few ways to set breakpoints. When the breakpoint is set the next time you make a request or receive a response that fulfils the breakpoint's requirements the breakpoint is hit and you get the opportunity to change the traffic.
 
 You can change pretty much anything in the header or in the body. Below I will do two very quick demos: one for request and one for response modification.
 
-###Request breakpoint on Fiddler's sandbox
+### Request breakpoint on Fiddler's sandbox
 Fiddler even has a sandbox you can use for practicing! To navigate to the sandbox go to Tools menu and click on Sandbox. This takes you to the Fiddler's sandbox website. 
 
 ![Sandbox][5]
@@ -122,7 +122,7 @@ This could be very useful in testing the behavior of your website on different i
 
 In the last step, instead of clicking on 'Run to Completion' you could click on 'Break on Response' which would send the request to the server, wait for the response, and break upon receiving the response. This would give you an opportunity to also modify the response before returning it to the client.
 
-###Response breakpoint on Bing homepage
+### Response breakpoint on Bing homepage
 You could use the knowledge you learnt above to also change a response. For this example I am going to use Bing's homepage:
 
 - Start up Fiddler or bring it to front
@@ -139,7 +139,7 @@ If you go back to your browser you should see your changes there. Here is an exa
 
 Yeah, I know - that is pretty lame; but this is not an article about design; it is about Fiddler. Well, to be honest with you even if it was about design I could not make it much nicer ;-)
 
-##AutoResponder
+## AutoResponder
 AutoResponder is a very handy tool. It allows you to fake server's responses. If you think about it, Fiddler is sitting between you and the web server and nothing can stop it from returning the response locally without hitting the server, and that is basically what AutoResponder does. You can configure AutoResponder to respond to specific requests and let the others through, or you can ask it to only respond to the traffic you expect and block the rest. 
 
 AutoResponder uses some rules to match the request. From [Fiddler's reference][10]: 
@@ -166,7 +166,7 @@ AutoResponder is very handy if you want to avoid hitting your servers for some o
 
 Adversely, you could also test your web site's fault tolerance by AutoResponding to web service requests and making web service calls fail.
 
-##RequestBuilder
+## RequestBuilder
 I was going to write something up for this; but what is in the [Fiddler's Reference page][14] is concise and nice. So I am just copy-pasting from there ;-)
 
 <i>
@@ -183,7 +183,7 @@ All I did above was to drag and drop the session from Shopping Cart, which we ha
 
 Request Builder could be very useful when you want to quickly test the behavior of a web service given a response; particularly if your client is not very easy to drive. For example, I am currently working on a project where client is a third party application I do not have any access to. It makes calls into some web services that we have developed. Testers could use Fiddler to test the behavior of our web services without having to deal with the intricacies of the third party client.
 
-##Filters
+## Filters
 From the [reference page][16], *Fiddler's Filters tab allows you to easily filter and flag traffic displayed in the Fiddler UI, as well as do some lightweight modifications.*
 
 There is not much to Filters really and what you see is what you get. It is pretty simple and what is in the reference page is quite good.
@@ -212,7 +212,7 @@ But many times that simple filter does not cut it and there are tones of other u
 
 Oh, and there is a forth way of setting breakpoints as shown above which is quite handy. You could also delete or set request and response headers using Filters.
 
-##FiddlerCap
+## FiddlerCap
 [FiddlerCap][20] is an amazing tool in terms of its ease of use for end users. FiddlerCap to Fiddler is what ADPlus is to windbg: it allows your end user with no technical knowledge to capture some useful information from the production for you to have a look at on your computer and troubleshoot the issue as if you were running the actual tool on the user's computer. So in a way it bridges the gap between developers and production environment.
 
 ![Fiddler Cap][21]
@@ -221,7 +221,7 @@ Oh, and there is a forth way of setting breakpoints as shown above which is quit
 
 FiddlerCap is very useful for end users that do not want to know about Fiddler and how it works. They use the tool on their computer to capture the traffic (from the functionality that is not behaving), optionally add comment and screenshot to it, and save it and send it to you. You can then open it up in Fiddler and see what happened on their computer, read their comments and see their screenshot. Very handy.
 
-##FiddlerCore
+## FiddlerCore
 FiddlerCap uses [FiddlerCore][22] which is a .Net library in the heart of Fiddler:
 
 ![Fiddler Architecture][23]
@@ -232,10 +232,10 @@ FiddlerCap uses [FiddlerCore][22] which is a .Net library in the heart of Fiddle
 
 So if you are writing an application that could benefit from Fiddler like functionality you have got a nice very thoroughly tested library, called FiddlerCore, that you can use.
 
-###Fiddler Extensions
+### Fiddler Extensions
 Just before we wrap this up, I would like to ask you to go to [Fiddler's extension page][24] and have a look at available extensions. There are quite a few very useful extensions in there that I am sure you will enjoy using.
 
-###Conclusion
+### Conclusion
 So there you have it. I hope you found this tutorial useful. As mentioned before, this in no way is an exhaustive reference to Fiddler; instead I tried to give you enough information for you to be able to more effectively use Fiddler. If you want to dig deeper then [Fiddler website][25] and [Fiddler Blog][26] will be the place to look at.
 
 Hope this helps.

@@ -20,7 +20,7 @@ If you are new to BDD you may want to read [BDD to the rescue][3] first.
 
 This is an introduction and a start of a series about BDDfy, a powerful BDD framework for .Net, called 'BDDfy In Action':
 
-###Using BDDfy
+### Using BDDfy
  - [Introducing BDDfy][4]: which is this post
  - [Using Method Name Conventions][5]
  - [Writing stories][6]
@@ -29,7 +29,7 @@ This is an introduction and a start of a series about BDDfy, a powerful BDD fram
  - [Input parameters in Fluent API][9]
  - [Reports and report configuration][10]
 
-###Advanced bits
+### Advanced bits
  - [Architecture overview][11]
  - [Customizing and Extending BDDfy Reports][12]
  - [Case Study - Rolling your own testing framework][13]: A sample application demonstrating how you can replace whole pieces of the BDDfy framework to customize it to your own needs. This will include:
@@ -41,7 +41,7 @@ Make BDDfy work with Story classes rather than Story attributes.
  - [Case Study - Rolling your own testing framework (2)][14]: Adding parallel testing to the custom framework.
  - [Using BDDfy in a Class per Scenario style for unit tests][15]: Using BDDfy with an auto-mocking container.
 
-##A bit of history
+## A bit of history
 In January 2011 I started working with a team who did not have any exposure to BDD. The codebase they were working on could benefit from testing in general but more so from BDD; so I introduced them to the concept and they liked it; but the existing frameworks did not feel like a good fit for the team and organization. One of the reasons was that they were not doing Agile. The existing frameworks would work very nicely in Agile organizations but not as easily in non-Agile teams. Sure, BDD was born in Agile land; but in my experience it is as useful (if not more) for non-Agile teams. Also it always felt like an extension to TDD in the sense that in order to learn BDD you should first know and do TDD. This made BDD rather unreachable for average developers.
 
 As such I started an attempt to make BDD very simple for every .Net developer regardless of their experience, knowledge of BDD and testing or whether they work on an Agile or non-Agile organization. 
@@ -52,7 +52,7 @@ After one year, today I am pleased to announce the release of BDDfy V1. The code
 
 The framework is called BDDfy because it BDDfies (as in turns into BDD) your otherwise traditional unit tests. With BDDfy it is very simple to turn your AAA tests into a BDD test/behavior. Oh and BTW it is pronounced B D Defy.
 
-##Why another BDD framework?
+## Why another BDD framework?
 Below are some of the BDDfy highlights:
 
  - BDDfy can run with any testing framework. It does not force you to use any particular framework. Actually BDDfy does not force you to use a testing framework at all. You can just apply it on POCO classes even in a console app if that is what you need!
@@ -63,12 +63,12 @@ Below are some of the BDDfy highlights:
  - BDDfy is very extensible. In fact, BDDfy core barely has any logic in it. It delegates all its responsibilities to its extensions.
  - BDDfy learning curve is rather flat. Not only that but it makes learning BDD effortless.
 
-##The team
+## The team
 Up until V0.9 BDDfy was a one-man framework - basically I was the only one working on it. I am not a big fan of one-man frameworks because they are a bit risky to use: if something happens to the sole developer of the framework or if he/she loses interest in maintaining it, the community will suffer.
 
 Since early releases of BDDfy there was a programmer from London called Michael Whelan who provided a lot of feedback and comments on the framework. He also found and reported a few bugs. Recently he asked if he could help in the framework and soon he became a committer and in the short period he has been officially engaged with the framework he has provided a lot of help. So there are now two of us which is great. Hopefully the team of two will grow into a community of bddifiers.
 
-##BDDfy: the simplest BDD framework
+## BDDfy: the simplest BDD framework
 This is only meant to be an intro and the actual technical content will follow in the upcoming posts; but I thought I'd give you a taste of BDDfy. So let's give it a quick shot:
 
  - Create a new test project in Visual Studio. It could be an MSTest project or a library project where your favorite testing framework is installed.
@@ -134,7 +134,7 @@ An image does not really do a justice for the html report; so you may want to ru
 
 Before V1 BDDfy generated the html report using RazorEngine. RazorEngine only works on .Net 4 which meant BDDfy could only generate html report for .Net 4 tests. This limitation has been removed because BDDfy no longer depends on RazorEngine. So if you are using BDDfy for your .Net 3.5 tests you can now take advantage of the html report.
 
-##This was just an intro
+## This was just an intro
 This was just a very quick intro to BDDfy and what you just saw was one of the many cool features of this framework. If you want to learn more about the framework stay tuned as I have got quite a few posts coming that will walk you through most of the features and explain how it works and how you may use it.
 
 To see a few samples for BDDfy you may install the [TestStack.BDDfy.Samples][23] nuget package which includes [Dan North's ATM sample][24] plus Tic Tac Toe game done in BDD.

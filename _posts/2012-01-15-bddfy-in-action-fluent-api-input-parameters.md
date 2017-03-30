@@ -20,7 +20,7 @@ The code shown in this article is available for download from [here][2].
 
 In [the last post][3] we discussed BDDfy's Fluent API and had a look at a very simple usage where we ported the example done using [Method Name Convention][4] to use Fluent API. In this post we will discuss how you can provide input parameters to your step methods when using Fluent API.
 
-##Using input parameters
+## Using input parameters
 In order to specify your step methods in Fluent API you provide BDDfy with some method call lambda expressions. In the examples we have seen so far we only called methods that did not have any input parameters; but BDDfy also supports input parameters. BDDfy inspects the provided expression and [extracts the input parameters][5] you have passed and when it comes the execution time it calls those methods using the provided inputs. Alright let's see this in action. The example this time will be about modeling [Alcohol Laws in Australia][6]. As usual the examples you see here are created to show you the API usage.
 
 Let's see what the code would look like using Fluent API without overriding the titles and injecting input parameters:
@@ -204,7 +204,7 @@ which results into:
 
 ![Not showing input parameters in the report][14]
 
-##Conclusion
+## Conclusion
 In this post we explained how you could inject input parameters into your step methods using Fluent API and how you could customize the step title with input parameters. This could be quite useful when you are using the same method for several scenarios which is very common in Fluent API. Another common usage is using <code>TestCaseAttribute</code> to run the same scenario using different input sets.
 
 The code shown in this article is available for download from [here][15].

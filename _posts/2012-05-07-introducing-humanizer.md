@@ -24,7 +24,7 @@ Humanizer is basically a set of extension methods, currently available on <code>
 
 Instead of trying to explain this I will just provide some samples (out of the test suite):
 
-###String Extensions###
+### String Extensions###
 String extensions are at the heart of this micro-framework. The foundation of this was set in the [bddify framework][3] where class names, method names and properties are turned into human readable sentences. 
 
     "PascalCaseInputStringIsTurnedIntoSentence".Humanize() => "Pascal case input string is turned into sentence"
@@ -45,7 +45,7 @@ You may also specify the desired letter casing:
     
     "CanHumanizeIntoUpperCase".Humanize(LetterCasing.AllCaps) => "CAN HUMANIZE INTO UPPER CASE"
 
-###Enum Extensions###
+### Enum Extensions###
 Calling <code>ToString</code> directly on enum members usually results in less than ideal output for users. The solution to this is usually to use <code>DescriptionAttribute</code> data annotation and then read that at runtime to get a more friendly output. That is a great solution; but more often than not we only need to put some space between words of an enum member - which is what <code>String.Humanize()</code> does well. For an enum like:
 
     public enum EnumUnderTest
@@ -66,14 +66,14 @@ You will get:
 
 Hopefully this will help avoid enums littered with unnecessary attributes!
 
-###Date Extensions###
+### Date Extensions###
 The <code>DateTime</code> extension methods were not part of what I had initially envisaged for this project; but while I was "humanizitationing" .Net types I thought it would be a shame to not have <code>DateTime</code> in there. 
 
 Well, I did not write much of this code myself and do not want to take any credit for it. This is a copy of [StackOverFlow algorithm][4] - although I had to apply some minor fixes on top of it. I am not going to bore you with all the examples as I am sure you know what this does: you basically give it an instance of <code>DateTime</code> and get back a string telling how far back in time that is:
 
     DateTime.UtcNow.AddHours(-30).Humanize() => "yesterday"
 
-##What else?##
+## What else?##
 This is just a baseline and you can use this to simplify your day to day job. For example, in Asp.Net MVC we keep chucking <code>Display</code> attribute on ViewModel properties so <code>HtmlHelper</code> can generate correct labels for us; but, just like enums, in vast majority of cases we just need a space between the words in property name - so why not use string.Humanizer for that?! 
 
 You may find an Asp.Net MVC sample [in the code][5] that does that (although the project is excluded from the solution file to make the nuget package available for .Net 3.5 too). 
@@ -148,7 +148,7 @@ No need to mention that if you want title casing for your labels you may call th
 
     modelMetadata.DisplayName = modelMetadata.PropertyName.Humanize(LetterCasing.Title));
 
-##Conclusion
+## Conclusion
 Humanizer is a collection of methods that help you turn your .Net stuff into human readable sentences.
 
 This package is just in V0.2 and I am going to keep adding to it things that will make this type of transformation easier. If you have an idea, a bit of code, any feedback or comment please shout out.

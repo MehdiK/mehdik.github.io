@@ -8,7 +8,7 @@ date: "2010-11-30"
 migrated: "true"
 permalink: "/about/"
 ---
-##About Me
+## About Me
 
 <img align="right" src="/get/me-small.png" alt="my photo" />
 

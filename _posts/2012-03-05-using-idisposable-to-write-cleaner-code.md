@@ -18,12 +18,12 @@ Just before I start I should mention here that this is not a new idea and there 
 
 So I thought I'd share it here just in case you have not seen it. 
 
-##IDisposable
+## IDisposable
 <code>IDisposable</code> is usually used as a marker interface to let programmers know that a class should be disposed of when it is no longer needed. It is quite useful when class references some unmanaged resources. Also for costly managed resources this interface could be used to clean up the memory footprint of the objects when we are done with them. You may read more about it on [MSDN][2].
 
 Despite the common belief Garbage Collector has no interest in  <code>IDisposable</code> and the interface is only useful for programmers which is what makes this trick safe to implement. One of the things that makes <code>IDisposable</code> so popular and useful is the <code>using</code> statement. I assume that you know the statement. If not, please refer to [MSDN][3] before reading further.
 
-###The not so readable code
+### The not so readable code
 So this is the code I am trying to clean: 
 
 <pre>
@@ -88,7 +88,7 @@ As shown in the code, every time we set foreground color within a scope we have 
 
 So let's clean that up. <code>IDisposable</code> interface and <code>using</code> statement are usually used for memory management; but in this trick we use them only to clean up the code. In puristic point of view and according to [Framework Design Guidelines][5] this solution is wrong; but honestly with all due respect I prefer to have a clean codebase than to comply with some guideline.
 
-###The solution
+### The solution
 I will create a small class I call ForeColor:
 
 <pre>

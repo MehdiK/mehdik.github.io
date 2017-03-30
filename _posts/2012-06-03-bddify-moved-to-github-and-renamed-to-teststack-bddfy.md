@@ -18,7 +18,7 @@ I will just come out and say it: bddify was a confusing name. The reason I calle
 
 **Everything** in the framework has been renamed from bddify to BDDfy. That includes [nuget package][6], assembly name, APIs, namespaces, samples ETC. Since that was a (serious) breaking change we have also pushed the version up to V3.0!
 
-###What does that mean for you?
+### What does that mean for you?
 You will need to uninstall bddify package and install BDDfy.
 
 Well, before that I would highly recommend to upgrade to Bddify V2.11 if you have not done already as that had a few breaking changes from previous versions. Once that is done you can change to BDDfy with less hassle:
@@ -45,10 +45,10 @@ Now **Replace All** (ctrl+shift+h) instances of <code>using Bddify</code> with <
 
 That should be it. I am thinking about pushing the existing users of <code>bddify</code> to <code>BDDfy</code> in a more seamless way perhaps using some PowerShell love - no promises there yet.
 
-###What does that mean for us?
+### What does that mean for us?
 The new nuget package unfortunately means the loss of the download history. bddify has been downloaded around 2100 times since inception; but that number and more importantly the history of it cannot be ported AFAIK.
 
-###What else is in BDDfy?
+### What else is in BDDfy?
 Although the rename and the move was a huge part V3.0 it is not just about that. We have also introduced some new features:
 
 **Added support for filtering out html report based on the test result:**
@@ -117,7 +117,7 @@ As you can see the step title template has a line break per row which results to
 
 This is just the very first cut of this feature and we are interested to hear your feedback on it.
 
-##Conclusion
+## Conclusion
 This was the second time and hopefully the last time <strike>bddify</strike> BDDfy moved home. I hope the users of this framework appreciate why we had to make this move and enjoy what BDDfy and TestStack will bring. That has been a big change but hopefully for the best.
 
 

@@ -59,7 +59,7 @@ Now write '`result = "Hello, world!"`'. Yep, we just changed the type of the `re
 
 ![Changing variables to string][5]
 
-##A quick tour around reflection
+## A quick tour around reflection
 To see the type of a variable or an instance of a class you can call the '`class`' method on it. The '`class`' method is very much like '`GetType()`' in C# in that you can call it on an instance to see its type! 
 
 ![Class method][6]

@@ -18,7 +18,7 @@ If you know neither C# nor Ruby, then you may not get the best out of this serie
 
 I don't consider myself an expert or even an advanced Ruby programmer - I am just a journeyman trying to improve my Ruby skills. So if you think something I say is not right or could be done more easily and/or better, then please leave me a comment and correct me. It would be much appreciated. 
 
-##Working Environment
+## Working Environment
 For this series you won't need much of a working environment. All you need is Ruby. You may follow [these instructions](http://www.ruby-lang.org/en/Downloads/) to install it on your operating system. I will be using Ruby V1.9 for this series and to be able to follow along it may be a good idea for you to install the same version. To double check your Ruby version you can type `ruby --version` in your command prompt. I have Ruby 1.9.3 installed as you can see below:
 
 ![Checking Ruby Version][1]
@@ -29,7 +29,7 @@ To make sure it's all setup and working type irb (which stands for interactive r
 
 This is basically what we are going to use as our working environment. Just a quick note about the command prompt: it is composed of the Ruby version and an index of the command in this session. I just fired up irb and haven't run any commands yet and thus 001. This number is incremented on each command run.
 
-##Index
+## Index
 `.dump /indexbrainstorming /ruby-for-csharp-developers-index`
 
  - Ruby for C# Developers (this post)
@@ -49,7 +49,7 @@ This is basically what we are going to use as our working environment. Just a qu
 
 <small>In case you're wondering about .dump that is a windbg command to store the memory dump of the process</small>
 
-##I need your feedback
+## I need your feedback
 Please leave me a comment and let me know what you think. Do you find this interesting? Is there a particular format or order that you think could make this easier to follow? I am open to suggestions and feedback - so please help me make this better for everyone.
 
 Hope you enjoy it. 

@@ -18,7 +18,7 @@ Bddify is very extensible and extending it is very easy. In this post I will dis
 
 (You may want to first read my previous post about Bddify usage as this post is based on the material presented there.)
 
-###A closer look at the framework
+### A closer look at the framework
 In the 'RunMe.cs' file provided as part of [Bddify package][3] there are a few samples that showcase Bddify. Each sample is a class that represents a scenario and each scenario contains one test method that contains only one line of code:
 
     this.Bddify();
@@ -83,7 +83,7 @@ The constructors sets some fields and 'Run', the only method, calls Scan method 
 
 Ok - that was a bit dry; but knowing how these all hang together helps more easily extend the framework.
 
-###IScanner
+### IScanner
 Bddify uses a scanner to scan the test object and fetch scenario(s) and steps from it. IScanner interface simply returns a list of scenarios found on the test object while each scenario contains a list of steps:
 
     public interface IScanner
@@ -151,7 +151,7 @@ You do not have to sub-class any of the existing scanners to provide your own. B
 
 Both MethodNameScanner and ExecutableAttributeScanner inherit from this class.
 
-##Custom "Bddify" extension method
+## Custom "Bddify" extension method
 Let's change the Bddify method in the 'Bddify.cs' file to use our new scanner:
 
     public static void Bddify(this object testObject)
@@ -173,7 +173,7 @@ This extension method uses AnotherMethodNameScanner for scanning the test object
 
 Note that none of the tests have been executed. This is indicated in the summary  and in the details table. Also if you click on the scenarios you can see that none of them have any steps; that is because the new scanner does not match any of the methods in the RunMe samples. 
 
-##IProcessor
+## IProcessor
 Bddifier class takes an array of IProcessors in the constructor. So far we have been passing in the existing processors; but let's have a look at IProcessor to see what it takes to create a new one:
 
     public interface IProcessor

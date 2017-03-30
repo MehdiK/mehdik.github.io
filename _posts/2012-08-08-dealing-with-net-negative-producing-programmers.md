@@ -36,7 +36,7 @@ They are not net negative because they do not work - if they did not work and/or
 
 Also I think NNPP should read Net Negative Producing Personnel or even Person. I have seen Net Negative Producing Business Analysts who drastically damage the productivity of a team due to their incorrect requirements. How about Net Negative Producing Architect, Project Manager, Manager, Tester etc? Any team member, regardless of their title, could be net negative producer. According to the [Theory of Constraints][1] "*A chain is no stronger than its weakest link*".
 
-###Identifying an NNPP?
+### Identifying an NNPP?
 I have observed a few other characteristics in NNPPs. They:
 
  - constantly whinge about everything
@@ -62,7 +62,7 @@ Yeah, they may be great programmers in isolation but I personally want Cowboy Co
 
 These are just some of the characteristics of an NNPP and as mentioned above regardless of how you do it, if you constantly lower your team's productivity, you are an NNPP.
 
-####Do not confuse low performers with NNPPs
+#### Do not confuse low performers with NNPPs
 Of course not all NNPPs have all these symptoms and more importantly not every programmer having one or more of these characteristics is an NNPP. So please do not go around your office labelling your team-mates as NNPPs just because they show some of these characteristics:
 
  - Some programmers are not NNPPs even though they have negative contribution. A good example of this is junior developers. You may hire a very talented junior developer and it is going to cost you a fair bit to up-skill them; but that pays dividends.
@@ -74,10 +74,10 @@ Also, as I have [ranted here](/never-judge-a-programmer-by-their-commit-history)
 
 The bottom line is do not confuse every unproductive team member as an NNPPs even if they slow you down or sometimes contribute negatively to the team; but at the same time do not ignore NNPP signs. If you know someone is an NNPP the time you spend mentoring or helping them is the time a good member of the team is wasting on a bad member. So you basically end up contributing to their negative impact to the overall team productivity!
 
-###How to deal with NNPPs
+### How to deal with NNPPs
 Now that we know who NNPPs are how do we deal with them?!
 
-####Do not hire them!
+#### Do not hire them!
 **Do not hire them**! Seriously, the best way to deal with NNPPs is to not deal with them at all. 
 
 A while back I wrote that in my opinion [writing bad code](/bad-code) might be ok under some critical circumstances. That is, there are scenarios and situations that warrant you to (knowingly) write bad code. But **hiring a bad employee is never ok**. An NNPP does not help you ship product. They instead slows you down. So you are shipping two features a week and you think you have little budget and want to hire a new dev so you can ship more features. Wrong! Hiring a below average programmer is going to slow you down and hiring an NNPP will bring your productivity and your product down to its knees. Improve your hiring process and save yourself and your team from all this trouble and pain. 
@@ -86,7 +86,7 @@ All the successful companies I have seen and have worked for/with have had very 
 
 Jeff Atwood has a good post about [how to hire a good programmer](http://www.codinghorror.com/blog/2012/03/how-to-hire-a-programmer.html). It may look time consuming, expensive or even excessive but believe me that investment is well worth the result. You may think that you are small company and cannot afford that much rigor. I personally believe every team and organization can afford it and is better off with this; but if you do not agree and think that is only suitable for some "special" companies/businesses then do not go all the way there; but at least have some sort of hiring process in place that if does not get you the exceptional people at least helps you avoid the NNPP. It is not that hard.
 
-####Fire them!
+#### Fire them!
 So you have hired yourself an NNPP: congratulations. You just lost a lot of productivity in your team plus perhaps 40% of total salary you pay to the entire team (on a small team) for the time they spend maintaining and cleaning up after your new hire. Do yourself, your team and the entire organization a favor and **fire them before s/he takes you all down**. 
 
 In some organizations firing is not quite acceptable and could cost you the morale and sense of security of the team. So you need to be careful with this. That said, I believe a bad employee is like a [broken window](/zero-tolerance-on-broken-windows) and unless you show zero tolerance you will end up with lots of them. A sad side-effect I have observed is that some good programmers or programmers with great potentials lose their motive very quickly and may even become NNPP (mostly temporarily) when working for a long time with NNPPs. 
@@ -97,7 +97,7 @@ If you think your team is not productive, do not hire a new programmer, fire the
 
 I have worked in a few teams of mixed experts and NNPPs and I just could not agree more with the above statement.
 
-####Figure them out!
+#### Figure them out!
 So you know you have an NNPP and you do not want to or cannot fire them!! There may still be some chance to reduce (or in some cases avoid) the damage.
 
 Some great programmers sometimes look and act like NNPPs under certain circumstances!! This in my experience happens when they do not like the task they are given or their team or their lead/manager. This is relatively easy to deal with. If they don't come to you, you should try to find out what is bothering them (in a subtle way maybe): give them a different task and if that does not work move them to different projects so they will work with a different team, team lead, manager etc. This may make them a happy person and a productive programmer again. You will salvage a good programmer in your team and the entire team will love you for this.
@@ -110,14 +110,14 @@ If you cannot find them a relevant job, just keep them off coding and as far awa
 
 Likewise giving more responsibility to some low performing people could bring the best out of them; but you have to be REALLY careful with this. NNPPs know they are not productive and know they cannot move forward in their career through creativity and productivity; so they welcome every single opportunity to move forward. The last thing you want to deal with is an net negative producing team leader or manager who could do very severe damage to a project. I worked on a project where a project manager took a team including a few brilliant programmers down with him, made a huge mess of the product, caused the project take three times longer and led us to a very low quality deliverable. Two of us who brought the issues to his attention faced his wrath and two brilliant (and lucky) developers who had the choice left the project. A few of us stopped caring because no matter how hard we tried or how good we were our efforts would not pay off and a lot of times we had to rework what we had already done a few times. **The more power an NNPP has the more damage they cause.**
 
-###A word to NNPP
+### A word to NNPP
 Honestly what I am about to say is not me being harsh on you - I am just trying to help. 
 
 If you are an NNPP and you have always been one, then maybe this is not a job for you. Perhaps try some other profession and you may find yourself very productive and happy again. I think being an NNPP should be really hard. So do yourself, your family and your current and prospective team mates a huge favor and change your job. You better than anyone else know your passion, your strengths and your weaknesses. If you like computers then maybe try some other computer related job. Give QA or database or network administration a go and you may love it. If you are not that much passionate about computers then try some other professions. I know a female programmer who gave up programming for pharmaceutical science and every time I saw her she would tell me how she wasted five years of her life on programming and how happy she now was. She actually became very good at her second job. Passion is a great part of becoming good at something.
  
 If you are usually very productive and right now find yourself in the NNPP camp then maybe ask your boss for a different task: something you will love. If it is not about your current task and about this Joe guy in the team who gives you grief, talk to Joe and sort it out. If it is about your manager try to change your department if possible or just quit and find yourself an employer/environment you will love. Martin Fowler says: *"If you can't change your organization, change your organization!"*.
  
-##Conclusion
+## Conclusion
 I guess any developer can more or less relate to this post: we have all worked with NNPPs and I guess you agree that it is just not fun. 
 
 This post was about some of the things I have tried with NNPPs leading to a bit of success with some NNPPs: some of them became less of a damage and some became just a tiny bit productive. That is why I think the best way to deal with them is to not hire them or fire them; because it takes so much effort to figure an NNPP out and fix them up and I think in a lot of cases this effort just does not pay off. If we did not tolerate NNPPs through out the industry then I think they either would pick up the slack and become better or would just pick a profession they could do better.

@@ -22,9 +22,9 @@ This anti-pattern has a much larger impact on projects than some of the other is
 
 Below I will try to explain some of the issues that you might face when using this pattern:
 
-##The problems
+## The problems
 
-###More data conflicts (with less recoverability)
+### More data conflicts (with less recoverability)
 *Applicable to any and all architectures*
 
 Imagine the following scenario: User A and user B both load the same data on their screen and both make some changes on it. User A saves her changes first, and then user B clicks Save and you get a conflict. There is no way out of this conflict except letting user B know that his changes were not saved and that he has to load the data again, make his changes, and click save and hope that this time there will not be any conflict.
@@ -41,7 +41,7 @@ In your solution the number of times this happens may be very low (perhaps you d
 
 Also (as I mentioned above) some businesses have to reduce the number of conflicts to a very minimum in which case it only makes sense to have granular changes. Some even mandate the possibility of merging changes or at least finding the actual reason behind the conflict and applying compensating actions to reverse it properly. This again is easier using a granular save interface.
 
-###Sending an entire object graph over the wire
+### Sending an entire object graph over the wire
 *(Applicable to n-tier applications only)*
 
 I am going to use the following example, which is taken from a project I worked on a while back, to explain this issue . Lets call it Order Portal. Order Portal was a simple web page that allowed confirming orders. The entities involved in the operation looked something (bigger than but) like:
@@ -68,7 +68,7 @@ If you are very interested in confirming several orders in one go (or if that is
 
 Still thousand times lighter on the wire.
 
-###Lazy loading
+### Lazy loading
 *Applicable to any and all architectures*
 
 User changes a dropdown box in the customer details form to upgrade the customer from silver to gold, and then clicks the save button that sends the entire customer object (for only one change) for persistence.
@@ -124,7 +124,7 @@ GetCustomerForUpgrade knows that the customer is being loaded for upgrade, so it
 
 Another less measurable benefit is that the code written in GetCustomerForUpgrade shows you exactly what you need to load for a customer upgrade and how many times you hit the database. This is the requirement that would otherwise be lost in lazy loading in MethodRunAsPartOfSave.
 
-###Unnecessary processing
+### Unnecessary processing
 In a generic update each time you want to save a change you have to check to see which business and validation rule apply. In other words, because you do not know what has changed and which business rule has to be run, you have to run a lot of checks on the object graph to find the applicable business rules.
 
 In the MethodRunAsPartOfSave example (given above for lazy loading) several checks are run every time the save method is called for the customer entity. **All** these checks are unnecessary. These checks are only there because the generic save method does not know what has changed. If you look at UpgradeToGold method, as an alternative for one of the changes, you can see that there is no check for changes. We know what has changed and we know that we should check for customer upgrade and nothing more.
@@ -133,7 +133,7 @@ Back to the generic save method with array of entities (as shown above): on the 
 
 Some developers, who do not like this additional processing, make another mistake: they use self tracking entities. This means that you will not have to load entities from database to find changes, because each entity knows what has changed and keeps a track of its original state as well as the changed state. This in my opinion is yet another anti-pattern. I will have to write a post to explain this more; but for now just think of the load you send over the wire to the server: you potentially double the amount of data sent over the wire!! The other issue with self-tracking entities is that validation and business rules are applied based on the state that was sent to the client (which is now stale); not based on the latest state of data.
 
-###UI design
+### UI design
 The problem of generic update method is very closely related to UI design. Different UI designs can ask for different saving mechanism and vice versa.
 
 So many times we see big UI forms/pages with a lot of elements on them and just one save button. When you have one save action for your entire screen you do not know what user has done. All you can do is to pass the object your screen is bound to into a generic method. This is a chicken and egg problem though; i.e. you may be forced to create one save action on your UI because your architecture enforces generic save mechanism, or you may have to write a generic save method because of incorrect UI design. When possible we should try to use [Task Based UI][5] (This article which I just found while trying to find a reference for Task Based UI appears to cover a lot of issues I am covering in this article with an example that is very much like Order Portal - du`h). Task based UI is a UI designed to capture user intention and business operation as opposed to state changes.
@@ -148,7 +148,7 @@ Another benefit of breaking your UI into several parts is composability. You can
 
 So next time you are designing your UI think about this. This may or may not apply to some of your screens; but it is worth considering every time.
 
-###Generic log
+### Generic log
 Logging done through generic update methods are usually generic which is less than ideal. For example UpdateCustomer log could look something like:
 
 <table>
@@ -245,12 +245,12 @@ That makes a big difference for logging. Some businesses analyze their operation
 
 Actually now that there is one log per method we can do even better. We can easily remove all audit log calls and achieve the same result using an [AOP][6] framework. I have a post coming up about this.
 
-##Active Record and self tracking entities
+## Active Record and self tracking entities
 When you are using Active Record or self tracking entities you are somehow forced down the road of generic saves. OK, you are not forced, but you usually end up there. The reason is that the entity knows almost everything it needs and all it takes to save the changes is to call a save method. This is almost too convenient to give up; thus you end up in the nasty world of generic updates.
 
 The other side effects I have observed is that all the business rules usually turn into validation logics applied on the entity itself because it knows everything, and you are "sure" that saving the entity is safe. Again a topic for another post.
 
-##The solution
+## The solution
 The solution is very easy: you should try to break down each save into meaningful business actions.
 
 You can create meaningful business operations on your domain model (and on your service layer if you have one). This approach is suitable when you use RPC; e.g. Request/Response pattern on WCF services. I provided some examples of this above. If you use messaging (e.g. pub/sub pattern on something like nServiceBus) create meaningful business commands. For order confirmation this would look something like:

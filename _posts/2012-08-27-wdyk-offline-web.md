@@ -16,7 +16,7 @@ So you have got an awesome website and you want to make it even more awesome by 
 
 This is not an extensive post going through every single details. Instead I will show you techniques and ideas to get you started quickly and cover a lot of gotchas and provide quite a few tips on how to and not to do offline web. If you want to dig deeper and learn more I have also provided reference to some great articles about each topic. 
 
-##Phone book sample app
+## Phone book sample app
 I have put together a very simple phone book web application to show some of these features. The sample is built for my [What Do You Know talk][1]. Not that I have a lot of slides for a five minute talk; but you may find my slidedeck [here][2] just in case you are interested. You may also find the code from my GitHub account [here][3]. 
 
 **WARNING**
@@ -32,7 +32,7 @@ A quick tip if you are writing an offline web app and want to constantly check h
 
 Now back to the offline web.
 
-##AppCache
+## AppCache
 Offline web apps are composed of two parts: offline cache and client side storage. You use offline cache (also known as AppCache) to make the resources available in offline mode and use client side storage so users can add, update and remove data without connectivity.  
 
 AppCache is communicated to the browser through a resource known as AppCache Manifest. You tell the browser about the manifest through manifest attribute of the html tag. 
@@ -55,7 +55,7 @@ From there by clicking on 'View Entries' you can see a list of cached pages and 
 
 ![AppCache Internals entries][10]
 
-###AppCache structure
+### AppCache structure
 AppCache manifest "file" should start with 'CACHE MANIFEST' and then come three optional sections: CACHE, NETWORK and FALLBACK: 
 
  - CACHE is where you specify the resources you want cached. It is worth mentioning that the page with the manifest pointer is cached too and is called 'Master' as shown in the AppCache Internals screenshot above.
@@ -81,7 +81,7 @@ You can find much more information about AppCache manifest on [this post][12] on
  
 You may find a fair bit of useful info and tips on AppCache [here][18].
  
-###Dynamic manifest file 
+### Dynamic manifest file 
 Browsers do NOT care or know if your AppCache manifest is dynamic or static; so you can dynamically generate it. Take a look at [AppCacheManifest.cshtml][19] view from my demo to see how you can do it. As you can see I am treating the Manifest just like a normal razor view: I am using html helpers to create links and even to render partial views inside the manifest file.
 
 This is very crucial in some web applications including the phone book sample. The phone book app should cache phone book entries per user which means the cache manifest is different from user to user. So I am rendering a child action in the manifest using `@Html.Action("ContactsEdit", "OfflineSupport")` and the child action renders the [ContactsEdit partial view][20] (shown below) after it queries the database for the user's contact:
@@ -102,7 +102,7 @@ Another useful MVC trick is using routing. As mentioned above the cache manifest
 
 This way it looks like a file with 'appcache' extension to the browser but is mapped to my action method and then razor view at runtime.
 
-##Client storage
+## Client storage
 I call this client storage because it is not necessarily related to offline applications and you can use it in online mode too. That said as mentioned above you will need to use some sort of client storage so your users can persist changes in offline mode.
 
 There are currently a few viable options available for client-side storage:
@@ -126,7 +126,7 @@ It is also worth noting that users have read/write access to the data persisted 
 
 If you want to learn more about Chrome Dev Tools you may read a terrific article about it [here][25].
 
-##Detecting connectivity
+## Detecting connectivity
 So now that we have decided what technology to use to store user data while in offline mode we need to figure out when the user is actually offline!! There is going to be some javascript code you want to run only in online mode and some only in offline mode. For example when you show a form to the user you need to know whether the application is online or offline. In offline mode the users' actions should be stored in the offline storage and the entries should be shown to the user (this is done using [persistence.js][26] and [showOfflineRecords.js][27] respectively in the phone book app). Also when the application goes online again you need to sync up these entries (this is done using [syncUp.js][28] in the phone book app). 
 
 So how can you identify the browser's connectivity? As you would expect there is an API for that: `navigator.isOnline`; but unfortunately [it is badly broken][29] - *"Browsers implement this property differently."* and most implementations are more or less useless!!
@@ -159,7 +159,7 @@ These are not the only events raised from applicationCache; but these are the fe
 
 You may see a few more options about checking connectivity [here][31].
 
-##Conclusion
+## Conclusion
 It feels relatively easy to make your website available in offline mode; but unfortunately there are quite a few gotchas in doing that. In this post I tried to cover some of these gotchas and to provide a solution or workaround for them.
 
 You may find a few other gotchas [here][32]. There is also a great article about offline web applications on [dive into html5][33].

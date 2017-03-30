@@ -16,7 +16,7 @@ BDD is a very interesting concept. It is amazing how much a rather small shift i
 
 This article is about a very simple technique I have used (and have seen used) in many projects; but I thought if you do not know BDD or have not used any of the frameworks then you would not know what you are gaining and what you are losing using this technique. So I decided to provide a list of some the frameworks along with tutorials and resources I have seen for your benefit.
 
-###OSS BDD Frameworks
+### OSS BDD Frameworks
 The frameworks in the alphabetic order are:
 
 - Bddify: "A small yet powerful and extensible BDD framework for .Net developers.". Bddify has been renamed to BDDfy and is now a fully fledged framework. You can find more about it [here](https://github.com/TestStack/TestStack.BDDfy).
@@ -29,7 +29,7 @@ The frameworks in the alphabetic order are:
 
 I apologize if you have a killer BDD framework I have not listed in this article. Please leave me a comment and I will add it to the list.
 
-###BDD simply!
+### BDD simply!
 Ever since I started writing unit tests I had issues with unit test names. I tried all sorts of different ideas and settled for [a naming convention][17] by Roy Osherove. I used that convention for a while as it was better than some of the other alternatives; but it still left a lot to be desired.
 
 That was until I learnt about BDD. The following implementation provides you with some of the benefits of BDD. It is not a fully fledged framework. Well, it is not a framework or even a library; just a very small class that could make your testing experience easier and could result in higher test quality.
@@ -180,7 +180,7 @@ That is it. We have a very small class that helps us write more readable tests w
 
 Obviously you do not need to have R# to get this result. You can use any other test runner and get the same result. In this case if you ran these tests with NUnit runner you would be able to see the name of the tests printed into the 'Text Output' tab.
 
-###The same done in StoryQ
+### The same done in StoryQ
 This is what the same behavior implemented in StoryQ would look like: 
 
     [TestFixture]
@@ -238,14 +238,14 @@ Very nice indeed. Nicety aside, this is far more readable if you use these repor
 
 Another difference between the SpecFor and StoryQ implementations is that with our small SpecFor class we would typically get a class per scenario. That is how we get our readable report from R#. With StoryQ, though, there is one class per story and one test per scenario. 
 
-###When would I use SpecFor?
+### When would I use SpecFor?
 I know SpecFor is not as shiny and brilliant as a fully fledged BDD framework. This does not allow you to separate the spec definition and implementation either; but I would still use this simple implementation in a few situations:
 
  - In a project where developers are not quite familiar with BDD and are feeling comfortable with the old unit testing style. This technique could bridge the unfamiliarity gap: developers will still use their existing knowledge and framework; but they can now write more readable and maintainable tests and get exposed to BDD.
  - When separating spec and implementation is not required and indented html reports are not necessary. There are times when you do not gain much by using a real BDD framework. An example of that is a small team of developers working on a rather small project. Another example is when the requirements are not very complex and there are not many bugs caused by misinterpretation of requirements. I have a post coming up about this.
  - When there is a resistance against using OSS projects or introducing external dependencies.
 
-###Conclusion
+### Conclusion
 Sometimes the separation of spec and test implementation provides a lot of benefit; and sometimes it does not. Sometimes using a real BDD framework helps avoid some issues in software team, and sometimes it is not that critical.
 
 You can use some of the more advanced frameworks out there and get a very nice result, and when you cannot or you do not need to you may just stick with the simple SpecFor implementation and still make huge improvements on your tests quality.

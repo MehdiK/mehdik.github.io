@@ -18,7 +18,7 @@ TLDR - There were three main changes in this release:
  - The new `UiComponent` properties were made public to make it easier to interact with pages from test scripts.
  - `IElementAssert` interface API changed to allow for jQuery selectors and also for API consistency between `IElementFinder` and `IElementAssert`.
 
-##Fluency and open API
+## Fluency and open API
 A lot of the interactions with the page objects in the previous releases were through methods. An example out of the documentation from the previous release:
 
 	public class SearchPage : Page
@@ -98,7 +98,7 @@ Now that the properties are public you can avoid that wrapper if you REALLY REAL
     
 I say if you **really** have to because all page interactions should be encapsulated in a page class and your test scripts should not interact with your pages directly. 
 
-##API consistency for assertions
+## API consistency for assertions
 There is an interface called `IElementFinder` which is returned by the `Find` property of `UiComponent` which allows you to find things on your page:
 
     public interface IElementFinder
@@ -127,10 +127,10 @@ There is a similar interface called `IElementAssert` which is in charge of asser
 	
 This new interface also allows you to use `jQueryBy` selector which allows you to use your good old jQuery selectors for element targeting. 
 
-##Some resources to get started
+## Some resources to get started
 If you are new to Seleno then go grab it while it's hot. Although pre V1 it's quite stable and has been in use by many teams for quite some time now. Seleno allows you to write maintainable UI tests. As a bonus point if you are using ASP.Net MVC it significantly reduces the amount of code you have to write to interact with your page by hooking into MVC infrastructure and using your view models to interact with your pages.
 
-###Learning resources
+### Learning resources
  - You can read more about Seleno and watch it in action [here](/presentations/automated-ui-testing-done-right-at-dddsydney). 
  - The source code is available in [GitHub](https://github.com/TestStack/TestStack.Seleno). 
  - You can see a few samples to get started with it quickly [here](https://github.com/TestStack/TestStack.Seleno/tree/master/src/Samples). 

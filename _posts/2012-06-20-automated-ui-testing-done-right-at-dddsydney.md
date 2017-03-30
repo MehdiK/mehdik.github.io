@@ -19,14 +19,14 @@ I will be speaking at [DDDSydney][1] on 30th of June. You may find the details o
 
 My talk is called Automated UI Testing Done Right and you may find more info about it [here][4].
 
-###Background
+### Background
 Two years ago I was very sceptical about automated UI testing. I had some painful experience with it because while writing the tests seemed relatively easy, maintaining them would become harder and harder over time to the point where it was impractical to maintain.
 
 Over the past year or so, I have been investing more in Automated UI Testing. I have had some discussions with guys at Readify about ways to do it better. Michael Whelan, my partner in crime for [BDDfy][5], had also been going through a similar journey, although he was ahead of me. So we started sharing notes and talking about UI testing, and a few ideas started popping up. Some of the videos from the last [SeleniumConf][6] were really insightful too. We used these ideas and patterns in some personal and work related projects; but then we thought we may formalize these ideas and patterns and turn it into a framework so others will not have to go through the same pain.
 
 A while back I mentioned a [BDDfy has moved to GitHub][7] and is now part of a test family called TestStack. Now there is a new cool kid on the TestStack block. It is called [Seleno][8] (thanks [Russ Blake][9] for the name).
 
-###Introducing Seleno
+### Introducing Seleno
 Seleno, a framework currently written on top of [Selenium][10], helps you have a better experience in Automated UI Testing. The ideas and patterns used in Seleno are not necessarily all new: we have implemented some of the most popular UI testing patterns like Page Object and Page Component. The framework also leverages some of the power of ASP.Net MVC framework to provide strongly typed Page Objects. You may have a look at the [project homepage][11] for more info.
 
 I am not going to go through the API or feature set now as it is still under (aggressive) construction and everything I write here is going to be obsolete in a few months; but you may access the code [here][12]. The framework is also available for download from nuget:
@@ -35,7 +35,7 @@ I am not going to go through the API or feature set now as it is still under (ag
 ">PM&gt; Install-Package TestStack.Seleno
 </code>
 
-###Automated UI Testing Done Right
+### Automated UI Testing Done Right
 ... back to my DDDSydney session. The session is about Automated UI Testing Done Right and through out the session I talk about some of the patterns that you can use to improve the maintainability of your UI tests. The session starts with a horrible test which is very typical when teams start doing UI testing. The test looks something like:
 
     // much of the code has been removed for brevity

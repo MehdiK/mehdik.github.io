@@ -16,7 +16,7 @@ This is a port from [GeekQuiz.Net][1].
 
 <small>I am considering shutting down GeekQuiz because handling two blogs is a bit of a hard job, it is leaving this blog, which is my main blog, unattended which I do not like and also many of the things I post there are worth sharing here and that is not DRY. I will have to ponder on that one; but for now ...</small>
 
-##Can you hack GUIDs? 
+## Can you hack GUIDs? 
 
 Let's give it a go. Give me as much information as you can about the following GUID:
 

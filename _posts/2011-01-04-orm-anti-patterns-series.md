@@ -33,7 +33,7 @@ Below is the list of articles in no particular order:
 Never ever one size fits all and this applies to my solutions explained as part of this series. Think about your problem, your requirements and your constraints, know your choices and make an informed decision.
 
 
-###Are these really anti-patterns or am I over-designing?
+### Are these really anti-patterns or am I over-designing?
 I call these anti-patterns only because they are used where they should not be and because I see them used incorrectly very frequently. In other words, some of these patterns are used as one-size-fits-all and are thrown at any and all persistence problems without any thought. I have used and will use some of these patterns in my code if they fit my requirements/context. 
 
 This series is about issues I have with these patterns; so I am going to do my best to highlight their issues. That said, I will also try to explain where each pattern fits.

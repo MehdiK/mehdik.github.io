@@ -16,7 +16,7 @@ This is my first article in the Tips'n'Tricks series. These articles are going t
 
 In this series I will post things that I would otherwise tweet about if I liked tweeter ;-) You never know. I may one day find tweeter useful and start tweeting - till then I am going to do it old-fashioned.
 
-##Code Definition Window
+## Code Definition Window
 The Code Definition Window in Visual Studio 2010 is very handy (if you have dual or big monitor).
 
 ![alt text][1]

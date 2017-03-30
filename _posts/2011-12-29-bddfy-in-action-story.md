@@ -21,7 +21,7 @@ You can download the code used in this article from [here][2].
 In this post we will discuss how you can add story support to your BDD behaviors.
 As mentioned before and as we saw in the [previous post][3] BDDfy does not force you to use stories. This could be quite useful for teams that do not work in an Agile environment. Forcing developers to come up with a story definition, while I believe is useful in many cases, could be less than optimal in some situations. For this reason you can <code>BDDfy</code> a scenario without associating it with a story; but that is more of an exception than a rule. So let’s see how you can create stories and associate them with some scenarios.
 
-##How to create a story definition?
+## How to create a story definition?
 In BDDfy for everything you want to do there are several options; there is one exception to this and that is defining stories. There is only one way to define a story and it is quite simple: to define a story all you need to do is to decorate a class, any class anywhere in your solution, with a <code>StoryAttribute</code>. Doing so creates a story that you can then associate with your scenarios. Here is an example of a story:
 
 <pre>
@@ -39,7 +39,7 @@ namespace BDDfy.Story
 
 All I have here is a class decorated with a <code>Story</code> attribute. By decorating this class you have setup your story metadata once and forever so you will not have to repeat this info for every scenario.
 
-##So how do I associate a story with a scenario?
+## So how do I associate a story with a scenario?
 There are two ways to achieve this:
 
 ###1. Let BDDfy find the association!
@@ -143,7 +143,7 @@ namespace BDDfy.Story
 
 The only difference here is that I am passing <code>BDDfyRocks</code> type as a type argument to the <code>BDDfy()</code> method. This runs the very same steps and provides the very same report as we saw above; except that this method is guaranteed to find the story regardless of your build configuration or CPU architecture.
 
-##How can I override the story title?
+## How can I override the story title?
 By default BDDfy turns your story class name into the title for the story which  appears in the reports. For example <code>BDDfyRocks</code> is turned into 'BDDfy rocks'. For what it is worth, the same logic is used to drive scenario and step titles.
 
 In the previous post we overrode a scenario title by passing the custom title into the <code>BDDfy()</code> method; but how can we override the story title? It is very simple: <code>StoryAttribute</code> has a <code>Title</code> property that you can set. If you leave that property alone BDDfy uses your story class name for the title; but if you set it, that value is used instead. 
@@ -161,7 +161,7 @@ public class BDDfyRocks
 }
 </pre>
 
-##How can I reuse the same story for scenarios in different projects?
+## How can I reuse the same story for scenarios in different projects?
 This is the only question I get asked every now and then about using stories. This usually happens when there are more than one test project in the solution and two tests/behaviors in two different projects happen to be related to the same story. This is where the second approach shines. When specifying the story in the <code>BDDfy()</code> the framework does not really care whether your scenario is being run within the story or is in the same class or in the same project. It is happy as long as it can see the story (which means as long as your code compiles).
 
 As an example the same scenario above could be written as (assuming that <code>AScenarioRunFromAnotherProject</code> lives in a different project):
@@ -185,7 +185,7 @@ namespace BDDfy.Story
 
 This works the exact same way as if the story is defined in the same project or on the same class.
 
-##Conclusion
+## Conclusion
 In this post we discussed how you can define a story and associate it with a scenario.
 
 You can download the code used in this article from [here][7].

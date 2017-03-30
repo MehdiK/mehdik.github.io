@@ -20,7 +20,7 @@ If you do not like ReSharper there are other competitive offerings for .Net (e.g
 
 In this post I am going to talk about ReSharper, some of the shortcuts I use and some of the dangers you should be aware of. I am talking about R# because this is the tool I have used most and feel most comfortable with. These issues may or may not apply to your tool of choice. I would be interested to see how other tools react to these scenarios; so if you are a user of other refactoring tools, please leave me a comment and let me know if they have similar issues.
 
-##Refactoring
+## Refactoring
 Lets have a look at the definition of refactoring before going any further. 
 
 From the [Refactoring website][4]: "*Refactoring is a disciplined technique for restructuring an existing body of code, altering its internal structure without changing its external behavior.*"
@@ -29,7 +29,7 @@ From [WikiPedia][5]: "*Code refactoring is "a disciplined way to restructure cod
 
 So refactoring should not change the external behavior of the code.
 
-##ReSharper refactoring support is awesome
+## ReSharper refactoring support is awesome
 I find myself using R# refactoring shortcuts many times a day. It makes my job much easier and removes the need for a lot of (erroneous) code changes. Refactoring shortcuts are very intuitive. Just like most other VS shortcuts you have to hold down 'ctrl' key, and because you are doing **R**efactoring you have to hit 'R' next, and then comes a choice of easy-to-remember one letter shortcuts. The shortcuts I use most are: 
 
  - ctrl+R+**F**: to introduce **F**ield.
@@ -39,7 +39,7 @@ I find myself using R# refactoring shortcuts many times a day. It makes my job m
  - ctrl+R+**R**: to **R**ename something.
  - ctrl+R+**S**: to change a method **S**ignature.
 
-##So what is the danger?
+## So what is the danger?
 A lot of developers I know, including myself, trust ReSharper so much. We sometimes blindly accept all its suggestions and use its refactoring methods fearlessly. 
 
 This is what R# provides for refactoring:
@@ -48,7 +48,7 @@ This is what R# provides for refactoring:
 
 That is quite extensive; but is everything under the 'Refactor' menu a safe refactoring method? Here I am going to examine two of the shortcuts I use frequently; but you may find other shortcuts with similar problems.
 
-###Introduce Variable (ctrl+R+V)
+### Introduce Variable (ctrl+R+V)
 I have the following (very contrived) method that I would like to refactor:
 
     class Program
@@ -97,7 +97,7 @@ R# makes it very easy indeed. Just put your cursor on DateTime.Now, type ctrl+R+
 
 You may run the app again. This time it says the operation took 0 milliseconds. We changed the behavior of the method and broke the logic. It is VERY easy to [regress your code][8] using 'Introduce Variable' carelessly.
 
-###Inline (ctrl+R+I)
+### Inline (ctrl+R+I)
 Inline is kind of opposite in its changes. Let's look at the previous example (before changes) again:
 
     public double DoSomethingLengthy(Action theLengthyMethod)
@@ -126,7 +126,7 @@ This is the working code that prints the correct value to the console.
 
 I understand that these samples are rather obvious and you would immediately know that something is wrong; but I have broken code and I have seen code broken using 'Inline'. Inline is a useful refactoring method; but be careful with it. 
 
-##What about simple code restructuring?
+## What about simple code restructuring?
 There is another method that is not just about refactoring; but more about code cleanup: Alt+Enter. It feels like Alt+Enter knows everything! R#, when Code Analysis is enabled, shows you some warnings and errors in code files through which you can traverse using 'Alt+PageDown' and 'Alt+PageUp' and then on each warning/error simply do 'Alt+Enter' and the greatest wizard of all times fixes your code in a blink. That is just brilliant.
 
 One thing I have found rather annoying with Alt+Enter fixes is its conversions to LINQ. It is the only place that I think R# has gotten a bit too smart if you know what I mean:
@@ -218,7 +218,7 @@ This time R# gives you a suggestion to improve your code. The R# suggestions are
 
 Usually when R# provides a suggestion or warning it is for good cause; but you still have to be careful and verify the result for readability.
 
-##Conclusion
+## Conclusion
 Refactoring tools are there to help us and they are great. They help us find issues with our code and fix it. R# is actually quite good at finding some of the potential bugs in the code (e.g. Access to Modified Closure warning explained [here][10] and [here][11]). 
 
 What is also important to realize is that regardless of how great these tools are they do not think in your stead. At the end of the day you are the programmer and you choose what tools to use and how to use them. With or without refactoring tools you should always think before making a change, and with or without refactoring tools the bugs in your code are the bugs you have created. I think the lamest excuse I have ever heard when someone broke some functionality was that "R# did that. It is R#'s bug"!

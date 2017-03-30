@@ -25,7 +25,7 @@ bddify is a small yet powerful and extensible BDD framework for .Net developers:
 
 bddify core barely has any logic in it. It delegates all its responsibilities to its extensions. Extending bddify is very easy and I will explain it in details in a future post.
 
-###How to install and use the framework?
+### How to install and use the framework?
 In Visual Studio 2010:
 
  0. [Install NuGet][2] if you have not already.
@@ -171,7 +171,7 @@ If you click on a scenario you can see its steps and the result of each one incl
 
 The RunMe file as mentioned above contains a few samples; but if you want to see more samples you may [download the code][11] and have a look at demos in the solution.
 
-###bddify an assembly
+### bddify an assembly
 Just like bddify extension method that works on object instances there is an extension method for assemblies. The assembly runner can scan an assembly and run all its tests. The following code snippet shows a console application that bddifies all the classes whose name starts with 'When':
 
     [STAThread]
@@ -189,7 +189,7 @@ The assembly runner provides a report on the console for you (plus the html repo
 
 This could be useful when you want to run your tests from command prompt.
 
-###Testing without a testing framework
+### Testing without a testing framework
 bddify does not depend on any testing framework. For example you can bddify a class that looks like:
 
     [RunScenarioWithArgs(1, 2, 2)]
@@ -218,7 +218,7 @@ You could make the asserting methods public and use a testing framework if you w
 
 It is worth noting that these sort of tests need a host to run; i.e. R# or other test runners will not be able to run these tests. This is where the assembly runner could help. There is a sample application, called AssemblyRunner, for this in the source code solution.
 
-###bddify needs your feedback
+### bddify needs your feedback
 bddify is still very young and has a long way to go: there are still quite a few things I would like to add to the framework and hopefully it will be very easy to extend. I have provided a rather decent test coverage for the framework but I guess there will be a few bugs here and there.
 
 I am interested in your feedback. Let me know what you think about the framework, where it is lagging and what it would take for you to use it in your project. If you find a bug or if you have a suggestion or issue with the project please raise it in [the project home at Google Code][13].

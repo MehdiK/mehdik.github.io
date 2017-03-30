@@ -16,7 +16,7 @@ As I started to feel pain and discomfort I started analyzing what was causing th
 
 I have broken the list into three types of habits: habits for when you're in the office, out of the office and commuting to work!
 
-###In the office
+### In the office
 In average I spend 9 to 10 hours a day in the office which is around 60% of my awake time. That is a huge part of my life and I'd better make it as healthy as possible.
 
 #### Move your body
@@ -69,7 +69,7 @@ If you are not willing to move your mouse around then, as Joshua suggested, you 
 
 <img class="center" alt="detachable num pad" src="/get/healthy-habits/sculpt-ergonomic-desktop.jpg" />
 
-####Monitors
+#### Monitors
 Adjust your monitor height to your eye level to release the tension from your neck and shoulder muscles. If your monitor is not height adjustable put a few thick books underneath to lift it up to your eye level. You can find a few really good tips for setting up your monitor properly [here](http://www.healthycomputing.com/office/setup/monitor/).
 
 In a multi-monitor setup and when monitors are rotatable I rotate all monitors 90 degrees to be vertical. If you have two or three monitors, they're already providing a huge horizontal real estate and rotating them 90 degrees provides the much needed vertical space; but that's not why I rotate them: turning your head some 30 degrees to the side to see your left or right monitors for a few hours a day is really bad for your neck. 
@@ -78,12 +78,12 @@ Hanselman has a [nice multi monitor setup](http://www.hanselman.com/blog/howtoad
 
 ![mouse position](/get/healthy-habits/hanselman-3-monitors.jpg)
 
-###Out of the office
+### Out of the office
 When returning home from work, I work more, either on work projects or on professional development by studying and coding. There have been long periods in my life when I would sleep around 5 hours a night so I have more time to work. I still think that a professional should put more into their work than 9 to 5 but everything has to be done in moderation. 
 
 I wish I could say these are all my habits but this is a note to self to improve my health and lifestyle out of the office.
 
-####A bit less technology	
+#### A bit less technology	
 Hi, My name is Mehdi and I am a technology addict.
 
 <img style="margin-top:0px" alt="Throw out the computer" align="right" src="/get/healthy-habits/throw-out-computer.gif" />
@@ -92,20 +92,20 @@ I think we are all becoming slaves of computers and smart phones: these highly a
 
 Leave some of your personal time for yourself and your family and switch off everything work related.
 
-####Sleeping well and long enough
+#### Sleeping well and long enough
 Sleeping needs if not met have huge impact on our physical and mental health. [Lack of sleep](http://www.webmd.com/sleep-disorders/excessive-sleepiness-10/10-results-sleep-loss) can make you grumpy and foggy. It also impacts your sex life, memory, health, looks, and even ability to lose weight. Different people have different sleeping habits and needs; but between 6 and 8 hours of night sleep is necessary for adults. 
  
-####Exercise
+#### Exercise
 I (tend to) do 30 to 45 minutes of exercise a day. I love martial arts, particularly Muay Thai, and when possible try to attend martial art classes. When that's not a possibility I either go to gym or just exercise at home. My home exercises are rather limited to push ups, crunches and pull ups. When I feel very energetic I do burpee instead of push ups. I have bad knees; otherwise I would have loved to run.
 
-###Commuting
+### Commuting
 I know a lot of guys who ride their bikes to work. A guy I used to work with would ride his bike 40km to get to work. Another guy I worked with turned down a job offer because the commute wasn't bike friendly! I am kinda unlucky when it comes to commuting and usually spend over three hours a day commuting to work and back home. So this is kind of impractical for me; but I will definitely do it when I have a shorter commute.
 
 If you, like me, take a bus or train to work, then don't take a seat! People race for that last empty seat in buses and trains, particularly for long trips. I spend two hours a day in the train which is a nice time to study, blog or code; but when I don't feel like working I tend to stand up for the whole trip. If you decide to stand up on a long trip, don't hold your head down reading a book or playing with your phone. That whole posture of holding something up with your hand and looking down on it is really bad for your neck. Instead listen to radio or a music or, if you want to be productive, a podcast or an audio book.
 
 Another thing I enjoy as part of my commute is walking up the stairs. The ThoughtWorks NY office is located on the 15th floor. I walked up the stairs enough to be told by the building management not to use the emergency stairs anymore. Recently I have been catching a train to downtown. The station is 315 steps below the ground. I use escalators to go down but walk up the stairs. Walking down the stairs could hurt your knees.
 
-##Conclusion
+## Conclusion
 In this post I talked about a few habits I have developed over the years to maintain my health. These habits have worked for me. They may or may not work for you. Try to experiment with different things to see what makes you healthier and happier which you can also make a habit of.
 
 Another thing to note is that these are habits and [habits take time to form](http://www.ucl.ac.uk/news/news-articles/0908/09080401). So persevere.

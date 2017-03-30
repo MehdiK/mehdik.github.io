@@ -15,7 +15,7 @@ In UI automation, however, the application under test is like a blackbox in the 
 
 I am going to provide a few solutions here that you can mix and match as each has some strengths and weaknesses. Here we are only going to change the runtime behavior of the application so it can work in the "test" mode. If you would like to learn more about how you can run your UI tests on a Continuous Integration (CI) server, Jake Ginnivan, one of the main contributors on [TestStack](http://teststack.net), has written an extensive post about it [here](http://jake.ginnivan.net/teamcity-ui-test-agent). The post explains how you can setup a VM in Azure using TeamCity to run your UI tests on your CI server, but you can use the same tricks to run your UI tests on a physical server.
 
-###Build Configuration
+### Build Configuration
 One solution to this problem is to have a separate <a href="http://msdn.microsoft.com/en-us/library/kkz9kefa(v=vs.110).aspx">Build Configuration</a> for your functional tests. To do this, open Visual Studio and select "Configuration Manager" from the "Build"" menu:
 
 ![UITests Build Configuration](/get/changing-runtime-behavior-for-tests/build-configuration.PNG)
@@ -49,7 +49,7 @@ Then change `Web.FunctionalTests.config` to add the configuration for the functi
 
 This is just a simple example of a web configuration transform file that changes the database connection string in a web application. This approach only works for web applications though: out of the box there is no support for configuration transformation for other types of .Net projects. There are, however, a few workarounds for that. You can read about two configuration transformation techniques with support for all types of projects [here](/transform-app-config-and-web-config).
 
-###Compilation Symbols
+### Compilation Symbols
 You can also use compilation symbols to alter the application behaviors at compile time. Here I am defining a `FunctionalTests` conditional compilation symbol in my project's build settings:
 
 ![define compilation symbol](/get/changing-runtime-behavior-for-tests/define-compilation-symbol.PNG)
@@ -70,7 +70,7 @@ This is using preprocessor directives which work at compile time; so for this to
 
 	/p:DefineConstants="FunctionalTests"
 
-###Process Environment Variables
+### Process Environment Variables
 Build Configurations and Compilation Symbols allow you to change the runtime behavior of an application by changing the configuration or application code at compile time. This is quite powerful but has some drawbacks too. For example if the expected behavior depends on some runtime decision you cannot use these approaches. You can overcome this shortcoming using Environment Variables. You know the good old Windows System Properties where you can set Environment Variables like Path, Temp folder etc:
 
 ![System Properties](/get/changing-runtime-behavior-for-tests/win-environment-variables.PNG)

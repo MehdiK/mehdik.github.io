@@ -18,14 +18,14 @@ Fiddler is a very popular tool for web debugging. It has been out for a few year
 
 It is worth mentioning that everything I am writing here (plus a lot of things I cannot fit into this blog) can be found on the [Fiddler][4] website.
 
-##What is Fiddler?
+## What is Fiddler?
 *Fiddler is a Web Debugging Proxy which logs all HTTP(S) traffic between your computer and the Internet. Fiddler allows you to inspect traffic, set breakpoints, and "fiddle" with incoming or outgoing data. Fiddler includes a powerful event-based scripting subsystem, and can be extended using any .NET language.*
 
 *Fiddler is freeware and can debug traffic from virtually any application that supports a proxy, including Internet Explorer, Google Chrome, Apple Safari, Mozilla Firefox, Opera, and thousands more. You can also debug traffic from popular devices like Windows Phone, iPod/iPad, and others.*
 
 You can get the application from the [Fiddler's website][5] along with tones of documentation, tutorial videos and so on. On the Fiddler's website there is also a Fiddler Extension repository that lists major Fiddler's extensions.
 
-##How does it work?
+## How does it work?
 Fiddler sits between your http client and http server listening on a port for http(s) traffic.
 
 ![alt text][6]
@@ -60,7 +60,7 @@ Fiddler is a Web Proxy; so it does not really care where the traffic is coming f
 
 *Figure 5 - If you can use an HTTP Proxy you can use Fiddler*
 
-##Similar Tools
+## Similar Tools
 Fiddler is not the only tool that works as a proxy or provides these capabilities. Following is the list of some of the more or less similar tools:
 
 - [WireShark][12]: *a free and open-source packet analyzer. It is used for network troubleshooting, analysis, software and communications protocol development, and education.*
@@ -78,7 +78,7 @@ Browser plugins are, however, different from proxies in nature. Firstly they run
 
 The other difference worth pointing out is that browsers serve (valid/current) cached contents locally without hitting the network. For example if your website requires a CSS file that has been cached on the computer from a previous session and is still valid, when you browse to the website again, the browser is going to serve the css locally. This means that the browser plugin is going to see the content served from the cache while proxies will not see the request and the traffic because browser does not make any request.
 
-##Let's get started with Fiddler
+## Let's get started with Fiddler
 Fiddler is a Windows Forms application written in .Net 2. The UI (at V2.3.5.2) looks like:
 
 ![alt text][17]
@@ -87,7 +87,7 @@ Fiddler is a Windows Forms application written in .Net 2. The UI (at V2.3.5.2) l
 
 We are going to go through the UI and see what each tab/menu/feature does. Well, I do this for the most used/useful features and this by no means is an exhaustive reference. For more information please refer to Fiddler web site where Eric provides a lot of information on every single feature.
 
-###Web Sessions
+### Web Sessions
 Web Sessions pane is where the traffic is displayed as it is captured:
 
 ![alt text][18]
@@ -114,7 +114,7 @@ The icons on the left hand side next to the ID give you more visual information 
 
 *Figure 8 - Icons in the Web Sessions*
 
-##Traffic Comparison
+## Traffic Comparison
 One little known awesome feature of Web Sessions is the ability to compare two sessions. To compare two sessions select them in the Web Sessions pane, right click  and choose 'Compare' item from the menu. 
 
 ![alt text][21]
@@ -131,7 +131,7 @@ By default Fiddler uses WinDiff as diff tool; but you can change this in registr
 - Add a new String Value called CompareTool and set the value to the path of your favorite Diff tool (e.g. "C:\Program Files\Beyond Compare 3\BCompare.exe") 
 - Restart Fiddler 
 
-##Statistics
+## Statistics
 The first tab on the right pane is Statistics which shows you some info about the selected session. It is most useful when used on several sessions:
 
 ![alt text][23]
@@ -140,7 +140,7 @@ The first tab on the right pane is Statistics which shows you some info about th
 
 Is not that awesome?! So it is telling me that I have selected 26 requests, where total bytes sent and received are 166K and 197K (with more info about the header and body size), it provides a summary on received status codes and MIME types. And then there is the nice chart on the bottom.
 
-##Inspectors
+## Inspectors
 Inspectors allow you to visualize requests and responses in meaningful ways. There are heaps of out of the box inspectors and [you can write your own][24] if you need to.
 
 When you double click on a session fiddler takes you to the Inspectors tab for that session. It also detects what the most relevant request and response inspectors are and chooses that for you. For example if you double click on a JSON session, Fiddler takes you to the JSON tab.
@@ -153,7 +153,7 @@ When you double click on a session fiddler takes you to the Inspectors tab for t
 
 There are many inspectors and I could write a 30 page article about it; but it is much easier to understand if you run Fiddler and start double clicking on sessions.
 
-##HTTPS Traffic Decryption
+## HTTPS Traffic Decryption
 Fiddler can decipher HTTPS traffic. This scares some of the guys at security/I.T. department; but this is nothing to worry about. It can only do so for the traffic going through it and by your permission.
 
 By default Fiddler does not decipher HTTPS traffic and you should explicitly ask it to do so. In order to activate HTTPS traffic decryption:
@@ -196,7 +196,7 @@ Fiddler uses a hacking technique called [Man-In-The-Middle][30] Attack to decryp
 
 So while the client and server are unaware of MITM, the whole traffic has been monitored and perhaps modified. Fiddler does pretty much the same thing except that you know it is sitting in the middle.
 
-##Summary
+## Summary
 In this article we saw some of the basic features of Fiddler. In summary this is what we covered:
 
 - Fiddler is a Web Debugging Proxy

@@ -18,7 +18,7 @@ The good news for those who do not like the all caps menus is that the Visual St
 
 That said ...
 
-###The menu casing does not matter
+### The menu casing does not matter
 As explained in the VS blog they have thought the decision through and have made the change for a reason and are now even happy to allow customization of the casing; but I honestly think the casing of the menus does not matter.
 
 One of the features I really like about VS2012 is the new Quick Launch box on the top right of VS window:

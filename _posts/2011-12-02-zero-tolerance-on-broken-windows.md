@@ -18,7 +18,7 @@ The best way to deal with broken windows in software is zero tolerance when it m
 
 There are many broken windows in software; but below I list a few more common ones and the way I deal with them:
 
-##Broken tests
+## Broken tests
 The problem with broken tests (like any other broken window) is that they are highly contagious. You cannot easily differentiate between 1, 10 and 100 broken tests if they all turn your test suite (or your build) red: if your test suite is broken for a while you get insensitive about it and when your changes break another test you just will not notice (or god forbid care about) it. This results into higher and higher number of broken tests.
 
 ![Broken tests][3]
@@ -34,21 +34,21 @@ It only takes a week or so for this process to become second nature for the team
 
 <small>The only thing that can be worse than broken tests are broken build; but I would not call broken build a broken window: if your build is usually broken then you have a much bigger problem!</small>
 
-##Warnings
+## Warnings
 Build warnings are not quite as severe as broken tests; however if you ignore 10 build warnings soon you will end up with hundreds. A while back I worked on a project where there were over a thousand build warnings.
 
 Again the best way to deal with these is zero tolerance. Give programmers some time to fix all the warnings and then change the build configuration to treat warnings as errors. This stops any future warning from creeping into your codebase as they would just break the build.
 
 If some of the warnings in your codebase cannot be resolved, for example warnings from third party libraries, then note down the number of warnings and keep a close eye on that number. The number should never increase. This can be easily enforced through code reviews and [check-in dance][6].
 
-##ToDos
+## ToDos
 Again your list of ToDos in your codebase could grow beyond maintainability very easily if you do not pay attention to it. Sometimes I go through ToDos (using R# To-Do explorer) and find out that many of the To-Dos no longer apply: it has been there for so long that either the requirement has changed or the need has become obsolete!! If a To-Do can live for that long without you doing anything for it, then is it really a To-Do??! I mean you put it there so you can fix an issue in your codebase or pay a technical debt; but if you are not doing anything about it then why is there? 
 
 Do not get me wrong. I am a huge fan of To-Dos and I use them frequently as a productivity tool; e.g. I am working on something and I come across an edge case or a refactoring need or an ugly code and I do not want to be distracted from what I am doing; so I will just leave a To-Do there so I can come back to it after I am done with my current task. So you cannot really get as strict about To-Dos as you do with broken tests and build warnings because they are required and they should live there. In other words you cannot really enforce zero-tolerance or you will lose a good tool from your productivity toolbox.
 
 I think the best way to deal with To-Dos is to tag them with the date you are writing them so next time you or someone else come across them you know how long it has been there. If it has been there for a while then it should either be prioritized and dealt with or if it is not even worth prioritizing then it should be removed.
 
-###Conclusion
+### Conclusion
 Do not let a simple broken window turn your codebase into an unmaintainable nightmare. Spot it and deal with it and when fixed enforce zero tolerance to avoid future instances.
 
 In this post I talked about three common broken windows in software: broken tests, build warnings and ever growing list of to-dos. These are not the only ones: we should never forget technical debt or we will end up with a [BBoM][7]. Dealing with technical debt however is very tricky. While we can very easily enforce zero tolerance on broken builds and build warnings, technical debt is not quite as measurable and cannot be enforced through tooling as easily and effectively. Also [there are some rare cases][8] where it makes sense to have technical debt. 

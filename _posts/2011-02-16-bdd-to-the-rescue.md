@@ -14,7 +14,7 @@ BDD can help you in more than one way. First and foremost it removes the ambigui
 ---
 Programmers are not best at communicating. It is even beautifully argued that "*[Sometimes, The Better You Program, The Worse You Communicate][1]*".
 
-###My favorite programmers' joke
+### My favorite programmers' joke
 <p>
 A woman asks her husband, a programmer, to go shopping: “Dear, please, go to the nearby grocery store to buy some bread. Also, if they have eggs, buy 6.”  <br />
 Husband: “O.K., hun.”. Twenty minutes later the husband comes back bringing 6 loaves of bread. His wife is flabbergasted. <br />
@@ -24,7 +24,7 @@ Husband: “They had eggs.”
 
 We, programmers, misinterpret requirements and effectively make silly mistakes. We also get ambiguous and prone to misinterpretation requirements a lot. I do not think it is far from reality to say that the majority of bugs are related to miscommunication and/or misinterpretation of requirements; but how can we avoid these issues?
 
-###Behavior Driven Development to the rescue
+### Behavior Driven Development to the rescue
 [Behavior Driven Development][2] (AKA BDD) is very helpful for communicating requirements effectively. It brings a mutually understandable structure to communication between programmers and business people and helps communicate with less ambiguity (and frustration). This is what we have been failing to do effectively for years.
 
 Some of the benefits of BDD are:
