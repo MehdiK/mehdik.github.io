@@ -1,4 +1,4 @@
---- 
+---
 layout: post
 title: "BDD Simply with Bddify"
 metaTitle: "BDD Simply with Bddify"
@@ -18,7 +18,7 @@ In my [BDD Simply post][2] I talked about SpecFor<T>. SpecFor<T> is only a few l
 
 SpecFor is very simple and easy; but I do not like its reports. I really want to have something more readable.
 
-##Enter Bddify
+## Enter Bddify
 In an attempt to provide a better version of SpecFor<T> and to get a nice report out, I put together a small library called Bddify. Instead of trying to explain what it is and how it works I will just show you an example. I am going to use the same ATM and disabled card example I have used in my other posts:
 
     public class card_is_disabled
@@ -62,7 +62,7 @@ To use Bddify you need to decorate your methods with some attributes. The attrib
 
 And then you will only have one test method from which you call this.Bddify(). This call Bddifies your class!
 
-###The success report
+### The success report
 If you run the 'Execute' test you will see the following report:
 
 ![alt text][3]
@@ -85,7 +85,7 @@ When you run the test again you get a failure report like below:
 The error and stack trace is the same as you would get if you did not use Bddify. The class also shows you which part of the test has failed by showing a "Failed" text next to the failing bit.
 
 ###Support for test first development
-When you are doing test first development you usually end up creating methods that you do not implement straightaway. The body of these methods usually throws a NotImplementedException. 
+When you are doing test first development you usually end up creating methods that you do not implement straightaway. The body of these methods usually throws a NotImplementedException.
 
 I usually check-in my changes a bit at a time instead of waiting for a whole feature to be implemented; but I do not want my check-in to break the build. Bddify allows for that. If your code (either the test code or the classes you are testing) throw a NotImplementedException, Bddify will ignore the test for you. This way not only your check-in does not break the build; but you will also know which bits you still have not implemented. Let's try this:
 
@@ -163,10 +163,10 @@ CreateSentenceFromName is a public static function on Bddify class that you can 
 
 Bddify is the extension method we called in the Execute method, and CreateSentenceFromCamelName is what enabled reporting off the camel cased method names. If you want some other naming for your methods, create your own reporter method and set CreateSentenceFromName to it.
 
-###Given, When, Then!
+### Given, When, Then!
 If you do not like GWT attributes and the report, it is not a problem. You can completely change the way report is created by using "extension points" on Bddify. I created few attributes for GWT which I used in the above example. You can create other attributes and use them. All you have to do is to inherit from ExecutableAttribute.
 
-###Do not like attributes?
+### Do not like attributes?
 You do not have to use attributes if you do not want to. Here is an example:
 
     public class CardIsDisabled
@@ -202,9 +202,9 @@ You do not have to use attributes if you do not want to. Here is an example:
         }
     }
 
-This still provides the same result. Bddify by convention knows how to interpret your method if you method name starts with Given, When and Then. 
+This still provides the same result. Bddify by convention knows how to interpret your method if you method name starts with Given, When and Then.
 
-###I want to create some files from my test run
+### I want to create some files from my test run
 Bddify uses an action called PrintOutput that gets a string and prints it somewhere. The default implementation of the method is:
 
     public static readonly Action<string> DefaultPrintOutput = Console.WriteLine;
@@ -242,15 +242,15 @@ Just create a method that gets a string and writes it to a file. Then set PrintO
 
 If you use this extension method, as well as the report being shown on the console, a file gets created on the specified path.
 
-###Bddify is coupled with your testing framework
+### Bddify is coupled with your testing framework
 My implementation is coupled with NUnit in a few places. I could remove the dependency; but it would mean more code which would make this not-so-lightweight. So I decided to leave it out and do not make my simple BDD library complicated. You have the source code. Feel free to change Bddify to use your testing framework of choice.
 
-##Conclusion
+## Conclusion
 That is Bddify. A very simple library that allows you to write BDD tests in a very simple manner and is capable of generating a rather decent report. It also allows you to replace some of its components which I think is handy.
 
-Oh and I forgot to tell you. Bddifier class itself is less than 100 lines of code. With all the extensions and attributes included it is still less than 150 lines. 
+Oh and I forgot to tell you. Bddifier class itself is less than 100 lines of code. With all the extensions and attributes included it is still less than 150 lines.
 
-I still do not have any plans to make this into a real BDD library. Well, the whole point of BDD Simply is to use something very simple and lightweight that you feel comfortable using in your project. 
+I still do not have any plans to make this into a real BDD library. Well, the whole point of BDD Simply is to use something very simple and lightweight that you feel comfortable using in your project.
 
 Bddify is not currently perfect and may have some bugs. It is not as feature rich as some of the BDD frameworks out there either. If you need a feature or if you think something could be done differently or to improve it, please leave me a comment.
 
