@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Communicate your values and expectations"
+title: "Be clear and explicit about your values and expectation"
 metaTitle: "Be clear and explicit about your values and expectation"
 description: "Your team are not mind readers. Be clear and transparent about what you stand for and what you expect and deliver on it"
 date: "2017-06-29"
