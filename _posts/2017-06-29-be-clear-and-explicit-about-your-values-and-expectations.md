@@ -3,7 +3,7 @@ layout: post
 title: "Communicate your values and expectations"
 metaTitle: "Be clear and explicit about your values and expectation"
 description: "Your team are not mind readers. Be clear and transparent about what you stand for and what you expect and deliver on it"
-date: "2017-06-25"
+date: "2017-06-29"
 tags: ["Leadership"]
 ---
 
@@ -63,4 +63,4 @@ I then documented this on the company wiki and sent an email to everyone thankin
  - Get buy-in from the CEO (or your immediate manager) and the rest of the leadership team before communicating this widely. It doesn't matter what you stand for if you values are not aligned with the CEO's. Likewise, if you don't work with everyone directly, it's critical that other leaders share these values and expectations; otherwise you could fail to deliver on your pledge or engender your expectations because a leader is misaligned.
  - Communicate your values and expectations early and clearly [up, down and sideways](http://www.mckinsey.com/global-themes/leadership/why-effective-leaders-must-manage-up-down-and-sideways).
 
-Last but not least, you can't be selective about when to deliver on your promises and stand for your expectation. **Communicating values you can't live up to and stand for consistently is much worse than not communicating them at all**. I have pledged that _"every word coming out of my mouth is a promise and a commitment"_, and that applies to my pledge and expectations. This is not very easy to live up to; but I strongly believe that [nothing works without integrity](http://hbswk.hbs.edu/item/integrity-without-it-nothing-works). So I honor my word and stay true to my values, no matter how difficult it might be. 
+Last but not least, you can't be selective about when to deliver on your promises and stand for your expectation. **Communicating values you can't live up to and stand for consistently is much worse than not communicating them at all**. I have pledged that _"every word coming out of my mouth is a promise and a commitment"_, and that applies to my pledge and expectations. This is not very easy to live up to; but I strongly believe that [nothing works without integrity](http://hbswk.hbs.edu/item/integrity-without-it-nothing-works). So I honor my word and stay true to my values, no matter how difficult it might be.
