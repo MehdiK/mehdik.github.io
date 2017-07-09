@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Be clear and explicit about your values and expectation"
-metaTitle: "Be clear and explicit about your values and expectation"
+title: "Be clear and explicit about your values and expectations"
+metaTitle: "Be clear and explicit about your values and expectations"
 description: "Your team are not mind readers. Be clear and transparent about what you stand for and what you expect and deliver on it"
 date: "2017-06-29"
 tags: ["Leadership"]
