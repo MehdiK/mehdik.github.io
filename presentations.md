@@ -10,7 +10,7 @@ permalink: "/presentations/"
 ## Presentations
 I really enjoy public presentation and over the years I've spoken in a handful of conferences and user groups. I've written about some of my presentations. You can find them below (some of them also included video recording of the session):
 
- - Microservices lessons from trenches
+ - [Microservices lessons from trenches](/presentations/microservices-lessons-dddmel)
  - [Automated UI Testing Done Right at DDD Sydney](/presentations/automated-ui-testing-done-right-at-dddsydney)
  - [Advanced Web Debugging With Fiddler at DDD Brisbane](/advanced-web-debugging-with-fiddler)
  - [Working With Offline Web Application](/presentations/wdyk-offline-web) at What Do You Know  Night from [Web Directions](http://www.webdirections.org/) conference.

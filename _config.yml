@@ -4,10 +4,13 @@ author: Mehdi Khalili
 email: me@mehdi-khalili.com
 disqus_short_name: mehdikhalilisblog
 description: > # this means to ignore newlines until "baseurl:"
-  Agile Coach, Lean Instigator, Mentor, Leader, Polyglot Programmer, Presenter, Blogger
+  Leader, Mentor, Change Agent, Agile and Lean Coach, Presenter, Blogger
+disclaimer: Opinions are my own and not the views of my employer
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://www.mehdi-khalili.com" # the base hostname & protocol for your site
 twitter_username: MehdiKhalili
+linkedin_username: mehdikhalili
+linkedin_name: Mehdi Khalili
 github_username:  MehdiK
 
 # Build settings
