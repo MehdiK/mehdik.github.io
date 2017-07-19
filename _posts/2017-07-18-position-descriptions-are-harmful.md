@@ -3,7 +3,7 @@ layout: post
 title: "Position descriptions are harmful"
 metaTitle: "Position descriptions are harmful"
 description: "Position descriptions suck the creativity and passion out of employees by boxing them into a few bullet points."
-date: "2017-07-05"
+date: "2017-07-18"
 tags: ["Leadership","Management"]
 ---
 
