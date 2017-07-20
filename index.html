@@ -2,21 +2,51 @@
 layout: default
 ---
 
-<div class="home">
+  <header id="home">
+    <div class="row banner">
+       <div class="banner-text">
+          <h1 class="responsive-headline">I'm Jonathan Doe.</h1>
+          <h3>I'm a Manila based <span>graphic designer</span>, <span>illustrator</span> and <span>webdesigner</span> creating awesome and
+          effective visual identities for companies of all sizes around the globe. Let's <a class="smoothscroll" href="#about">start scrolling</a>
+          and learn more <a class="smoothscroll" href="#about">about me</a>.</h3>
+          <hr />
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+          <ul class="social">
+             <li><a href="https://twitter.com/{{ site.twitter_username }}" target="blank"><i class="fa fa-twitter"></i></a></li>
+             <!-- <li><a href="#"><i class="fa fa-google-plus" target="blank"></i></a></li> -->
+             <li><a href="https://www.linkedin.com/in/{{ site.linkedin_username }}"><i class="fa fa-linkedin" target="blank"></i></a></li>
+             <li><a href="https://github.com/{{ site.github_username }}"><i class="fa fa-github" target="blank"></i></a></li>
+          </ul>
+       </div>
+    </div>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-          {{ post.description }}
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
+    <p class="scrolldown">
+       <a class="smoothscroll" href="#about"><i class="icon-down-circle"></i></a>
+    </p>
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+  </header>
 
-</div>
+   <!-- About Section
+   ================================================== -->
+   <section id="about">
+
+      <div class="row">
+         <div class="three columns">
+            <img src="get/me.png" alt="" />
+         </div>
+
+         <div class="nine columns main-col">
+
+            <h2>About Me</h2>
+
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
+            eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
+            voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+            voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
+            sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+            Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.
+            </p>
+         </div> <!-- end .main-col -->
+      </div>
+
+   </section> <!-- About Section End-->
