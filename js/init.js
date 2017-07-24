@@ -20,16 +20,17 @@
 ------------------------------------------------------ */
 
    $('.smoothscroll').on('click',function (e) {
-	    e.preventDefault();
+      if ($('#home').length > 0)
+        e.preventDefault();
 
-	    var target = this.hash,
-	    $target = $(target);
+      var target = this.hash,
+      $target = $(target);
 
-	    $('html, body').stop().animate({
-	        'scrollTop': $target.offset().top
-	    }, 800, 'swing', function () {
-	        window.location.hash = target;
-	    });
+      $('html, body').stop().animate({
+          'scrollTop': $target.offset().top
+      }, 800, 'swing', function () {
+          window.location.hash = target;
+      });
 	});
 
 

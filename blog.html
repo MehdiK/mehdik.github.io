@@ -3,18 +3,18 @@ layout: default
 ---
 
 <section id="blog">
+  <div class="row">
+    <div class="nine columns">
+      {% for post in site.posts %}
+        <div class="row post">
+          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
-    {% for post in site.posts %}
-      <div class="row post">
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <div>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-          {{ post.description }}
+          <div>
+            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+            {{ post.description }}
+          </div>
         </div>
-      </div>
-    {% endfor %}
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
-</div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

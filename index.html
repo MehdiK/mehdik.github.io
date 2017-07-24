@@ -162,7 +162,7 @@ layout: default
 
         <div class="nine columns main-col">
 
-          {% for post in site.posts %}
+          {% for post in site.posts limit:10 %}
             <div class="row post">
               <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
@@ -172,6 +172,11 @@ layout: default
               </div>
             </div>
           {% endfor %}
+
         </div>
+
+        <h1>
+          <a href="/blog">More posts ...</a>
+        </h1>
       </div>
     </section>
