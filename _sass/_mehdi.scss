@@ -37,6 +37,12 @@
 }
 
 footer .social-links li a:hover { color: #11ABB0; }
+footer .copyright li {
+    display: block;
+}
+footer .copyright li:before {
+    content: "";
+}
 
 #home h1 {
   font-family: 'librebaskerville', serif;
