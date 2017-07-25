@@ -1,0 +1,49 @@
+#presentations, #popular-posts, #open-source, #blog {
+  padding-top: 66px;
+  padding-bottom: 66px;
+  border-bottom: 1px solid #E8E8E8;
+
+  h1 {
+    font: 18px/24px 'opensans-bold', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    span {
+     border-bottom: 3px solid #11ABB0;
+     padding-bottom: 6px;
+   }
+  }
+
+  ul {
+    list-style: disc;
+  }
+}
+
+ #blog {
+   margin-bottom: 0px;
+   padding-bottom: 0px;
+   border-bottom: none;
+
+   .post:last-child {
+     border-bottom: none;
+   }
+}
+
+.post {
+  width: 80%;
+  ul {
+    list-style: disc;
+  }
+}
+
+footer .social-links li a:hover { color: #11ABB0; }
+
+#home h1 {
+  font-family: 'librebaskerville', serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+blockquote:before {
+   content: "";
+}

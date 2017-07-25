@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+<section id="blog">
+  <div class="row">
+    <div class="twelve columns">
+      {% for post in site.posts %}
+        <div class="row post">
+          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+          <div>
+            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+            {{ post.description }}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

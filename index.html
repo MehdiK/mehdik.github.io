@@ -2,21 +2,189 @@
 layout: default
 ---
 
-<div class="home">
+  <header id="home">
+    <div class="row banner">
+       <div class="banner-text">
+          <h1 class="responsive-headline">Mehdi Khalili</h1>
+          <h3>I'm an <span>innovative</span> and <span>disruptive</span> leader with 20 years of experience in <span>technology</span>.
+          Scroll down to learn more <a class="smoothscroll" href="#about">about me</a>.
+          <hr />
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+          <ul class="social">
+             <li><a href="https://twitter.com/{{ site.twitter_username }}" target="blank"><i class="fa fa-twitter"></i></a></li>
+             <!-- <li><a href="#"><i class="fa fa-google-plus" target="blank"></i></a></li> -->
+             <li><a href="https://www.linkedin.com/in/{{ site.linkedin_username }}"><i class="fa fa-linkedin" target="blank"></i></a></li>
+             <li><a href="https://github.com/{{ site.github_username }}"><i class="fa fa-github" target="blank"></i></a></li>
+             <li><a href="{{ "/feed.xml" | prepend: site.baseurl }}"><i class="fa fa-rss" target="blank"></i></a></li>
+          </ul>
+       </div>
+    </div>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-          {{ post.description }}
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
+    <p class="scrolldown">
+       <a class="smoothscroll" href="#about"><i class="icon-down-circle"></i></a>
+    </p>
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+  </header>
 
-</div>
+   <!-- About Section
+   ================================================== -->
+   <section id="about">
+
+      <div class="row">
+         <div class="three columns">
+            <img class="profile-pic" src="get/me.png" alt="" />
+         </div>
+
+         <div class="nine columns main-col">
+
+            <h2>About Me</h2>
+
+            <p>
+              I am the CTO of <a href="https://simplehq.co/">Simple</a>, a Brisbane based software startup with a mission to make marketing teams more effective all around the world.
+            </p>
+
+            <p>
+              I started my career in the software and IT industry 20 years ago.
+              I founded a company called Aram Systems to provide computer and networking services back in 97.
+              I assembled computers, performed troubleshooting, setup networks and provided network administration for small companies.
+              A couple of years later I joined a company as a software developer as that was always my passion.
+              Since then I have worked in three continents and with over 20 different teams and organisations wearing many different hats.
+              I’ve been a programmer, tech lead, architect, BA, QA, product owner, software delivery principal, agile and lean coach and executive consultant to name a few.
+            </p>
+
+            <p>
+              I am a dad, husband, CTO, fitness and health junkie, blogger and presenter.
+            </p>
+         </div> <!-- end .main-col -->
+      </div>
+
+   </section> <!-- About Section End-->
+
+
+    <!-- Presentations Section
+    ================================================== -->
+    <section id="presentations">
+
+       <div class="row">
+          <div class="three columns header-col">
+             <h1>
+               <span>Presentations</span>
+             </h1>
+          </div>
+
+          <div class="nine columns main-col">
+            <p>I enjoy public presentation and over the years I’ve spoken in a handful of conferences and user groups. I’ve written about some of my presentations. You can find them below (some of them also included video recording of the session):</p>
+
+            <ul>
+              <li><a href="/presentations/microservices-lessons-dddmel">Microservices lessons from trenches</a></li>
+              <li><a href="/presentations/automated-ui-testing-done-right-at-dddsydney">Automated UI Testing Done Right at DDD Sydney</a></li>
+              <li><a href="/advanced-web-debugging-with-fiddler">Advanced Web Debugging With Fiddler at DDD Brisbane</a></li>
+              <li><a href="/presentations/wdyk-offline-web">Working With Offline Web Application</a> at What Do You Know  Night from <a href="http://www.webdirections.org/">Web Directions</a> conference.</li>
+            </ul>
+
+            <p>You can also find a few slidedecks on <a href="http://www.slideshare.net/MehdiKhalili">SlideShare</a>.</p>
+          </div>
+        </div> <!-- end .main-col -->
+    </section> <!-- Presentations Section End-->
+
+
+    <!-- Popular posts Section
+    ================================================== -->
+    <section id="popular-posts">
+       <div class="row">
+         <div class="three columns header-col">
+            <h1>
+               <span>Popular Posts</span>
+            </h1>
+          </div>
+
+          <div class="nine columns main-col">
+             <p>This is a curated list of some of the more popular posts on my blog.</p>
+
+             <h4 id="notes">Notes</h4>
+             <ul>
+               <li><a href="/be-clear-and-explicit-about-your-values-and-expectations">Be clear and explicit about your values and expectations</a></li>
+               <li><a href="/never-judge-a-programmer-by-their-commit-history">Never judge a programmer by their commit history</a></li>
+               <li><a href="/dealing-with-net-negative-producing-programmers">Dealing With Net Negative Producing Programmers</a> : who are Net Negative Producing Programmers and how we can deal with them.</li>
+               <li><a href="/bad-code">It’s sometimes OK to write bad code</a></li>
+               <li><a href="/stop-discriminating">Stop Discriminating</a>: venting out a sore personal experience with racial discrimination.</li>
+             </ul>
+
+             <h4 id="concepts">Concepts</h4>
+             <ul>
+               <li><a href="/bdd-to-the-rescue">BDD To The Rescue</a>: why BDD matters and how it can help.</li>
+               <li><a href="/definition-of-done-in-an-mvc-project">Definition of Done</a>: Definition of Done I used in a web project which can be used as a reference.</li>
+               <li><a href="/orm-anti-patterns-series">ORM Anti Pattern Series</a>: a series of posts where I explain some of the common anti patterns I have come across when dealing with Object Relational Mapping (AKA ORM). The whole series has been very popular; but these are the three posts that stand out amongst all:
+                 <ul>
+                   <li><a href="/orm-anti-patterns-part-4-persistence-domain-model">Persistence vs Domain Model</a>: the pros and cons of reusing your persistence model as domain model</li>
+                   <li><a href="/orm-anti-patterns-part-3-lazy-loading">Lazy Loading</a>: why Lazy Loading is usually a very bad idea.</li>
+                   <li><a href="/orm-anti-patterns-part-5-generic-update-methods">Generic Updates</a>: disadvantages of generic updates along with alternative solutions.</li>
+                 </ul>
+               </li>
+             </ul>
+
+             <h4 id="tutorials">Tutorials</h4>
+             <ul>
+               <li>Fiddler In Action tutorial <a href="/fiddler-in-action/part-1">part 1</a> and <a href="/fiddler-in-action/part-2">part 2</a>: an extensive tutorial on using <a href="http://http://fiddler2.com/">Fiddler</a> web debugging proxy.</li>
+               <li><a href="http://net.tutsplus.com/tutorials/maintainable-automated-ui-tests/">Writing Maintainable UI Tests</a> article on NetTuts: a few tips on how to write maintainable UI tests.</li>
+               <li><a href="/presentations/wdyk-offline-web">Working with offline web applications</a>: a tutorial about writing web applications with offline support along with a working sample.</li>
+               <li><a href="/continuous-integration-delivery-github-teamcity">Continuous Integration and Delivery with TeamCity for GitHub projects</a></li>
+               <li><a href="/bddify-in-action/introduction">BDDfy In Action series</a>: an extensive tutorial for my open source BDD framework for .Net, <a href="https://github.com/TestStack/TestStack.BDDfy">BDDfy</a>.</li>
+             </ul>
+          </div>
+        </div> <!-- end .main-col -->
+    </section> <!-- Popular posts Section End-->
+
+
+    <!-- Open source Section
+    ================================================== -->
+    <section id="open-source">
+       <div class="row">
+         <div class="three columns header-col">
+            <h1>
+              <span>Open Source</span>
+            </h1>
+          </div>
+
+        <div class="nine columns main-col">
+            <ul>
+              <li>Created <a href="https://github.com/TestStack/TestStack.BDDfy">BDDfy</a>: the simplest to use and extend BDD framework for .Net.</li>
+              <li>Created <a href="http://github.com/MehdiK/Humanizer">Humanizer</a>: a .Net framework that meets all your .NET needs for manipulating and displaying strings, dates, times (inc. timespans) and quantities.</li>
+              <li>Created and now contributing on <a href="https://github.com/TestStack/TestStack.Seleno">Seleno</a>: Seleno helps you write automated UI tests the RIGHT way!</li>
+              <li>Co-founded <a href="http://teststack.net/">TestStack</a>: a collection of awesome and unique testing tools and frameworks.</li>
+            </ul>
+          </div>
+        </div> <!-- end .main-col -->
+    </section> <!-- Open source Section End-->
+
+
+    <!-- Blog Section
+    ================================================== -->
+    <section id="blog">
+      <div class="row">
+        <div class="three columns header-col">
+           <h1>
+             <span>Recent Posts</span>
+           </h1>
+         </div>
+
+        <div class="nine columns main-col">
+
+          {% for post in site.posts limit:10 %}
+            <div class="row post">
+              <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+              <div>
+                <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+                {{ post.description }}
+              </div>
+            </div>
+          {% endfor %}
+
+        </div>
+
+        <h1>
+          <a href="/blog">More posts ...</a>
+        </h1>
+      </div>
+    </section>
