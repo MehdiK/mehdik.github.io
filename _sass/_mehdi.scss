@@ -43,3 +43,7 @@ footer .social-links li a:hover { color: #11ABB0; }
   letter-spacing: 1px;
   text-transform: uppercase;
 }
+
+blockquote:before {
+   content: "";
+}
