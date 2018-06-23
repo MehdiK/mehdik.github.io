@@ -2,7 +2,7 @@
 layout: post
 title: "Listen, Challenge, Commit!"
 description: "Listen, Challenge, Commit is a simple process that helps you build highly productive and cohesive teams"
-date: "2017-07-18"
+date: "2018-06-23"
 tags: ["Leadership","Management"]
 ---
 
