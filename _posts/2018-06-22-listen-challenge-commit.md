@@ -56,7 +56,7 @@ A lot of companies move the decisions to where the information is: to higher man
 ### Listen, Challenge, Commit
 "*Leadership is the art of giving people a platform for spreading ideas that work.*" – Seth Godin
 
-Listen, Challenge, Commit is a very simple three word process for creating great teams. The prcess is very simple; but it's not easy to implement: most of us are really bad at listening, find challenging awkward and uncomfortable, and don't fully honour our words.
+Listen, Challenge, Commit is a very simple decision making process for creating great teams. The process, while simple, is not easy to implement: most of us are really bad at listening, find challenging awkward and uncomfortable, and don't fully honour our words.
 
 You might find it hard to start with this; but I'm certain you will get better the more you try it. One thing that certainly helps implement such a process is communicating your values and expectations clearly with your team. [Here is how I communicated my values and expectations](/be-clear-and-explicit-about-your-values-and-expectations) with a team I led a while back. As you see, there is a lot of alignment between this process and my values, and that made it somewhat easier.
 
