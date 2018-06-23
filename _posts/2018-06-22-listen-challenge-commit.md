@@ -13,7 +13,7 @@ tags: ["Leadership","Management"]
 
 And some people don't even listen - they either completely tune out as the other person speaks or constantly interrupt them!
 
-To create a productive team, the first and most important step is to listen. When I say *listen*, I don't mean to hear the other person. I mean listen to them with empathy. Put yourself in their shoes and see the world from their point of view. Be curious about their point of view, ask questions to understand their feelings, pain points and goals.
+To create a productive team, the first and most important step is to listen. When I say *listen*, I don't mean to hear the other person. I mean listen to them with empathy. Put yourself in their shoes and see the world from their point of view, be genuinely curious ask questions to understand their feelings, pain points and goals.
 
 A lot of arguments happen because people don't listen wholeheartedly to others. It is easy to get defensive and argumentative when you feel the other person doesn't care about your point of view. So it's very critical that during this phase you don't interrupt, disagree, or even agree. You do one and only one thing: you listen intently.
 
@@ -26,7 +26,7 @@ So after everyone's had a turn in presenting their point of view, you move to th
 
 People repeat their point of view over and over again when they don't feel heard or understood, and challenging, without listening, could turn into a heated argument. So everything I said above about listening applies just as much here. When someone's challenging an idea, everyone needs to tune in, listen to them intently, understand their point of view and empathise with their objective, fears and uncertainties about the idea.
 
-Don't interrupt the flow, don't cut conversations short and don't hold anything back. It's a lot cheaper to make a right decision everyone buys into than to make a rushed one. At the same time, don't go around the circle or on tangents. Move to the next step once everyone's raised their objections and explained their point of view.
+Don't interrupt the flow, don't get defensive, don't cut conversations short and don't hold anything back. It's a lot cheaper to make a right decision everyone buys into than to make a rushed one. At the same time, don't go around the circle or on tangents. Move to the next step once everyone's raised their objections and explained their point of view.
 
 ### Commit
 "*When you're surrounded by people who share a passionate commitment around a common purpose, anything is possible.*" - Howard Schultz
