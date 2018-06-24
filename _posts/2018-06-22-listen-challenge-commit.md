@@ -6,7 +6,7 @@ date: "2018-06-23"
 tags: ["Leadership","Management"]
 ---
 
-**Listen** wholeheartedly, **challenge** others with respect, **commit** to a decision, regardless of whether you agree with the decision or not, and execute on that commitment. This simple decision making process helps you build highly productive and cohesive teams.
+**Listen** wholeheartedly, **challenge** others with respect, **commit** to a decision, regardless of whether you agree with it or not, and execute on that commitment. This simple decision making process helps you build highly productive and cohesive teams.
 
 ### Listen
 "*Most people do not listen with the intent to understand; they listen with the intent to reply.*" - Stephen R. Covey
