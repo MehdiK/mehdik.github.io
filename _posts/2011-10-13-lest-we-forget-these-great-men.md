@@ -1,4 +1,4 @@
---- 
+---
 layout: post
 title: "Lest we forget these great men"
 metaTitle: "Lest we forget these great men"
@@ -42,4 +42,3 @@ R.I.P. Steve Jobs and Dennis Ritchie
 </a>
 
 </div>
-

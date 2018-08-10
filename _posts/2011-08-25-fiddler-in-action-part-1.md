@@ -1,4 +1,4 @@
---- 
+---
 layout: post
 title: "Fiddler In Action - Part 1"
 metaTitle: "Fiddler In Action - Part 1"
@@ -115,7 +115,7 @@ The icons on the left hand side next to the ID give you more visual information 
 *Figure 8 - Icons in the Web Sessions*
 
 ## Traffic Comparison
-One little known awesome feature of Web Sessions is the ability to compare two sessions. To compare two sessions select them in the Web Sessions pane, right click  and choose 'Compare' item from the menu. 
+One little known awesome feature of Web Sessions is the ability to compare two sessions. To compare two sessions select them in the Web Sessions pane, right click  and choose 'Compare' item from the menu.
 
 ![alt text][21]
 
@@ -127,9 +127,9 @@ One little known awesome feature of Web Sessions is the ability to compare two s
 
 By default Fiddler uses WinDiff as diff tool; but you can change this in registry:
 
-- Open Registry, go to HKEY_CURRENT_USER\Software\Microsoft\Fiddler2 
-- Add a new String Value called CompareTool and set the value to the path of your favorite Diff tool (e.g. "C:\Program Files\Beyond Compare 3\BCompare.exe") 
-- Restart Fiddler 
+- Open Registry, go to HKEY_CURRENT_USER\Software\Microsoft\Fiddler2
+- Add a new String Value called CompareTool and set the value to the path of your favorite Diff tool (e.g. "C:\Program Files\Beyond Compare 3\BCompare.exe")
+- Restart Fiddler
 
 ## Statistics
 The first tab on the right pane is Statistics which shows you some info about the selected session. It is most useful when used on several sessions:
@@ -183,16 +183,16 @@ Clicking yes on this box installs Fiddler's certificate in your Personal store:
 
 *Figure 16 - Fiddler certificate installed in your personal store*
 
-Fiddler uses a hacking technique called [Man-In-The-Middle][30] Attack to decrypt HTTPS traffic: 
+Fiddler uses a hacking technique called [Man-In-The-Middle][30] Attack to decrypt HTTPS traffic:
 
 ![alt text][31]
 
 *Figure 17 - Man In The Middle Attack*
 
-1. The client thinks it is talking to the server while it is talking to the man-in-the-middle (MITM) and it uses the MITM's certificate for SSL. 
-2. MITM then receives client's request and potentially modifies it and sends it to the server using the server's certificate. 
-3. Server receives the request thinking it came from the client, does the processing and returns the response to the MITM thinking it is the client. 
-4. MITM receives the response and optionally modifies it and returns it to the client. 
+1. The client thinks it is talking to the server while it is talking to the man-in-the-middle (MITM) and it uses the MITM's certificate for SSL.
+2. MITM then receives client's request and potentially modifies it and sends it to the server using the server's certificate.
+3. Server receives the request thinking it came from the client, does the processing and returns the response to the MITM thinking it is the client.
+4. MITM receives the response and optionally modifies it and returns it to the client.
 
 So while the client and server are unaware of MITM, the whole traffic has been monitored and perhaps modified. Fiddler does pretty much the same thing except that you know it is sitting in the middle.
 
@@ -209,16 +209,16 @@ Soon to come is the next post about more [advanced features of Fiddler][32]. Sta
 
 Hope it helps.
 
-<a href="http://www.codeproject.com/script/Articles/BlogFeedList.aspx?amid=khalili" style="display:none" rel="tag">CodeProject</a>
+<a href="https://www.codeproject.com/script/Articles/BlogFeedList.aspx?amid=khalili" style="display:none" rel="tag">CodeProject</a>
 
 
-  [1]: http://dddbrisbane.com/
+  [1]: https://dddbrisbane.com/
   [2]: /advanced-web-debugging-with-fiddler
   [3]: /fiddler-in-action/part-2
-  [4]: http://www.fiddler2.com/fiddler2/
-  [5]: http://www.fiddler2.com
+  [4]: https://www.fiddler2.com/fiddler2/
+  [5]: https://www.fiddler2.com
   [6]: /get/fiddler-in-action/fiddler-proxy.png
-  [7]: http://msdn.microsoft.com/en-us/library/aa383630(v=vs.85).aspx
+  [7]: https://msdn.microsoft.com/en-us/library/aa383630(v=vs.85).aspx
   [8]: /get/fiddler-in-action/connections-tab-ie-options.png
   [9]: /get/fiddler-in-action/wininet-proxy-settings.png
   [10]: /get/fiddler-in-action/wininet-proxy-settings-after-fiddler-starts.png
