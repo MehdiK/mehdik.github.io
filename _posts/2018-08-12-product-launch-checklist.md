@@ -5,9 +5,11 @@ description: "This is a checklist for everything you need to consider for launch
 date: "2018-08-12"
 tags: ["Product"]
 ---
-Earlier in my career, I saw product launch through one lens: developing the software. This was partly due to my singular focus on software development and partly because that's what every company I worked for and with did. In the past few years, I've been involved in end to end delivery of several products, from idea all the way to release and market fit.
+A few months ago, I was talking with a client about things they should consider before launching a new product we, Readify, were helping them to build. I put a list together and walked them through it.
 
-Here's a list of things I consider for a product launch these days. What have I missed? What do you take into account as part of a product launch?
+I thought I'd document a checklist here for future reference. This list is much longer than what I provided my client, because we were already taking care of a fair bit of these for them.
+
+What have I missed? What do you take into account for a product launch?
 
 ### User Experience
  - Before doing anything else, identify and validate the problem you're working on. [Design Thinking](https://www.ideou.com/pages/design-thinking) is your friend here.
