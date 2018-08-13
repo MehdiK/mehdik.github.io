@@ -1,15 +1,15 @@
 ---
 layout: post
 title: "Product launch checklist"
-description: "This is a checklist for everything you need to consider for launching a new product"
+description: "This is a checklist for a few things you need to consider for launching a new product"
 date: "2018-08-12"
 tags: ["Product"]
 ---
 A few months ago, I was talking with a client about things they should consider before launching a new product we, Readify, were helping them to build. I put a list together and walked them through it.
 
-I thought I'd document a checklist here for future reference. This list is much longer than what I provided my client, because we were already taking care of a fair bit of these for them.
+I thought I'd document the checklist here for future reference. This by no means is an exhaustive list of everything you need to consider; but rather a list of things I've seen commonly overlooked. Then again, there is a lot in here. Just cherrypick what's applicable to your particular case.
 
-What have I missed? What do you take into account for a product launch?
+I am assuming you already know how to deliver quality software. With that out of the way, here's the list.
 
 ### User Experience
  - Before doing anything else, identify and validate the problem you're working on. [Design Thinking](https://www.ideou.com/pages/design-thinking) is your friend here.
@@ -51,7 +51,7 @@ What have I missed? What do you take into account for a product launch?
    - Do you need an approval process for new updates and responses?
    - Is the twitter handle available?
 
-### Processes
+### Business Processes
  - How are you going to sell your product? Where can your customers find your product?
  - Can you accept payment from your customers?
  - Who’s going to provide application support for end users and how? Phone support, in-person, in-app chat, Facebook, Twitter etc?
@@ -80,8 +80,13 @@ What have I missed? What do you take into account for a product launch?
    - Does the vendor allow free/discounted retest if they find vulnerabilities? If yes, what's the grace period?
 
 ### Technical
- - Do you have a logging and monitoring system?
- - Can you monitor your application performance proactively?
+ - Do you have a logging, monitoring and alerting system?
+ - Do you have a sound backup strategy in place? Do you test your backups on a regular basis?
+ - Do your BCP and DR policy cover your technical recovery? What's your mean time to recovery?
+ - Have you done load and stress testing on your app? Can you monitor your application performance proactively?
  - Do you have health dashboards setup?
  - Can you do zero downtime release? This is much more critical if you are working on a globally used product with no "after hours".
  - What's your SLA? Do you have maintenance window? Is it communicated in the license agreement?
+
+
+What have I missed? What do you take into account for a product launch?
