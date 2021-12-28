@@ -18,11 +18,11 @@ When I die, I want to be remembered by family, colleagues and friends as a trust
 ## Principles
 I centre my life and every decision I make by following these principles:
 
- - Integrity: I honour my word.
- - Empathy: I see the world through the feelings, thoughts and experience of others.
- - Courage: I say and do what I feel is right, even when it's risky to do so.
- - Humility: I don't let my ego control me or hurt others.
- - Forgiveness: I lend a hand to the fallen, even if they fell while kicking me,
+ - **Integrity**: I honour my word.
+ - **Empathy**: I seek to understand others by seeing the world through their feelings, thoughts and experiences.
+ - **Courage**: I say and do what I feel is right, even when it's risky to do so.
+ - **Humility**: I don't let my ego control me or hurt others.
+ - **Accountability**: I take complete ownership of my life and what happens to and around me.
 
 ## Personal development practices
 Here is a few practices that I will try and embed in my life to enable me and my mission:
